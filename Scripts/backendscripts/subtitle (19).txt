@@ -1,0 +1,53 @@
+[MUSIC] In the previous module, we have seen
+how we can make use of Express and Express router to build up a web
+server to sum up Rest API. We constructed the entire web server by
+hand and organized the files by ourselves. Wouldn't it be nice if we had a tool
+that can automatically generate a standard structure for
+our express application. Just like we had for angular or ionic or native script in the previous courses,
+some kind of command line interface that enables us to automatically scaffold
+out a start up application and then you can go in and
+modify the application to suit our needs. So that is where Express Generator
+comes to our aid. Express Generator is a tool that we will
+install a command line interface that we will install as a global NPM module and it enables us to quickly scaffold
+out an Express application. Let's look at some of the details next. So as I said,
+what exactly is Express Generator? Express Generator is a quick scaffolding
+tool that will help us to quickly build up the structure for an Express application
+with some starting code already built and some standard middleware already
+included into the application. And so all that we need to do is
+install the Express Generator. Command line interface as
+a global NPM module, and then use that to scaffold
+out our Express application. So how does Express Generator work? With Express Generator, once you have
+installed the Global API module. You just type Express, space, and the name of your Express
+application that you want to start. And this will generate a folder with the name of the application
+that you have typed in. There are various options available for
+you to generate your Express application. It can use different kinds of view
+generators like jade, EJS, and so on. If you're not familiar with them, don't
+worry about that too much for the moment. In this course, we will be using Express
+purely as a server that supports REST API. The client side implementation, we are
+already doing that using either angular Ionic or
+native script in this specialization. And once you scaffold out your
+Express application, you just move into the replication and do an NPM
+install to install all the preconfigured modules that are already included in
+your default Express application. And some of the middleware that,
+by default, will be included into your application. Once that is done,
+then it is just a matter of going in and modifying that generated
+templates to suit your needs. So what is the typical Express Generated
+application look like? So this would be
+the directory structure or the folder structure generated
+by Express Generator. So you have an app.js file which is
+the starting point of your Express application and
+then you have package.json, which obviously contains the details
+because this is a node application. So this contains all the details
+of the dependencies and so on that will be installed. Then you have public folder,
+where you put your static resources. Then you have the routes folder, where you have the various application
+routes the REST API adopts. Now if you recall in the Express
+application that we generated earlier, I explicitly created the routes folder and put all the Express router
+files into that folder. The reason is simply to keep match with
+what Express Generator actually generates. When it scaffolds out an application. And then the views is where you have the
+template engine for generating standard web templates, HTML templates,
+if you are interested in using them. In this course, we will be using the views
+for our Express application in NAV. With this quick understanding
+of Express Generator, let's now install
+Express Generator in our computer. And then use it to scaffold
+out where several application that we will develop over
+the rest of the course. [MUSIC]

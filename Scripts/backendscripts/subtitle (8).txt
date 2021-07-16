@@ -1,0 +1,109 @@
+[MUSIC] In this lesson, we will learn about
+how we can write simple notifications. We'll also learn about Node modules and how Node modules enable us to organize
+our applications into multiple files. We'll also learn about the different
+kinds of Node modules and how we can import Node modules into
+our files of our Node application and make use of them within our application. First, let's learn about Node modules in
+a little more detail in this lecture. JavaScript, when it is first designed was meant to be a scripting language
+to be used within the browser. So the small realm within which it was
+supposed to be used is the browser. Now, as you understand from this
+specialization, JavaScript has gone way beyond its original intention, and now
+is being used for writing applications. Both to be run using frameworks
+within the browser, and also to run applications on the server
+side, as we will see in this course. JavaScript originally was never
+designed with any common libraries. If you look at standard programming
+languages like C, C++, Java, and so on, they all have standard libraries
+that enable you to access the underlying hardware. And also provide a structured way of
+organization the application into multiple files and then combining them
+together when you create an application. JavaScript never had any of
+this support when it began. Because as we understand
+JavaScript was not designed for the purpose for
+which it is being used today. But of course, people understood the difficulties
+when you need to expand JavaScript beyond a single file which is used as
+a scripting language for the browser. Now, if you have a very large
+JavaScript application, it becomes cumbersome to write
+the entire code in one single file. And obviously you want the results to
+be able to break your application into multiple facts. Now, unlike traditional programming
+languages, JavaScript never had a way of distributing the code into multiple
+files and then combining them together. So this is where the CommonJS API
+came in to fill in this gap that fills in the needs for
+some common application. And this CommonJS format defines
+a module format that can be used for breaking up your JavaScript
+application into multiple files. And Node adopts that CommonJS format for organizing our JavaScript
+application into multiple files. And within JavaScript,
+with the CommonJS format, each file becomes its own Node module. So let's learn a little bit more about
+Node modules in the rest of this lecture. So as I just mentioned, each file in a Node application
+becomes its own Node module. So the file or the JavaScript file
+defines the boundary for a Node module. So within that file,
+the CommonJS specification provides a variable called the module
+variable which is a JavaScript object. And this gives you access to the current
+module definition within a file. And on this module object,
+you have the module.exports property which determines
+the export from the current module. So when you assign something to
+the module.exports property, then that becomes the exported
+value from the current module. So that when this module is
+imported into another file of our Node application,
+then whatever is exported from this module becomes available in
+the second application. We'll look at an example in short while. When you need to import
+a module into another module, this is where the require function
+is used to import the module. So as we will notice in a short while,
+the require function is used to import a Node module that is defined
+in other file into the current file so that it can be used within
+our node application. Node modules can be of three categories. We have file-based Node modules where we
+define the Node module within a file, within our application and
+we make use of it within our application. Then, we have core modules
+that are already part of Node. The Node designers kept these core
+modules intentionally small so that Node can be kept small. And also provide sufficient
+functionality so that external module designers
+can add in their own functionality that can be leveraged
+when we developed Node applications. So the core modules include path,
+file system, os, util and a few others. We will encounter some of them
+as we go along in this course. Then we have external Node modules. These are third-party Node modules that
+are developed by Node developers, and then made available through
+the Node ecosystem. So these external Node modules can be
+install within our system using NPM. So many times you would see
+us using NPM install and the name of the Node module and
+that will be included within our Node application in a folder
+named node_modules folder. And we will encounter external Node
+modules in a later lesson in this course. How do we make use of Node modules? When you need to use a Node module within
+another Node file within your application, then you would use the require function. I briefly mentioned about the require
+function in one of the previous slides there. The require function for
+file-based Node modules, you will specify this as require and then specify the path to the file
+which contains the Node module. So you would say require./,
+the module name if the file exists in the current folder written
+which your Node application exist. So this specify the relative path to
+the file from the current location. And also for the core and
+external modules, you would normally specify them by saying
+require and the name of the module. You would explicitly specify a path for
+it. If it is a core module,
+it's already part of Node and so it will be automatically included. If it is an external module,
+then it will be installed either within the node_modules folder in the current
+folder, or if the Node doesn't find the external module within the
+node_modules folder in the current folder, it will go up to the next higher level
+folder looking for that Node module. Or the next higher level folder and up the hierarchy until it locates
+the Node modules which will then be imported to be used
+within your Node application. If it is unable to find the Node
+module up the hierarchy, then it'll obviously raise an error
+saying that the Node module is missing. This way of organizing is
+very useful in the way the Node application structure
+is defined as we will encounter more in the later part of this course. With this quick introduction to Node
+modules, let's take a look at an example which we will do as part of
+the exercise that follows this lecture. As we learned in this lecture, a Node module's boundary is defined by
+the file that contains the code here. So here, I have an example of a Node
+module defined as rectangle.js. And in there you can see that
+I am using two exports here, I'm saying exports.perimeter and
+exports.area. And you'll see that here I'm not
+using module.exports because exports itself is also a shortened
+version of module.exports. So if you don't want to use
+module.exports completely but instead just want to exports,
+then this is another way of writing those items that are exported
+from the current Node modules. So here we are exporting two functions,
+the perimeter and the area from the rectangle Node module. Now in order to make use of
+this module in another file, then let's take a look
+at the index.js file. And the very first line in this
+file you will notice that it says var rect = require and
+within quotes, ./rectangle. So this is specifying that the rectangle
+module is going to be important in here, I made use of within this
+particular file of the application. So this is how we would
+define Node modules, and this is an example of
+a file-based Node module. We will encounter the core and the external Node modules in
+later lessons of this course. [MUSIC]

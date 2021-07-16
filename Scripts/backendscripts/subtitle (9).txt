@@ -1,0 +1,127 @@
+[MUSIC] Now that we have an understanding of node
+modules, let's do our first exercise to further our understanding of node
+modules with an example in this exercise. So to get started, let's go to
+a convenient location on our computer. So here,
+I am in my documents Coursera folder, where I have the files from
+all the previous courses. So I'm going to create a new folder here,
+named NodeJS and this folder is where I'm going to store
+all the code related to the NodeJS course. So going into the NodeJS folder, let's create a subfolder here,
+named node-examples. And in this folder, we're going to be creating
+the files related to this exercise. Open a terminal window or
+a command window, and then navigate to the node-examples
+folder at the prompt, and then at the prompt, type npm init to initialize this folder
+as a node application. So type npm init and
+then it will come up with some standard default values for
+some information that is going to store in
+a file named package.json. So for the name, let's type node-examples, and version is 1.1.0, and description, I'll simply type Simple Node Examples. And the entry point is
+index.js default value. For the test command just leave it as such
+and the Git repository for the moment, we'll leave it as such. And for the author,
+just fill in your name. And the rest, and then npm init will show the default value that it'll set
+up in the package.json file. So as we have learned, the package.json
+file is the manifest file for a node application, and once you
+complete this, you will notice that the package.json file is created
+in that node-examples folder. Let's open this project in
+an editor of our choice. So I'm going to open my
+Visual Studio code at this folder. When my Visual Studio code,
+it opens in that folder. I'm going to go to the scripts here and
+set up a script here saying "start" and I'll say "node index". And then save the changes
+to the package.json file. Next I'm going to create a folder here and
+name it as index.js and as you realized that main here
+is given as index.js file, so that starting file for
+my node application. So in the index.js file,
+I'm going to create a simple example to illustrate various features of node and
+how we will construct node modules. So here, we'll construct an example
+that evaluate the area and the perimeter of a rectangle. A very simple example that
+it helps us to illustrate various aspects about node and
+node modules. So the get started type, Var rect. And we're going to create
+a JavaScript object here, that's two properties,
+perimeter, which is a function. And as you see, I am using the arrow
+function to define this function here. So node in its current version
+supports ES 6 or ES 2015. And so that is why I'm going to
+use the arrow function support that is available in ES 2015
+to define this function here. And if you have taken the previous
+courses where we use time skirt, this would be quite familiar to you. Now with node, we have the option
+of using JavaScript or Typescript. Now the documentation for node and also express that we will see later,
+all use standard JavaScript. So I have defaulted to using standard
+JavaScript in this course or ES2015 JavaScript in this course. If you prefer to use TypeScript, you can set up your node examples to
+write your application in TypeScript. But then you will have to transpile
+that code into JavaScript so that it can be run using Node. So you have to set up
+additional infrastructure in order to be able to use TypeScript. In this course, I am going to use
+JavaScript as the default language for the rest of the course. And I'm not going to go into
+Typescript use it in this course when nodes start supporting
+Typescript natively, then it makes more sense to
+move to Typescript [INAUDIBLE]. But if you are interested in Typescript, I have noticed that there have been
+several blog articles posted by different people that illustrate how you can set up
+your Node application to use Typescript. Having said that,
+let's return to the index.js file and then continue with our example. So I'm setting up a perimeter here and
+then also an area function here. Again, taking two values, x and y, which represent the length and
+the breadth of the rectangle. The two parameters, and
+the area is computed as x times y. So from your primary school mathematics, you know how to compute the perimeter and
+the area of the rectangle. So here, I have set up this
+JavaScript object here and then let me define a function
+here named solveRect, which takes two values, (l, b), as the two parameters, the length and
+the berth of the rectangle. And it is going to use this
+JavaScript object that I have defined earlier in order to compute the perimeter
+and the area of he rectangle. So inside here, let me do a console.log and say Solving for rectangle with l equal to This is just for our convenience. So that will print out this information
+onto the terminal there and so in this console.log, I'm just
+printing out the l and b values, so that I know for the rectangle for which we
+are computing the length and the breadth. Now, I'm going to check to
+make sure the length and the breadth are not less than or
+equal to zero. If they are less than or equal to zero,
+then it doesn't make sense to compute the Perimeter and area for the rectangle. So I will say console.log here, so I would say Rectangle dimensions should be greater than zero. So that way, we print out these values
+on to the screen if the length and the breadth are less than or
+equal to zero. Otherwise of course, it makes
+sense to compute the perimeter and the area of the rectangle. So we'll say else console.log("The area of the rectangle is"). Similarly, we'll compute, The perimeter of the rectangle. Here. So inside this function,
+we are computing the area and the perimeter of the rectangle and
+purging it out. Now, we obviously need to call this
+function using different values for length and breadth and
+see what it prints up. So right below here,
+I'm going to say solveRect and then just use some values here. So I'll say 2, 4, And 3, 5. And let's say 0, 5 and see what happens. And -3, 5. So four different choices
+of parameters here to illustrate how this
+application is going to work. So with this, let's save the changes. Now going back to the terminal,
+at the prompt, type npm start and you would see that it prints out
+the area of the perimeter for the different rectangles that
+we have specified there. So we are saying solving for
+the rectangle with l is equal to two and b is equal to four, and the area of
+the perimeter for this rectangle. And for the second one, and for
+the third one, as you see, your dimensions should be greater than zero and
+for the fourth one also,
+it is printing out the same value. Now obviously, I notice that I would
+need a space there, so I'll just correct the code to add in that extra space there. So with this, we have seen how we
+can write a simple node application to compute the perimeter and
+the area of a rectangle. Now obviously, you want to be
+able to set up a Git repository, where you can store all this code. So at the prompt type git init to
+initialize the Git repository and then you can check the status
+of the Git repository and you notice that two files
+have been newly created. So let's add the two files
+to our Git repository, and at this point, checking the git status, you see that
+the two files have been checked in. So let's do a git commit break the message Simple Node Example. In the second part of this exercise,
+we're going to now create a node module in this example. So at the editor, in the editor, create a file named rectangle.js. And inside this file,
+we're going to create a node module. So we're going to use the exports object in order to export the two values from this node module. So as you've learned, every file in a node
+application becomes its own node module. So from within this rectangle node module, I'm going to export two values,
+the perimeter, And The area. Now I"m going to go into index.js file and
+then simply copy this value. And that is what we will
+use as the export for the perimeter here and similarly for the area I'm just going to copy this from the index js file and
+then use that for the area. So now, we have a simple node module
+ready, which is exporting two values, the perimeter and
+area from this rectangle.js file. So as we have learned in the lecture,
+[INAUDIBLE] node modules, now once you create a node module,
+you need to input that node module into another file where you
+want to make use of it. So going back to index.js file. Now I'm going to replace this
+whole thing by require and I note that this node
+module is in the same folder as the current project. So I would say require rectangle and
+that's it. So my changes are now complete. So this particular index.js file
+is going to import the rectangle node module that we have just created, and
+then make use of it within our code here. So let's save the changes and then take a look at our application again,
+at the terminal prompt. Going to the terminal,
+at the prompt, type npm start. You will notice that there modified version of this application produces
+exactly the same results as before. With this, we learn about how
+you can create a simple node module in our application. Now checking the git status,
+you'll see that you have two files, one which has been modified,
+another one which has just been added. So let's add this to
+our Git repository and then do a git commit with the message, Simple Node Module. And Check the git log and you'll notice that we
+have two commits that we have committed to our
+Git repository there. With this, we complete this exercise. In this exercise, we have seen how we
+can write a simple node application. And also how we can write
+a simple node module and use it with another file
+in our node application. [MUSIC]

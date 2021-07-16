@@ -1,0 +1,66 @@
+[MUSIC] Git is a very popular version
+control system for software. We need Git for working with our node
+ecosystem that we're going to use throughout this specialization. So it is important for
+you to get Git onto your computer. So let's go through a few quick steps
+to set up Git on your computer. And then some quick commands to enable us
+to make use of Git in this specialization. I will not go into too much of details
+about version control and how Git works, and so on. That is beyond the scope of this course. Instead, we'll just get some
+basic understanding of Git. Git is as I said,
+a version control system. This is a software tool
+that enables us for the management of changes to source
+code and maintaining a version history. So as your source code evolves, you will be able to check in the code
+on different points of time. So that you can always have
+a way of rolling back to a previous version in case your updates
+to the code doesn't work correctly. There are various version control systems
+that are in use in the real world. Including CVS, SVN, and
+Git being a very popular mechanism for version control these days. Where did Git originate? Git was designed by Linus Torvalds, the
+person behind the Linux operating system. Git was designed as a distributed
+version control system for use in Linux kernel development. And it has seen much wider deployment
+in the real world these days. That node ecosystem is
+very much tied into Git. And that is the reason why we need Git for
+this specialization. Let's now move on to a few hands-on
+exercises where you will first set up Git. Then you will learn a few
+basic Git commands. And then also understand how you
+can set up an online repository in places like GitHub or Bitbucket for synchronizing your source code from
+your computer to the online repository. This is obviously not a comprehensive
+tutorial of Git, but we'll learn just enough of the commands that are necessary
+for use in this specialization. Let's now run through a few quick
+steps to set up Git on your computer. One easy way of setting up Git on your
+computer is to go to this site called git- scm.com, and then download
+the Git installation files from there. So when you visit this website,
+git.scm.com, you will see on the right-hand side here,
+a button for you to download the Git. If you want to, you can go directly to
+the downloads page here on the site. And then you will find the downloads for
+various platforms, and you can download the one for
+your specific platform for installation. This is the easiest way of
+getting Git onto your computer. There are other ways of setting up
+Git depending on your platform. For example, if you install
+GitHub Desktop on your computer, it'll automatically set up Git for you. If you are using a Mac and
+you set up X Cord, and especially the X Cord command line tools. That will also setup Git for you. On this site, git-scm.com,
+if you go to the documentation page, you will notice that there is
+a book here called, Pro Git. You can just go on to
+the Getting Started link. You will see a specific chapter
+here on installing Git. So, just go to this Installing Git site,
+and there you have more details about how to install Git
+on your specific platform. So, you can use any of
+the methods suggested here for installing Git on your platform. This is fairly straightforward, so I am not going to go through
+the details of how to do the setup. Download the installer and run through
+the setup to get Git onto your computer. Once you install Git on your computer,
+start up a command window or PowerShell if you're
+using a Windows machine. Or start up a terminal window if
+you're using a Mac or Linux machine. And then at the prompt,
+type in git --version to check what version of Git
+is installed on your computer. So on my machine I have this current
+version of Git installed, and that is good enough for me to work with. Once we verify that Git is installed,
+you will configure a couple of global identity parameters,
+the username and email address. So that whenever Git does any
+comments as you will learn later, it will make use of this information. So, to do that, at the prompt type
+git config --global user.name, and there you can type in your username. The other parameter that I'm
+going to configure is my email. And to ensure that this
+information has been configured, we can type git config --list, and then it'll list out a bunch of
+configurations that we have done. Some of these are automatically set up for
+you, but if you want to, you can set them up as you require. So here I have my code
+editor value set to VI, which is what I use to do
+a command line editing of files. So with this, we have completed the setup
+of Git for use on our computers. Once you get Git on your computer,
+it is time to go and learn Git bit by bit. [MUSIC]

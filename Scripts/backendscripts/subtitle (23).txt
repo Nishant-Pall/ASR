@@ -1,0 +1,30 @@
+[MUSIC] In the previous lesson, we learned about
+MongoDB, we downloaded an in-store MongoDB and interacted with the Mongo
+server using the Mongo ripple. But of course, that is not the way we
+envision using MongoDB in this course. Instead, we want to be able to access
+the MongoDB server from within our node or express application. So how do we access the Mongo server
+from within our node application? So this is where we have a node JS
+based driver that is officially available from the Mongol Developers
+that we can make use of connect to the Mongo server
+from within our Node.js application or
+within our expressive application. So let's learn a little bit more about
+that Node.js and MongoDB climber. So as I mentioned, the Node MongoDB Driver
+provides a high-level API that enables you to access the Mongo
+server from within your Node application. And it provides you with many
+methods that enable you to interact with your Mongo server. Now, to install that MongoDB
+driver which is a node module, we type npm install mongodb and --save
+to install it within our application. Thereafter, we will then develop
+our Node.js application, and then require this app,
+MongoDB driver, and they make use of the node module to access the MongoDB
+server from within our application. The MongoDB driver, which is nothing but
+a node module, provides several operations that can be carried out on the MongoDB
+server from within our Node application. It allows you to connect to the MongoDB
+server, obviously and thereafter, allows you to perform various database
+operations like inserting, deleting and updating an existing record or
+adding new records to your database. Also, it provides various base of
+creating the documents that already within the database. We will look at some examples of how they
+make use of the various metrics that the MongoDB Driver provides for
+us in the exercises for this lecture. Now, the driver itself supports
+both callback based and promise based interactions
+with the MongoDB server. So let's look at some details
+of this in the next exercise. [MUSIC]

@@ -1,0 +1,121 @@
+[MUSIC] Now that we have had a brief introduction
+to MongoDB, it's time to get hold of MongoDB, install it on our computer,
+and then interact with MongoDB server. To get started, of course, the first thing
+is to install MongoDB on your computer To install MongoDB on your computer,
+go to mongodb.com. And on the right hand side here,
+you will see the Download button. You can click on the Download
+button in order to obtain the links to that download. So when you click on the Download button,
+you'll be taken to the Download Center, where you would see various versions
+of MongoDB available to us. You can access it online,
+using database as a service. But in our case, we're going to download
+MongoDB, and install it on our computer. So to do that, we will choose
+the Community Server version of MongoDB. And when you do that, you will be
+automatically given access to the specific version suited for your computer platform. So in this case, I'm going to download
+the OSX version of the MongoDB and then do the installation. If you are using a Windows machine then
+you can download the Windows installer. For a Linux machine correspondingly, you can download
+the corresponding installer here. To install MongoDB, the MongoDB documentation itself
+provides you with detailed instructions. I don't think I can give you any
+better instructions than what is already provided there. So to understand how to install
+MongoDB on your computer, head over to
+docs.mongodb.com/manual/installation. And then click on
+the Install MongoDB Community Edition. And here, you will see the installation
+instructions for various platforms. So to install on Windows,
+click on the Install on Windows and then go through the steps given here. And they specify how to
+download MongoDB and then install the MongoDB Community Edition
+on your computer. So, go ahead and follow these instructions
+to install MongoDB on your computer. And also they tell you how
+to get started with MongoDB. Now once you have
+completed the installation, you can proceed ahead to the next
+step that we gave in the exercise. Similarly, if you are installing in OSX, just follow instructions given
+here to install it on OSX machine. And also correspondingly for
+the Linux platforms. I assume by now you have installed
+MongoDB following the instructions given in the documentation. Then, once you have completed that go to
+a convenient location on your computer. So here I am in my Coursera folder. I'm going to create a new
+folder here named, mongodb, and then inside the mongodb folder I
+will create a new folder named data. Now this data folder is where
+mongodb will install all the data relevant for my current project. Once you have created this folders,
+open a command window or a Terminal at the mongodb folder. So here, I have my Terminal, and I am currently in the mongodb
+folder that I have just created. So at the prompt in order
+to start the Mongo server, type mongod --dbpath =data --bind_ip 127.0.0.1. Recall that we already have the data subfolder inside the mongodb folder. So the dbpath here essentially
+takes the path to the folder, which will store the data for
+my Mongo application. Now, you can execute this mongod command
+from any location on your computer. As long as you specify the complete
+path to the location of the data folder where your MongoDB
+data is going to be stored. Since I am already in the mongodb folder,
+and the data folder is a sub-folder
+of the mongodb folder, I can just simply execute the command
+by saying mongodb -- dbpath=data. And this should start
+up your MongoDB here. And if it asks for some permissions,
+just allow MongoDB to be available for being connected
+to from different locations. Open another Terminal window or command
+prompt and add the prompt, type mongo, in order to start the Mongo report or
+Mongo read evaluate print loop. So this is a command line way
+of accessing your Mongo server. So when you type Mongo,
+it will automatically connect itself to the MongoDB server that is running on
+your computer at the port number 27017. So here,
+you see this is automatically connecting. So when you start the Mongo Ripple,
+it will know exactly where to look for the default MongoDB server which will
+be running at port number 27017. In this course, we're going to be running
+the MongoDB server at its default port number and so
+that it's easy to access data. Also on OSX machine, you might see a warning like this
+which says soft rlimits too low. You can just ignore that warning
+everything will work just fine even though you will see that warning
+being printed there. This has something to do with the amount
+of memory space available for your Mongo process. And this will be just fine to run for the development version of the Mongo that
+we're going to be using in this course. Now once the Mongo Ripple starts,
+you will see a prompt, and at the prompt, you can type various commands
+to access your Mongo server. So at the prompt, if you type db,
+it will specify the specific database on the Mongo server to
+which it is currently connected. So, now we're going to create a new
+database there with the name confusion. So to create a new database, I would
+just say, use conFusion at the prompt. So this will automatically create a new database named conFusion
+if it doesn't already exist. If it exists then it will automatically
+switch to that conFusion database, there after any commands that you execute
+will be accessing this conFusion database. So at the prompt if you now type db you
+will see it prints out saying conFusion. The test that it printed earlier with the
+test database that is automatically set up when you start running the Mongo server. Now, to learn the various
+commands that are supported you can just type db.help() at the prompt. And this will print out a set of
+commands that are available to you at the Mongo Ripple command prompt. We're going to be using a few of
+these to access the MongoDB database. Again, typing db you see that we
+are accessing the conFusion database. Let's create a new collection
+in this conFusion database. To do that, at the prompt type db.dishes. Now the dishes here
+refers to a collection. Now if this collection already exists, then this will access
+the dishes collection. If it doesn't exist, then it'll create
+the dishes collection at this point. So in the dishes collection
+I'm going to insert. So this is where we use the insert function that is available
+on the collection here. And then let's insert a record
+into this collection, or a document into this collection. So at the prompt I'll type name, I'm just typing some random stuff
+here just to show you that we can insert a document into the database. So with this, this particular
+JSON document that you see here, will be automatically
+inserted into the database. So the insert function
+takes a JSON document as its parameter here. And immediately the Mongo Ripple will respond saying WriteResult and
+number inserted is 1. So one record has been inserted, one document has been inserted
+into this collection. Now to print out the various
+documents in this collection, we can simply say db.dishes.find(). So the find function will find all
+the documents in this collection and it will print out those documents. Now, if I just say find, then it will
+print out this information like this here, as a single line and you can see
+that this is a JSON string here. Now we can also use the, Pretty function that is available
+which will print out the documents in a more easily readable manner. So if you type db.dishes.find().pretty(),
+so you see that the document that we had
+inserted earlier Is now seen here. So you can see that the name and the description that we had inserted
+is available in this document. In addition, note how MongoDB has automatically
+added an id field to this document. So if you don't explicitly
+specify the id field MongoDB will automatically add the id field. And as explained in the lecture earlier,
+this is of the type object id and you can see that this string specifies
+the ObjectId information there. Now this ObjectId as we learnt
+in the lecture earlier, has a specific fall back which
+it also includes the timestamp, the machine name, the process ID and also the increment value
+that is stored here. So now, similarly if you want to, I can simply create an object
+ID using the Mongo Ripple. So let me just type var id = new, ObjectId(); just to
+demonstrate to you that the ObjectId will contain the timestamp. So here I have created this variable
+them ID which is a new ObjectId. Now I can simply type
+id.getTimestamp(); and you will notice that this
+will print out the current time value in the ISO
+format as you see here. So this shows you that the ObjectId
+actually contains the timestamp field here. So similarly, you ask for
+the other fields also from the ObjectId. And to quit the Mongo Ripple
+just type exit at the prompt, and the Mongo Ripple will exit, and then bring you back to your Terminal
+prompt or your command prompt. With this, we complete this exercise. In this exercise,
+we have seen how we download and install MongoDB on our computer. How we start up a MongoDB server,
+and then access the MongoDB server using the Mongo Ripple and
+interact with the server. [MUSIC]

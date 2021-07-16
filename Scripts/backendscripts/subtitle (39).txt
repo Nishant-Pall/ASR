@@ -1,0 +1,165 @@
+[MUSIC] In the previous lessons, we have seen several different
+kinds of authentication schemes. We started with basic authentication, then
+we looked at how we can use cookies for doing authentication, and
+even signed cookies, and thereafter, we looked at
+session-based authentication. Where the server is keeping track of
+information about each client, and then the cookie will be used as a way
+of indexing into the server-side database to extract additional
+information, to validate the user. Now, the cookie and session-based
+authentications are not scalable, because there server needs to keep
+track of all the different users. Even though, this is done outside
+the HTTP protocol itself, but still the fact that you need to keep track of all the section information of the
+server site, makes it not very scalable. So this is where token-based
+authentication has proved to be very useful. we'll look at token-base authentication
+a little more detailed in this lecture and exercise that follows. Again, quickly reviewing cookies and
+session based authentication. With cookie based authentication, we notice that cookies are stored on the
+client side, and the cookies are included in every outgoing request message whereby,
+the server is reminded about that specific client,
+by extracting information from the cookie. Cookie can be used together with sessions,
+whereby the cookies store the session ID, and then when the server receives
+the incoming request from the cookie, it extracts the session ID and uses that
+as an index into the server-side session store to retrieve the session
+information for the particular client. Now, this approach as I said, is not very scalable because if you have
+thousands of sessions, the server needs to keep track of all these thousands
+of sessions on the server side. Even though it is done
+independent of HTTP in a store, either a file store or a database. But still, the fact that you need to track all of
+these information makes it not scalable. So, again, to remind you one more time, why do we talk about
+token-based authentication? Session-based authentication, as we have
+seen earlier, works perfectly fine for web applications and can easily
+take care of user authentication. But then, session-based authentication,
+while it's the principle of stateless servers and
+also leads to scalability problems. The second issue is,
+mobile applications do not handled session-based
+authentications very well. Similarly, mobile applications have
+a hard time dealing with cookies. So, in such circumstances where
+your server is serving data for both a web application,
+as well as a mobile app. Then, the session based authentication
+will not be very useful, and this is where token based authentication
+becomes a lot more easy to use. In a token-based authentication
+as the name in place, the server will issue a token to
+a validated user, and all subsequent requests coming from the client side,
+will bear the token in the request itself. Either in the form of a request header or
+in the body of the request message. Furthermore, token-based
+authentication also helps us to deal with what are called CORS or
+CSRF problems. Cross-origin resource sharing problems and
+so on, I'll briefly talk about
+cost in the next module. But for the moment, token-based
+authentication addresses some of the issues that lies with cars and
+cross-site request forgery related issues. Not only that, token-based
+authentication is a lot more easy for one application to share its
+authentication with another application. Of course,
+this is all done in a secure manner. But, with session based authentication,
+that is not straight forward. How does token-based authentication work? In token-based authentication, the user first needs to validate
+himself or herself on the server side. Now, this validation could take on
+the forms that we have seen earlier. So we can use a local validation
+using username and password. Or, we can even use third
+party validation using technologies like, oauth or
+oauth 2.0 or open ID. We'll talk briefly about oauth and
+oauth 2.0 in the next module. But, no matter which way the user
+authenticates, once the user is authenticated, right after, your server
+can simply issue a token to the user. And all subsequent communication
+between the user and the server,
+can be done simply using this token. JSON Web Token that we will talk about,
+is one such token-based authentication scheme, and there server when it creates
+this token, it will create a signed token. Using a secret on the server site
+which only the server knows. So thereby, even if a third
+party in towards and between and tries to manipulate the token,
+even if it captures the token and tries to manipulate the token,
+the token will become invalid. And so, that way of protecting the user is easily feasible, all subsequent requests from the client side should
+carry the token in the request, either, as I said, in the header or
+in the body of the request message. So when the server receives this token,
+the server will verify the token, to ensure that this is a valid token,
+and then if it is a valid token, the server will then respond
+to the incoming request. As I mentioned, JSON Web Tokens is one
+such token-based authentication scheme. JSON Web Token,
+is a very simple way of encoding information in a token then
+pass it to the client site. JSON Web Token itself
+is based on standards, this is based on the IETF RFC 7519. IETF here, stands for
+the Internet Engineering Task Force. The organization that mandates
+everything about how the internet works, and deals with the protocols and
+the policies, related to the internet. The RFC, stands for
+the standards document, in IETF terms, RFC stands for
+Request for Comments. And each such standards
+document carries a number. 7519 in this case refers to the document, the standard document
+related to JSON Web Token. The JSON Web Token itself is a self
+contained token, it carries all the information within itself,
+that is necessary to identify the user. Not only that, a JSON Web Token can
+be shared between two applications. So for example, one application when
+it authenticates and then gets hold of a JSON Web Token, can pass that
+JSON Web Token to and in that application, that it is willing to authorize to
+access the server on its behalf. This sharing of the token is
+done in a very secure manner, so don't worry too much
+about security in there. This is not in a secure manner, where by the sharing of the token
+between one application to another. Thereby, the authorization is transferred
+over to a second application, and the second application can authorize
+on behalf of the first application, to communicate with the server. This is feasible with tokens. Now of course, the engineer in you will
+obviously be wondering what exactly is inside a JSON Web Token,
+and how is it useful? A JSON Web Token, as I said,
+is encoded into a long string and this string itself can be interpreted
+as consisting of three parts. The string itself can, or the encoded
+string itself contains three parts, the Header, the Payload,
+and the Signature. That carries enough information
+about how this token is encoded. The Header itself contains the specific
+algorithm that is used for encoding this JSON Web Token,
+and the type of the token itself. The algorithm in this case, would be
+HS256 which is a 256 bit encoding scheme, that is used for hashing
+the information inside of the token. And in this case, this happens
+to be the JSON Web Token, and so the type field will be set to JWT. And so that is the information that is
+stored in the header of JSON Web Token. The Payload itself, carries information
+that helps you to identify the user. In the exercise that we will do, the hour payload only carry the ID
+of the user inside the payload. No other information is necessary. This ID can be used on the server side, to index into the Mongo DB to retrieve
+the full user information if required. So, you will see that
+we'll encoding the ID and then storing it in
+the payload of that message. You can store additional information in
+the payload of the message if you require. But the more information
+that you stored there, the larger the corresponding
+JSON Web Token is going to me. So, try to limit the amount of information
+that you stored in the payload of the JSON Web Token. As we will see in the exercise,
+we have a node module that enables us to encode and create a JSON Web Token, based on the information that
+we want to put in the payload. Now, when you create a JSON Web Token,
+you also supply a signature. A secret key on the server side which is
+used for encoding this JSON Web Token, and that secret is also included in
+the signature part of the JSON Web Token. The signature itself is included
+in such a way that there is a basics before encoded header and
+payload, which is then encoded using the specific
+secret that is used by the server. And this encoded in, as I said the HMAC, that we have referred to in one
+of the previous lessons and using the 256 bit hashing, and
+that is included in the signature. So, when this JSON Web Token is
+received on the server side, and when the server decodes this token,
+then the server is able to cross check to make sure that this JSON Web Token
+has not been tampered by anybody, while the token is being passed between
+the client and the server site. So if you know anything about security,
+and intruders, and so on, you understand why it is
+important to encode the token, and verify the authenticity of
+the token on the server site. As I mentioned, if you need to deal with
+JSON Web Tokens in your node application. There is a specific node module called
+as the jsonwebtoken Node Module. This node module implements
+the JSON Web Token related standards, and it can be included into
+your node application. This module itself, provides a method
+called sign which allows you to sign and issue the token to the client
+from the server side. It also contains a verify method. Which can be used to
+verify the authenticity or to ensure the authenticity of
+the incoming JSON Web token, so we will be making use of the JSON Web
+token module, in our exercise. Together with the JSON Web Token module, we also used the Passport-JWT module,
+node module. Which provides the jwt based strategies
+for our passport authentication module. So this provides a passport strategy for
+authenticating using JSON Web Token. So this allows you to authenticate RESTful
+endpoint using the JWT as the method for dong the validation, without
+requiring the server to use sessions. Now, the JWT passport module, supports a method of even
+extracting the JWT token from the incoming request message, and then
+even verifying the token on your behalf. The Passport-JWT module intern,
+uses the JSON Web Token module for doing the verification
+of that JSON Web Token. The token itself can be carried in
+the header of the incoming request, in the header, even in the authentication
+header of the incoming request, which is what we will be
+doing in the exercise. The token can be also carried in the body
+of the incoming request, in which case, we have to extract the token from
+the body of the incoming request and then make use of it. The Passport-JWT module,
+supports that also if you choose to use that as way of passing the token
+back from the client to the server site. The JSON Web Token, can be also included
+in the URL query parameters if you so choose to, and can be extracted
+from there b Passport-JWT and used for authentication. Now, with this quick understanding
+of JSON Web Tokens and how they are useful, we will move on
+to the exercise where we will use the Passport-JWT module,
+together with the JSON Web Token module, and configure our Express Rest API
+server to use JSON Web Tokens. [MUSIC]

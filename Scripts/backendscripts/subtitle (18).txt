@@ -1,0 +1,318 @@
+[MUSIC] Now that we have understood REST API and
+express support for REST API,
+let's move on to the next exercise. Where we will look at how we
+will develop the REST API using the support given by express. And also, the use of express router, enabling us to organize our code
+in a way that is more suitable when you need to support a large
+number of REST API endpoints. To get started,
+continuing with the node-express folder we have been working on
+the express-based web server. At the prompt, let's install body-parser, so to do that,
+type npm install body-parser --save. And we are using the 1.18.3 version of body-parser in this course here. Now once we have installed body-parser,
+then go into our code. In the index.js5, let me require bodyParser, so we'll say const bodyParser require body-parser. And then whenever you
+need to use a middleware, you'll say, app.use(bodyParser.json). So this allows us to parse
+the body of the request message, which is formatted in JSON format. Once we have completed that,
+then let's start building up The REST API support for
+the /dishes endpoint. Using the app.all, app.get, put, post, and delete methods are supported by express. So to do that, let me start out by saying app.all, and the first parameters that app.all takes is the endpoint. So in this case,
+I am specifying the endpoint of /dishes. And then the second parameter
+is the callback function, req, res, next, the three parameters here. And inside this callback function, we're
+going to handle the incoming request. So we will say, when a request comes in,
+for all the requests. So when we say app.all,
+no matter which method is invoked, get, put, post, or delete, for
+the /dishes REST API endpoint, this code will be executed
+first by default here. So we'll say res StatusCode is 200 and then res.setHeader and let's say Content-Type text. We'll send plain text now,
+instead of HTML text. This should be enough for
+REST API endpoints. Later on, we will send the data
+in the form of JSON once we are able to retrieve
+the data from the database. So that will come in one
+of the later exercises. For the moment, we'll simply send
+plaintext replies back to the client. Now after these two,
+the middleware here is not completed yet. So we will call the next function here, so
+the next as you see refers to this next. So when you call next, what it means
+is that it'll continue on to look for additional specifications down below here, which will match this dishes endpoint. So this would be done for
+all the requests, get, put, post, and delete, on the dishes, and
+it'll continue on to the next one. So here, suppose we get a get request on dishes, which means that now, if we get a get request on dishes, first this will be executed, and then the req and res will be passed on to this second call here. So in this case,
+I will no longer need the next, because I'm not going
+to call further down. I'll complete the handling right
+within this method here itself. So if we modify the req or
+res inside this code, then when you call the next,
+that modified object will be passed in as
+the parameter to this. So if you have issued a get request
+on dishes, so this is what will be executed right after this, so
+this next will cause it to pass on. And then here, you notice that
+we modified the res object here. And the modification will carry in as
+the input parameter to this function here. So inside this get function,
+we can say, for example, at the moment, I'm simply going to send back
+a simple message, we'll say, will send all the dishes to you. Later on, when we retrieve the dishes
+information from the database after we learn about MongoDB,
+then this function will be returning that JSON data back to the client,
+since it's in a get request here. Now in the previous course,
+we had used the JSON server, and the JSON server was already
+providing all of these for us. Now you are seeing how you would construct a real server that will
+process the incoming request. And then generate
+an appropriate response and send it back to you in response to
+the request received from the client side. And this is where the user express,
+as we see here, is useful. So we have handled get, let's handle post also on dishes here. And again,
+the parameters would be (req, res, next), and that function that
+is invoked will be here. Now, when the get request is received,
+because here, you're calling rest.end. So that end is the handling of the get
+request and doesn't trigger the reply to be sent back, or response to be
+sent back to the client at this point. Now, if you get a post request on dishes,
+again, this whole code will be executed. And then, because of this next, that
+will drop into this function call here. And then the code here, will be executed,
+so when you receive a post The post request coming in from
+the server will carry some information in the body of the message
+in the form of JSON data. They'll see what the form
+of the JSON data is when we look later on when we test
+end point using post net. I'll show you what the body of
+the post request message will contain. But at this point,
+what I'm going to do is, I will extract the information
+from the body. And so here when we use the body parser,
+what happens is that for the incoming request, the body of
+the incoming request will be parsed and then added into the req
+object as req.body. So the req.body will give you access
+to whatever is inside that body of the message. So, when I send the request, I will add information to the request body in the form of a JSON string which contains a name and a description. So I'm going to extract these
+two piece of information and then print them out and then send them
+back to the client in the reply message. So I can say, req.body.and then name. And so the expectation is that when
+the client sends the post message, the post message body will
+contain a JSON string, which will also contains the name
+property in the JSON string. So req.body.name plus and this is where I will include with details: + req.body.description. So whatever the JSON string
+contains in the req.body, but JSON string will be parsed
+into a JavaScript object and added in to the request
+object as a property body. The JavaScript object points to whatever came in as the JSON string in
+the body of the request message. So that is why I am able to parse the name
+property, the description property,, you can have the price property,
+the image property, and all of that. So if you've taken the previous course,
+you've seen the structure of a dish object, in the form of a JSON string or
+the JavaScript object there. So, the name and
+description sounds familiar to you. So that exactly what I am using here. Right now I'm only extracting the name and
+the description from the body and then sending it back to
+the client in this body. So I'm just constructing this reply
+message here using the information from the body of the request message,
+and then sending it back to the client. So that way I can confirm that the server
+is receiving whatever I am sending in the body of the message. So this is the post request. Now for put, let me just copy this,
+and then paste it here. And then for put on that dishes endpoint, because it put on the dishes
+endpoint doesn't make sense. A post means that you're posting
+a new dish to the servers. A put on the dishes end
+point doesn't make sense, so here what I'm going to do is I'm going to reply back with the message PUT operation not supported on /dishes. In addition, I will also,
+Include a status code of 403. 403 means their operation not supported. So if you look back at
+the HTTP response codes table, you will see the corresponding
+code 403 what it represents there. So that is what I am using for post. For delete, I'm going to copy this one and for delete I'm going to, Simply parse this, and then we'll say,
+Deleting all the dishes. So when you send a delete request
+on that /dishes endpoint. It is interpreted to mean that the client wants to delete all the dishes
+information on the server side. Now, this is a dangerous operation, so you make sure that you don't
+allow partner users to do. So later on, when we study authentication, we'll see how we can res check this
+operation to only privileged users. But again, as you see, this is a dangerous
+operation, so keep in mind about that. So now you see that in the dishes
+endpoint, we have get, put, post, and delete support. Let's also support that on
+the dishes/:dishId endpoint. So I'm going to copy the get, put,
+post, and delete methods from here, and then calls all of them
+also to be supported on dishes/:dishId. So this is for the get,
+and we copy that and post, put, and delete. How do we handle each of these? So for get,
+if I get a request on dishes/dishId, what I would like to do is to
+extract this parameter and then send it back in the request,
+in the reply message. So we'll say, we'll send, Details of the dish. Now which dish? This information is in the parameter. So this parameter value can retrieve from req.params.dishId. So this dishId, as you see, the name that
+you use here should match this value here. So if you just simply see ID here, this should also be corresponding
+the given sId here. So the name itself doesn't mean anything,
+except that this parameter name and this should match each other, so that you
+can retrieve the information correctly. So we'll say,
+send the dish parameters dishId and then we'll say to you. So that way we know that the server
+is getting the dish parameter.. So if I say /dishes/23
+there several replies will send the details of
+the dish 23 to you and so on. So we'll see how it works when
+we use post to test this Server. Now for post. For post,
+this method is not going to be supported, so I'm just going to copy this part. it doesn't make sense to do
+a post on a specific dish ID, because you're not trying
+to add a new dish. But you want to modify, and modification
+is done by using the put operation. So we'll say,
+POST operation not supported on /dishes. And then I'm going to add in the. Req.params.dishId. So this will send back
+saying post not supported on dishes/23 in the reply message. Now, for PUT, For PUT, we'll say, res.end and say Will, update the dish. Req.params.dishId. Or rather, we'll do it this way. I'll first write, So res.write can be used to add
+a line to the reply message. So we'll say updating the dish. And we'll say req.params.dishId. And since this is a PUT operation, and
+if the body contains the JSON string, which contains the details of the dish, I can extract the JSON string because
+we are using the body parser. So we'll say Will update the dish:. Which dish? req.body.name. Plus. With details, req.body.description. Now, when we update the dish,
+I want to add a, New line there. So I'll say '/n' there. So when you do a PUT, you are sending back
+the information about which dish ID you are updating, and also,
+the details you are updating. The name and the description, which should be in the body
+of the PUT message there. For delete, It'll say Deleting dish,
+and req.params.dishId. And so for delete, this is
+the operation that will be performed. So you see that now we have the get,
+put, post, and delete operations on the dishes/dishId,
+endpoint, and also the get, put,
+post operations on the /dishes, endpoint. So let's now save the changes. And start our server again. Start the server by saying npm start. Let's now go to postman and
+send a few requests to this server and see what it returns. Let me first issue a get to local
+host 3,000 and see what it returns. So when you send a request
+to get local host 3,000, it is still returning
+the index start HTML page, because the static file
+handling is still in place. Now let me send a get request to
+localhost:3000/dishes, and this, as you expect, will send back a reply
+saying we'll send all the dishes to you. Now, let's send a POST request
+to localhost:3000/dishes. So this is where you can change the
+various methods that you want to execute. But when you send a post, you want to include some details
+in the body of the message because there's somebody's expecting you to send
+information in the body of the message. So click on body here and
+click on raw here. And then, for the text,
+you select this to JSON so use the application JSON. So the content type would
+be application/JSON in the request that you send. So since this is a JSON object, so within braces, I will say name. I'll just simply type in test, and description. Some standard information here, so
+you see that this is a JSON string which contains two properties, name and
+description and the corresponding values. So let's send a post
+request to the server. When you send a post request
+to the server, as you see, in the reply it says will add the dish:
+test week details: description. So as you can see, the two piece of
+information are extracted from the body of that JSON requested [INAUDIBLE] and
+then included in the reply. Let's send a put request to dishes. When you send a put request to dishes,
+as you see, it says PUT operation not supported on
+/dishes, and look at the status here. It says Status: 403 Forbidden. So this operation is not
+allowed on this endpoint. Let's do a DELETE operation on the dishes. When you DELETE operation on the dishes, then you will notice that it
+says deleting all the dishes. So that's the reply that you get back. So you see that the get post, put and delete on the /dishes
+endpoint works as you expect. Now let's do a get on dishes /23. So 23 here is the parameter, the ID of the dish that you want to get. So when you send a request to
+that the server will reply, will send details of the dish: 23 to you. So you see that the parameter has been
+extracted from the request message and then included in the reply message. Let's do a post on this. And as you know, POST is not
+allowed on this endpoint, and so that's why you get a status
+403 Forbidden on this. Let's do a PUT operation on that. So for the PUT operation, you notice
+that the body still contains that. So in POST, when you type in a value here, that will be retained and can be included
+in other requests that you're sending. So when you send a PUT request
+on the endpoint, dishes/23. So you notice that it says
+updating the dish, 23. Will update the dish,
+the name of the dish, with details,
+the description of the dish here. And then, let's do a delete
+operation on that endpoint and then it says, d deleting dish: 23. So those endpoints are all supported
+as you see in this example here. So we have done get PUT, POSRT, and delete
+operations on both the /dishes endpoint and also the /dishes/
+the dish id endpoint. So, you see how we have implemented
+the REST API endpoint support for one set of REST API endpoints. Now, with this, we complete
+the first part of this exercise. So, here we have seen how we can
+use express to construct and implement the REST API endpoint for
+the dishes. Now, this is a good time for you to do a git commit with
+the message Express Simple REST. According to the terminal
+I will start the, Server. Check that three of
+the items have been changed. So, git add, git commit -m, Express Simple REST, And check the set. So as you can see, using Express you can
+easily implement support for REST API. And as you can see from this list,
+you construct the app get, PUT, POST, and delete methods for
+all the REST API endpoints like this. Now imagine you have
+a thousand REST API endpoints, and you need to construct
+something like this. Your index.js file will explode with so
+many different REST API endpoints. And each one being handled
+using its own app.get, app.put, app.delete, and app.post. Now Wxpress supports a way of
+subdividing this work into multiple, many Express applications, which then can be combined together to
+form the overall, Express application. This is where we will make
+use of the Express Router to be able to construct
+a mini Express application. And then, inside a Express Router file, we will support the REST API endpoint for
+one group of REST API parts. So for example, for
+dishes, and dishes dishId, they can all be supported in one file. Similarly, in the assignment,
+you'll be supporting a REST API endpoint called promotions and
+promotions/:promoId. And then,
+you'll support another REST API and for leaders/leaders, and /leader:leaderId. So each of these groups can be
+implemented separately as many Express applications using Express Router. So that is what I will
+illustrate to you for the dishes endpoint in the next
+part of this exercise. So to do that, we realize that if we
+put all the files in one single folder, then again your folder
+structure will look messy. So my preference is to create
+a folder here named routes. And this routes folder will contain
+all the routers that I'm going to design using the Express Router. So in the routes folder,
+I'm going to create a new file called dishRouter.js. And this dishRouter.js file will contain the implementation of the handling
+of REST API endpoint for /dishes and /dishes:dishId endpoints. Now how do we make use of Express Router? Let's see how we can use it. Now Express Router comes together with
+Express, so we don't need to install yet another Node module. Instead, we can work with Express
+that we have already installed. So to do that, at that prompt,
+type, const express = require('express');. So notice that,
+since this is a mini-application, we still require express even
+in this dishRouter.js file. And from your knowledge of Node modules,
+once you define a new file, that becomes its own Node module. And this Node module can then
+be imported in index.js. So you see the connection already
+between how we can restructure our application into multiple
+files using Node modules. So we'll set require Express,
+then we'll say const bodyParser require ('body-parser'). So we have already installed bodyParser
+in the previous steps of the exercise, so we can use that. Now to use an Express router, let me declare const
+dishRouter = express.R. And on express, it supports this
+router interface, so we'll simply say express.Router and this will declare
+dishRouter as an Express router. So in many Express application, an insight here I can handle that
+dishRouter related code here. So once I declare of this an in Express
+router, then I can say dishRouter. And then on the dishRouter,
+it supports a method called route method, which can take in
+an endpoint as a parameter. So I would simply declare
+this endpoint a /. Now, you're wondering,
+shouldn't that be dishes? You will pretty soon see
+that I need to mount this Express router in my index.js file. So in my index.js file, I will mount this
+express router at the /dishes endpoint. Mounting of an express router, again, one more concept that I
+want you to understand. Again, I will illustrate that
+to you in a short while. Now, the dishRouter.route means
+that by using this approach, we are declaring the endpoint
+at one single location. Whereby you can chain all get, PUT, POST, delete methods already
+do this dish router. Now, when you look at index.js,,
+look at the way we implimented this. So we have app.all and then /dishes,
+app.get/dishes and /dishes. Now, if you had made a mistake,
+and their instructing app.post /dishes instead if you just type /dish,
+then what happens? The POST operation will not
+be supported on dishes but will be supported on /dish endpoint. To avoid this problem, the express
+router supports this route end point. On the route end point, you simply specify the end point on
+which this router is going to work. And then, the get put portion delete
+method, this simply chained into that. So it'll be one group of method
+implementations all together. So that is the reason why
+they use a Express router. So it comes with a couple of very useful support to make sure that your
+implementation is correct. So now that we are going to
+do that as the dish router, what I'm going to do is I'm going
+to remove this thing from here. Now, that dishes IDN point,
+I'm going to leave that to you as an exercise in
+your first assignment but the dishes endpoint, I'm going to
+cut this out, all the way up to all. I'm going to cut this
+out from index.js5 and to move that into the dishRouter here. Now when I move that into the dishRouter,
+I don't need this app.all anymore. I simply chain that into the route,
+so I will simply say .all and then I no longer need this
+end point definition there. That's it.
+So it'll say .all and
+then we'll say req, res, next. And this ,all is operating
+on this particular endpoint already specified here. Now, not only that,
+we can chain the remaining methods. So that's why you see that I have
+removed the semicolon from here. I'm going to delete this app and
+then attach it on to that. So does get also gets changed into
+the route, and then I can remove this part, the handling will
+remain exactly the same as before. So similarly,
+I will remove the, App there. And then again, delete that from post. And the same thing. For put, And for delete, Same thing. So notice that there is no
+semicolons here, here or here, but the last one, the delete,
+will have the semicolon in place. So this group is one single
+unit implemented by using the dish router on this particular router,
+and all these are chained together. And also, of course, with delete,
+I need to remove this end point. That's it, see,
+clean structure of the code here. So that essentially, ends up
+implementing the dishRouter, right, remember, this dishRouter is defined
+inside the dishRouter.js file. Now, I need to export this
+from this node module. So to export this,
+I'll go to the bottom here and I'll say module.exports and say, dishRouter. That is it. So now, my dishRouter is
+exporting everything that I need. Now, you are looking at this and
+saying, what about Colon dish. That is going to be part
+of your first assignment. Not only that, you'll be implementing for two additional REST API endpoints also,
+the promotions and the leaders. But this already shows you
+the structure of what a Express routers implementation of
+res API support looks like. So this is for dishRouter.route. And one last thing before I forget, we should say
+dishRouter.use(bodyParser.json()). Now once you have completed
+implementing the dishRouter, we can now go in to the index.js file. Since this dishRouter is another node
+module, a fine node module nevertheless. So we need to import this
+into our application. So right here, I'm going to import const dishRouter is equal to require. Now since this is a file
+based node module, I'll say ./routes/dishRouter. And once I have declared them there,
+then I come down into the code here. And right there, I say app.use. And I mount the router at an endpoint. So how do I mount the router? The first parameter here,
+I will specify slash dishes. And the second parameter,
+specify dishRouter. And that's it. So what this means is that
+in my express application, any request coming to that slash dishes
+endpoint will be handled by dishRouter, and that'll be done by
+the code that is present here, because we have said dishRouter route,
+and so notice that this says slash, so which means that this is mounted
+at the slash dishes endpoint. So that's why anything coming through
+slash dishes will be sent over to this and will be handled by this. A big hint for
+you to think about how you would implement that colon dish id end point. You will still use the same dishRouter.js
+file to also implement the support for that, /dishes/:dishID end point. That's another big hint for you, okay. With these changes,
+let's save the changes that we have done to our application and
+then restart our server and then take a look at how our
+server is going to do its work. Going to the terminal, let me restart
+that server by typing npm start. And once the server is up and running,
+I'm going to go to postman and send requests from postman to this server. Going to postman, now I know that
+my server is only supporting the dishes end point,
+I have implemented the dish ID part of it. So let me send a get request
+to local host dishes and you'll see that it works
+exactly like before. Now if you have done a previous request in
+post then you can simply click on that and then resend that request. Put operation doesn't work,
+post operation, Works as you see there. And then let's cause the delete
+operation on the dishes. And it says deleting
+all dishes as expected. So this is the implementation of the rest
+API support using express router. With this, we complete the second
+half of this exercise. This is a good time for you to do a get
+comment with the message express router. Now that we have completed this exercise
+where we have seen how Express can be used to support implementation of the
+Res API end point support on our server, and also the use of Express router, it's time to move onto the first
+assignment which follows this lesson. [MUSIC]

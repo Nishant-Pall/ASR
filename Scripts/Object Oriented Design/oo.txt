@@ -1,0 +1,1974 @@
+Hi and welcome to the Coursera specialization on Software Design and Architecture
+it is my goal to help you become an experienced software architect who thinks critically about the design and architecture of your products in order to create great software
+I will be doing this with the help of our learning navigator Sam Jeffery
+You will meet her in a moment
+You have probably already worked on some software projects in the past
+You may have worked on small programs so you may worked on a larger scale system
+Take a minute and think of the projects that you worked on
+Did they have a good design
+Could the design be done better
+Was there even a design at all
+How do you know if the software was well designed
+Think of how easy it was to make changes to your code
+Did a small code change produce a ripple effect for changes elsewhere in the code
+Was your code hard to reuse
+Was the software difficult to maintain after a release
+If you answered yes to any of these questions chances are you could benefit from a better design
+Good design is not just about code
+It is about being able to express ideas for your software with other developers other teams and your clients
+Having a well thought design makes your software easier to implement reduces a need for major changes later or the project and it saves you from headaches down the line
+Whether you are a new developer looking to expand your knowledge or an experienced industry veteran knowledge of Software Design Architecture will help your software become flexible reusable and maintainable
+Hi and welcome to the Coursera specialization on Software Design and Architecture
+I am Sam Jeffery your learning navigator through this specialization
+it is my goal to help you become an experienced software architect who thinks critically about the design and architecture of your products in order to create great software
+So what is software design and architecture
+How does it improve your software products
+Consider this scenario
+You join a project that is been in development for a while
+You look at the code and become instantly overwhelmed
+You can not tell what the purpose of the pieces are things are unorganized and design documentation is non existent
+You do not even know where to begin
+These are all signs that the project was not well designed from the outset
+Or Let us say that you are now working on a personal development project
+When you began you were not quite sure what the functionalities would be but you just started coding
+It did not matter that the code was unorganized because you were the only one working on it and you know how it works
+You come up with a great new feature for your product but in implementing it you broke the program elsewhere
+You should have designed it right
+I am guessing that you have experienced scenarios like these
+They are quite common in the software industry which shows you why software design and architecture is so beneficial
+In this specialization you will learn how to apply design principles patterns and architectures to create reusable and flexible software applications and systems
+You will learn how to express in document the design and architecture of a software system using a visual notation
+We will give you lots of practical examples and opportunities for you to apply this knowledge that you leave this specialization with employable skills and relevant knowledge to confidently work in the software industry
+it is important to note that this specialization primarily covers software design and not user interface design
+Although the two aspects of design are closely related we will mostly focus on software design
+We have tried to align our course with the Software Engineering Curriculum Guidelines
+It recommends the topics when teaching software design and architecture
+However with that being said this specialization has no affiliation with ACM or IEEE
+I provided a reference to these guidelines in the course resources if you would like to read more about it
+This specialization consists of four courses
+Each course features four modules with the first three focused on content and initial parts of the capstone project and the fourth to complete the rest of the capstone project
+The capstone projects will give you the opportunity to apply the knowledge that you learn in each course to a real functional software product
+In the first course you will learn about object oriented design
+This course will build upon the basics of Java and take you to the next level by covering object oriented analysis and design
+You will discover how to create flexible reusable and maintainable software by applying object oriented design principles
+You will learn how to communicate these designs by expressing them in a visual notation known as Unified Modeling Language or UML
+In the first capstone project you will be challenged to apply your knowledge of object oriented design by evolving and documenting a Java codebase with corresponding UML documentation
+The second course focuses on design patterns
+Design issues and applications can be resolved through design patterns commonly applied by experts
+The second course extends your knowledge of object oriented analysis and design by covering design patterns used in interactive applications
+Through a survey of established design patterns you will gain a foundation for more complex software applications
+Finally you will learn how to identify problematic software designs by referencing a catalog of code smells
+In the second capstone project you will be challenged to redesign an application to use design patterns
+The third course covers software architecture
+By the third course you will be equipped with software design patterns and principles and will be ready to learn how architecture can be used as a basis for organizing the software systems found in industry today
+Through a review of architectural styles you will explore the structure and behavior of large scale software systems
+Specific UML diagrams will express important architectural perspectives
+You will learn how to analyze and evaluate a given architecture by examining the trade offs between competing quality attributes such as modifiabilty and performance
+In the capstone project in this course you will document and evaluate the architecture of a layered Java system
+Finally in our fourth course you will learn about service oriented architecture
+Based on the understanding of architectural styles that you learned in the third course you will review architectures for web applications
+You will then explore the basics of service oriented architecture or SOA in two approaches web services and representational state transfer or REST architecture
+In the final capstone project you will connect a mobile application with a variety of REST interfaces to access storage search and computation services
+By the end of this specialization you will know how to design it right
+Our courses are designed to be taken in sequential order
+However the courses do stand alone
+If there was a specific area of software design and architecture that you were interested in learning about you could just take that course
+In this introductory course and throughout the specialization we will assume that you possess basic Java programming knowledge
+In this module there is a Java pre test that you can take to see if your Java programming skills are sufficient to succeed in the specialization
+The pre test is not meant to discourage you from taking our specialization but is intended to set you up for success by identifying areas that you may need to review before taking this specialization
+We understand that our learners will come from various backgrounds and experience levels
+In order to make sure that all our learners are on the same page we have tried to be explicit when introducing new terms
+Based on your experience level you might find that you should complete additional readings to fully grasp the topics or if you are an experienced developer you may find that some topics you already know
+In a specialization of this size it is difficult to ensure the material is appropriate for everyone
+We have done our best to provide you with the resources you need to understand the material
+We have found that even if you are an experienced developer there is still a lot to learn
+So we encourage you to engage with the lessons even if you have covered the material before
+Who knows
+Maybe the material has changed since you learned it
+I also encourage experienced learners to share their expertise in the discussion forums
+Let us build a strong community of mentorship and camaraderie
+Well I think you are ready to embark on this journey
+So once again welcome to the Software Design and Architecture specialization brought to you in partnership by the University of Alberta and Coursera
+I hope you enjoy it and I wish you the best of luck
+What does a career in software design and architecture look like
+What is the difference between software design and software architecture
+These are questions that we will explore in more detail throughout the specialization
+However Let us take a quick look at them now
+Like many roles in the software industry the software designer or a software architect role can look very different from company to company
+Characteristics like company size the scope of the project the experience of the development team the organizational structure and the age of the company can all impact what these roles look like
+In some companies there may be a distinct role for a software designer or architect
+In other companies the design may be completed by a member or members of the development team
+Typically the software designer role would be responsible for outlining a software solution to a specific problem by designing the details of individual components and their responsibilities
+A software architect role would be responsible for looking at the entire system and choosing appropriate frameworks data storage solutions and determining how components interact with each other
+That brings us to the primary difference between software design and software architecture
+In short software design looks at the lower level aspects of a system whereas software architecture tends to look at the bigger picture the higher level aspects of a system
+Think of this like designing a building
+An architect focuses on the major structures and services while an interior designer focuses on the smaller spaces within
+Great software designers and architects are detail oriented forward thinkers
+They need to be able to see the product at both the low and high levels
+They need to be creative problem solvers in order to come up with a quality solution for the problem at hand
+And they need to be able to express these ideas effectively with the product manager and the development team
+Does that sound like something you would be good at
+Software design and architecture is essential to the software development process
+Let us take a look at what people in the industry feel about this role
+Software design is the process of turning the wishes and requirements of a customer into working code that is stable and maintainable in the long run and can be evolved and can become part of a larger system
+that is software design
+I like the or because I do not make a distinction between software architecture and software design
+I think they are just the same problem at a different scale
+Way I like to think of it is that architecture is primarily begins with understanding what is the business problem that the client needs to solve
+Where business does not mean necessarily financial business any business
+Once you have realized that that is your primary task which is to figure out what the client wants then everything kind of falls in after that
+Because If you understand the problem then you can start to think about what in your previous experience as possible solutions and then you start getting a idea of how your overall solution is going to look like
+And that is where I kind of say really architecture is the study of boxes and lines
+Because your first description of what it is you are trying to do is simply a set of boxes with things inside them and lines expressing relationships
+Design and architecture is important if you want to have a stable long lived system
+Anybody can build a system that will last a week or a month or a year but if you want to build something that is the basis of other peoples work and contribution over potentially a period of years or longer in some cases you need to put some thought into it
+You need to have somebody whose job it is to look out for the long game and make sure that you are not making suboptimal short term decisions
+Architecture is important because if you get it wrong your project will fail
+that is it
+it is just that simple
+We know it in the building world and we know it in the software world
+Where we are using the term architecture to be this understanding of the relationship between the requirements of the user and the ability to build a system that will deliver those requirements
+I think you can trace back most major software failures to bad architecture where architecture is used in this general sense
+One of the key challenges in software architecture is the tendency to have to trade off between speed and quality If I boil it down right
+I think there is a tendency for the customer in the business to want their their software to want their results as soon as possible
+And there is a tendency for the engineering team to want to build the most robust thoroughly designed thoroughly implemented system possible
+And so we trading off between these things all the time
+And I think it is that tension in that trade off is where you get really good software you get good designs out of that but it is a process you have to go through to go through that
+So our biggest issue that we face is understanding the clients problem
+What is it they really want to do
+And in many cases the client actually does not know what they want to do either
+They come in with only a partial understanding a vague kind of sense that they could be doing things better
+But often one of our first task is to actually help them understand with more precision what their business is
+A software architects job is to be the interface between the product and the customer and the engineering teams
+And so for instance customers will express a requirement or a need they have of the of the software and it is the architects job to then work with the customers and their representatives product managers and such to come up with the technical requirements of how we are going to solve the problem
+And then they take those requirements to the engineering teams and worked with the engineers on how to realize that in a way that is meeting the customers requirements and also aligned with the technical best practices and nonfunctional requirements that have to be adhered to in the product
+The software architect is like a building architect
+They are responsible for the overall conceptual integrity of the project
+Their main goal is to serve the needs of the customer within the budget that the customer has
+I would express software design or software architecture in a couple of different ways
+For small things for simple things you will sit with an engineer and you will whiteboard something out and you will come up with a design that way and you will basically get them going
+For larger initiatives larger projects you are typically writing fairly substantial design specification documents where you are exploring all the different possible use cases all the different possible flow variations and things of this kind in addition to all of those critical functional and nonfunctional requirements stability maintainability these kinds of things
+So in general I would say that we communicate software architecture through the written word through wikis through white papers these kinds of things in addition to fairly detailed engineering design schematics class diagrams if necessary big box diagrams if it is just a simple high level architecture design
+I have been programming for fourty five years and one thing I have learned is that the only thing that is really there is the code and everything else that you talk about is views on the code
+So I like to express architecture or describe architecture as saying that all the things that I am going to do the boxes and lines the prose the fancy diagrams of the diagrams and napkins there are simply indexes into the code
+that is how you find your way to the actual artifact that is actually doing what you want to do
+I tend to apply simplicity first as my main principle if I am looking at how I am approaching the problem
+that is the filter that I try to use on it
+And I often will find myself there is a tendency in people to complicate things to inject complexity because it is interesting
+As an engineer as a technical person complexity is fun and interesting
+And it is only when you stripped away all the unnecessary complexity that you realize you have got the core of a great solution to a problem
+And so I really try to do that and when I am working with product teams and engineers alike that simplicity principle really helps to cut through a lot of the confusion
+what is the most important principle
+Simplicity
+that is true and it is the engineering maxim to keep it simple
+The reason for that is twofold
+One is that if it is simple you probably have a pretty good chance of getting it right or almost right
+that is one part
+The other thing is if it is simple then you can explain it to someone simply that communication of architecture is important because you are not going to be around forever
+And you need to transfer your knowledge over to someone else
+And if it is not simple the knowledge transfer cost is higher because it is more complicated to explain and the chances of misunderstanding are much higher
+So I became interested in software design by working as an engineer and being exposed to larger scale code bases you know progressively over the years
+When I first started of course I worked on mostly very very small things
+And I was very interested in how software was put together and the design at a micro design level
+And then as I proceeded in my career and I started to be exposed to some fairly large pieces of software that served millions of people I got really interested in how those things are put together and what is it that makes that successful
+And how do you make sure that you are not having to re implement this thing over and over and over again
+And I found that to be a really interesting side of the business that I really had not explored before
+And so it turns out I really enjoyed that
+I think if you start writing code to do things to play around you start asking yourself questions about well why is it that this code is really nice to work with and this code here is horrible
+And you start asking yourself questions about design and the difference between design and architecture in the software business is there really is not any because our business is all self similar
+Issues that you ask about programs are the same issues you can ask about big systems
+And I think in my case I just became interested in this fundamental understanding of the issue of building software artifacts
+And then it just naturally scales up at some point you are building systems with a hundred thousand lines of code
+And then you suddenly realize on your project team that you do not have a million lines of code
+And you are now a software architect because you have a million lines of code whereas before you were just a programmer you only had ten thousand lines of code
+Most architects that I know started as software engineers
+Usually as an intern or a new grad and they work basically overtime
+They work on progressively larger and larger pieces of the software that they are responsible for
+And what happens is you start to see those engineers get to a level of comfort where they start to push outside of the code base that they are indirectly responsible for
+And they start involving themselves in discussions around the larger impacts to the system of the work that is being done
+And that just generally continues until all of a sudden they are actually working at a much higher level of abstraction
+And then contributing at a very different level and so that is how you know you have got an architect on your hands
+Yeah there is not a career path into software architecture
+What it really is is if you think of architects as having more responsibility than programmers what it really is as a career path where you get more and more responsibility that you do by demonstrating that you are actually good at building things
+My experience has been that I did not think I was a expert programmer until I had been out in the world for ten years and I think that is consistent with many of my colleagues
+Over that period you start working on bigger and bigger systems and eventually someone trusts you with being the point person to put together a design for a much larger system than you would ever done before
+And then once you have done one of those and it has not been a total disaster you get an even bigger system
+So I guess it is gradual building of your reputation is what makes you into a software architect
+I would say the most exciting thing about being a software architect is the satisfaction of seeing the final product put together and out there and being used by real people to good effect right
+Because you spend all this time early on in a project and you have to fight for your nonfunctional requirements and you have to fight for how this is all going to be put together
+And then when it all comes together and you have done all that negotiation and it is out there in the hands of a customer and it is valuable there is a real sense of pride with that
+I think additionally you also get a lot of satisfaction and pride from making the right call in terms of long term viability of a code base and of a project
+And so seeing somebody be able to come to your product maybe years later and make some very business critical contribution extension of something that you designed without having to redesign it is very satisfying
+It tells you that you hit it on the right mark
+what is exciting in architecture
+Well in general you do not want too much excitement because that is usually associated with some sort of looming disaster
+But what is interesting about software architecture and that continues to make it interesting is that someone always has a problem that is slightly different than all the problems you have seen before which means that your previous solutions are not necessarily going to work and you get to do something new
+So it is the novelty that makes up architecture interesting
+An architect has to have a number of important skills obviously deep technical expertise is table stakes
+You have to be a technical guru I think at a certain level
+In addition to that you need to be able to communicate with people at the level that they want to be communicated with
+So if you are talking to a business person they do not want to hear about your code
+They want to hear about their business problems
+And they want to hear how you are solving their business problems
+If you are talking to an engineer they want to know the business context but they need you to talk to them about code
+And so it is really important to have that ability to understand how the person you are talking to wants to be communicated with
+So empathic communication I would say is really important
+Additionally some basic functional skills like a little bit of project planning and organizational skills being able to keep a backlog of work so that you do not forget about things
+Be able to juggle a lot of different competing concerns at the same time is also a very important skill
+The most important ones are what I would call the soft people skills that you need in order to get people to tell you what their requirements are
+This is very hard actually especially in situations of uncertainty
+Clients are very reluctant typically to tell you the things that they are really bad at
+They like to tell you all the things that they know how to do but they are reluctant to express where their understanding of a problem is incomplete or where their business processes just do not work right
+And if you do not identify those areas you have actually encountered a big risk in your project because those are the areas that are the problem
+The well understood parts of a clients needs are not an issue
+it is the parts that are fuzzy and not well understood
+But of all the technical skills that you have got you need this meta skill which is to look at various technologies and ideas and decide is that going to be useful to me or not in my particular problem I am trying to solve
+So as an architect you have to know a lot about what is out there
+But not in a tremendous amount of detail because a lot of the stuff that is out there is not going to be useful to you at least immediately
+By the time you might need it it is probably gone through ten anyway and is not the same thing
+So you have to have the skill of being able to quickly assess various technologies and fit them into your understanding of the discipline
+So new language comes out you so say Oh yeah this is yet another procedural language with nothing much different than all these other ones
+Or you might see something else and says Oh that is interesting
+I wonder if this particular style of approaching the problem perhaps aspect oriented programming just to pull something of the air will actually help me solve my problem in a better way or express my problem in a better way
+ Well staying up to date is a bit of a trick
+ it is about exposing yourself to as much as you can in the outside world and inside your own company as well
+ But in particular you know look at what the big companies are doing
+ what is Apple doing
+ what is Google doing
+ what is Amazon doing
+ And you read their blogs
+ You play with their software
+ You get an account on whichever tool you want to use and you start using those things
+ And you use that for inspiration
+ And just to see how others are approaching architecture in their systems right
+ So there is a number of levels of inspiration there I think
+ Additionally read a lot of just the general tech press and find out what is going on out there in the world
+ Read academic journals for the appropriate areas and see what is coming a little farther down the line
+ What are the academics thinking about
+ So there is lots of those things to go after
+ So the advice I would give to a new software architect is to get as comfortable talking to people as you can and meet as many people as you as humanly possible
+ Expose yourself to as many ideas as you can
+ And share your own perspective as well
+ And I think it is by by leveraging the community leveraging those around you that you are going to be inspired to be creative in your architecture and you are going to get a better understanding of the context in which you are operating both within your business as well as the broader technology landscape out there
+ And it will help you to make better choices ultimately
+ The advice you give to new software architect is the same advice you give to a musician
+ Try and play with people who are much better than you are because that is how you become a better architect
+ And that means working with people who are better than you are
+ If you have the opportunity at the very least try to read as much of the foundational literature in the field and there is not that much to read
+ there is a maybe twenty key resources you should go to
+ Some of them dating back to the original papers in the seventies about coupling and cohesion
+ And then of course writing code
+ So you need to work with people that are better than you are
+ Read a lot of code and read a lot of code and that is how you become a software architect
+ Oh and of course learning from your mistakes is also quite valuable
+
+You may have heard the term Object Oriented Modeling you may have even applied it whether you knew it or not
+ Object oriented Modeling is a major topic in this specialization
+ So what is it
+ When solving a problem object oriented modeling involves the practice of representing key concepts through objects in your software
+ Depending on the problem many concepts even instances of people places or things become distinct objects in the software
+ Think in terms of objects
+ Objects are all around you
+ Take a look around what do you see
+ I am guessing you see a computer or a tablet
+ You may also see other physical objects like a table a door or a coffee mug
+ Is there anyone else in the room
+ They are objects as well
+ The room itself is even an object
+ So why should you use objects to represent things in your code
+ It is a way of keeping your code organized flexible and reusable
+ It keeps code organized by having related details and specific functions in distinct easy to find places
+ This creates flexibility because you can easily change details in a modular way without affecting the rest of the code
+ You can also reuse code and keep your program simple
+ Let us explore what object oriented modeling might look like
+ Consider the seminar room for example
+ The first object we identify is the room itself
+ The room has details such as the room number and the seating capacity of the room
+ We can also identify objects that are contained within this room
+ What are some of these objects
+ Have a look around this room
+ There are many physical objects such as the chair the table the projector and the white board
+ Each of these physical objects could be represented by objects in software
+ There are specific details associated with each object
+ The projector has specs related to its performance such as resolution and brightness
+ A chair has its own details such as seat dimensions that would be relevant to a user of that object
+ Objects can also have individual responsibilities or behaviors
+ For example the projector is responsible to power on take a video input and display an image
+ What about a person as an object
+ That works too
+ Let us put a person object in this room
+ A person object would have details such as name age gender and occupation
+ There are also countless behaviors that a person object could complete
+ In this example Ken could write on the white board turn on the projector sit in a chair or open his laptop on the table
+ it is easy to think about people or electronics knowing about the information when achieving behaviors
+ For example a person object knows their name and age and a laptop knows its specs
+In object oriented modeling even inanimate objects know their information
+ So a chair knows its dimensions and location
+ A door knows its frame height and the angle that the door is ajar
+ The white board knows its height and width as well as if it is blank or contains writing
+ With object oriented thinking you often think of everything as objects even living things
+ And all these objects are self aware even inanimate things
+ object oriented modeling will be a major topic of the work that you do in this specialization
+ Start viewing the world around you in terms of objects
+ It will help you out when you are called upon to design software using object oriented Modeling
+ Think objects
+
+ You can think of developing software as a process that takes a problem and produces a solution involving software
+ Normally it is an iterative process with each iteration taking a set of requirements through to a working and tested implementation and eventually building up a complete solution
+ Many developers are eager to go straight into coding despite not fully understanding what to program in the first place
+ Evidence suggest that diving straight into implementation work is a leading cause of project failure
+ In a survey from The Standish Group the most common causes of project failures are related to issues in requirements and design
+ For example about thirteen percent of respondents noted incomplete requirements impaired their projects
+ Unless you want your projects to fail take your time to form requirements and create a design
+ You might not get them perfect but their importance to effectively making good software should not be overlooked
+ Throughout this module you will see the importance of requirements and design for a successful software solution
+ We will cover how eliciting requirements involves actively probing a clients vision by asking questions about issues that the client may not have considered
+ Besides identifying specific needs you learn to ask about potential trade offs the client will need to make in the solution
+ With a clear idea of what you are trying to accomplish you can pivot to Conceptual Design mock ups and eventually Technical Design diagrams
+ By the end of this lesson you will understand that design work involves outlining a solution
+ And this work may include evaluating different alternatives
+ You may be eager to tackle implementation work and get something working but the requirements and design activities are critical
+ Once you begin coding a solution and depend on certain assumptions it can become difficult to change those assumptions
+ For the design phase you will have to think like an architect which means thinking about the structure and behavior of your software
+ Consider the following scenario
+ You are hired to design a house
+ Before you start laying the foundation you must first understand what the homeowner wants
+ This starting point is known as eliciting requirements
+ The homeowner wants a single story house
+ It needs to have a gym a bathroom three bedrooms and a living room
+ Eliciting requirements involves not only listening to what the client is telling you but asking questions to clarify what the client has not told you
+ For instance did it strike you as odd that this house has no kitchen
+ That would be a natural follow up question
+ Do you anticipate needing a kitchen
+ Should the rooms all be same size
+ If not which should be bigger or smaller
+ How big should the house be overall
+ Are there external design constraints
+ For example building restrictions put in place by the community
+ Should the house face a particular direction to take advantage of passive solar energy or scenic views
+ Which rooms should be furthest apart
+ Which rooms should be close together
+ The art of eliciting requirements is found in asking revealing follow up questions
+ Once these questions are answered you now have an initial set of requirements allowing you to start thinking of possible designs
+ The design activity involves taking requirements and outlining a solution
+ This activity involves producing a conceptual design and then a technical design which results in two corresponding kinds of artifacts conceptual mockups and technical diagrams
+ Conceptual mockups provide your initial thoughts for how the requirements will be satisfied
+ At this point you focus on the house design by identifying major components and connections and defer the technical details
+ For example the components from your house project are the lot on which the house will be situated the house itself the kitchen the gym the bathroom the bedrooms and the living room
+ Connections in the house can relate the components
+ For example if the living room is openly accessible from the kitchen the living room has a connection to the kitchen
+ Each component has a task it needs to perform known as responsibility
+ For instance the gyms responsibility is to provide the homeowner with space and power for fitness activities and equipment
+ Similarly the kitchens main responsibility is to provide space for storing kitchenware appliances food supplies and power and water for meal preparation
+ As a main component the house has the overall responsibility of providing enough power water and support for all the required components within it
+ Note how we do not mention specifics about wiring and plumbing
+ These are technical details that cannot be fully addressed until the conceptual mockups are completely understood
+ For instance determining the size of the electrical distribution panel for the house will require adding up the power requirements necessary to energize each of the rooms
+ I recommend finishing the conceptual design before moving on to forming the technical design
+ The clearer your conceptual design is the better your technical designs will be
+ Continuing with the architectural example you have wowed the homeowner with your conceptual design and together now have a shared vision for the dream home that will now be built
+ After the conceptual mockups are done it is time to define the technical details of the solution
+ From the conceptual design you know all the major components and connections and their associated responsibilities
+ Describing how these responsibilities are met is the goal of technical design
+ In a technical design you start specifying the technical details of each component
+ This is done by splitting components into smaller and smaller components that are specific enough to be designed in detail
+ For example the gym component will require further components like a floor
+ The floor will be responsible for supporting a lot of weight
+ Are homeowner is training to be an Olympic lifter
+ By breaking down components more and more into further components each with specific responsibilities you get down to a level where you can do a detailed design of a particular component such as describing how to reinforce the floor
+ Technical diagrams express how to address specific issues like this
+ Compromises might arise when creating an acceptable solution
+ What if reinforcing the floor of the gym requires putting in columns or beams in the basement below the gym
+ What if the homeowner also wanted a wide open space in the basement with good head room
+ Sometimes conflicts like this can happen
+ You and the homeowner will need to workout a compromise in the solution
+ Constant communication and feedback is key so that the solution is acceptable
+ If components and connections and their responsibilities in your conceptual design prove impossible to achieve in the technical design
+ Or fail to meet the requirements you will need to go back to your conceptual design and rework it
+ Once you come to a feasible design you want to continuously check with your client that the conceptual mockups capture what they want
+ In the architectural example such checks are important
+ Because you would rather adjust the design on paper than demolish an actual wall later
+ The technical diagrams then become the basis for constructing the intended solution
+ Let us apply what we have seen as a building architect to software design
+ Suppose you have a design task for a university course search website with the following requirement
+ As a learner I want to search for relevant courses through a search page
+ Now Let us do a conceptual design
+ In making a conceptual design of a building we try to recognize appropriate components connections and responsibilities and avoid technical details
+ An architect starts with a sketch of the building with the components connections and responsibilities in mind
+ When it comes to conceptual design and software involving user interfaces conceptual mockups can be a hand drawn sketch or a drawing made using computer tools
+ When we look at our requirement as a learner I want to search for relevant courses through a search page
+ We recognize search page and course as the components and the search page has the responsibility of searching for relevant courses
+ By sketching a mockup of our user interface we notice many missing components
+ You are probably wondering about how a search keyword is entered in the search page
+ How is the search started
+ How is the list of search results displayed
+ These flaws in the initial mockup require further clarification with your client or more conceptual design work
+ Eventually we generate a more comprehensive conceptual design or user interface mockup
+ The search page contains an input field and search button and transitions to the result page
+ Course is a way of displaying the result
+ From this mock up we recognize many connections
+ For example for the search page to fulfill its responsibility to search it needs Input Field
+Search button and Results Page
+ This also translates to Search Page having connections to Input Field Search button and Results Page
+ From a conceptual design we move to making a technical design where just like building design you try to add a detail how those components connections and responsibilities can be implemented
+ For example we refine each component until it is specific enough to be designed in detail
+ For example how does the search page fulfill its responsibility of searching a list of courses for relevant ones given that a user has entered a keyword
+ Does the page need to talk to an external system
+ Suppose the university already has a Course Database component which your course
+Search Page can connect to
+ Since Search Page requires Course Database in order to fulfill its responsibility of search a connection exists between
+Search Page and Course Database
+ Here we can not really use a conceptual user interface mockup since we are now designing internal software components
+ Later on in the specialization you will learn about different technical diagrams that describe the structure and behavior of these components
+ Components when they are refined enough turn into collections of functions classes or other components
+ These pieces then represent a much simpler problem that the developers can individually implement
+ You can easily imagine that larger systems require more design time
+ With large systems there are also more components connections and responsibilities to keep track of
+ And since these components themselves will be big they will be refined to many more components before the design can be detailed
+ You now have learned to take some time to think about the problem and outline the conceptual and technical design before actually implementing the solution
+ Design artifacts like conceptual mockups help to clarify design decisions with clients and users
+ Technical diagrams help to coordinate development work
+ However recognizing the importance of design is just the beginning
+ Throughout the rest of this specialization we will explore various design techniques so you can get the most out of your design process
+
+As you design software to satisfy requirements you have to make many important decisions
+ Certain design decisions involve trade offs in different quality attributes such as performance convenience and security
+ Think about balancing such qualities when designing a front door to a house
+ You want to make your home more secure in the most direct way
+ So you decide to add locks
+ You add a single lock and do not feel very secure
+ it is easy to open and close the door very quickly
+ So you continue to add extra security
+ You keep adding locks until you realize it is very time consuming and inconvenient to unlock your door
+ Instead of mindlessly adding locks you must come up with a design that balances security with both convenience and performance in mind
+ When designing software it is important to consider how qualities can compete in a proposed solution under different situations and determine a suitable compromise
+ This is a constant balancing act for a software architect
+ Let us talk to an expert about how competing qualities constantly influence their implementations
+ Yeah there is always a lot of competing concerns with software design and I think obviously from a product perspective you have things like usability and performance
+ Obviously those are are critical
+ Scalability is always important
+ Where the trade offs really seem to be important is when it comes to security code quality time to market
+ These kinds of things where everybody wants and you need to be secure right
+ And you need to have high quality
+ But the pressure that you have from product to get something out the door is sometimes at odds with those requirements
+ And as an architect its your job to fight for those things and to advocate for them in the context of the business
+ So it is not slavishly sticking to a point and to the point that you are damaging your business but it is about advocating responsibly for the quality of the code base that you are producing
+ So I think if I would summarize quality is the job of the architect
+ You are ensuring the quality of the code base and you are trading that off against lots of things all the time
+ Architecture is about producing a quality product and you have to define what quality is
+ that is what architecture is right
+ It is that you are defining what are those quality attributes that you are chasing after
+ And you are going to deal with performance you are going to deal with scalability you are going to deal with maintainability security all that stuff
+ Also you want your job to advocate for that quality for all of the stakeholders right
+ Engineers need quality customers need quality the business needs quality
+ So I think overall I mean you are always bouncing a lot of things
+ Architecture is all about balancing competing concerns
+ But if I boil it down to the most important it is you are balancing quality versus time to market
+ Right
+ So as customers as businesses we want to get things into market
+ We want to start making money off of them or serving our customers or whatever it might be
+ And as engineers we have a tendency to say we want it to be perfect
+ We want it to be hundred percent code coverage
+ We want it to be tested every way possible
+ it is got to support as much load as you could ever possibly throw at it
+ But the reality is there is always a trade off there
+ And so as an architect you have to be able to establish what is good enough right
+ What are the non negotiables
+ What must you do
+ And then what can you negotiate on
+ And once you establish that as an architect you have made a really good job of establishing those guardrails and then the team can execute from there
+ The business and the engineering team can execute from there
+ Context is important to determine what choice of solution is right for the balance of qualities
+ For example a home located in a low crime area will require different security needs from one located in a high crime area
+ For software talking to its stakeholders will help you to understand the context
+ Sometimes choices made in your software designs can have unintended consequences
+ For example an idea that seems to work fine for a relatively small amount of data may become impractical if there is a need to deal with a lot more data
+ it is good to get other perspectives on your technical designs for a more rounded implementation
+ These perspectives can be in the form of asking other developers for their opinion or having a design review session
+ In the home example you may decide to install bars on the window of a house built in high crime neighborhood
+ However the bars might have the unintended consequence of preventing an escape through the windows in case of fire
+ These consequences could have been avoided if a fire marshals perspective had been considered before implementation
+ Besides design reviews it is worthwhile to slow down while implementing a system and test it carefully
+ You can prototype alternative ideas and run tests to see what works best
+ If a design decision has unintended consequences tests can help to catch them
+ In the same way for the home example running an emergency escape drill would detect the bars as impeding a fast escape
+ Let us see how various qualities arise which influence your software design
+ For software there are functional requirements that describe what the system or application is expected to do
+ For example a media app has a functional requirement of being able to download a full length movie
+ Naturally a software design needs to outline a solution to meet such requirements correctly
+ So a key quality to satisfy is simply correctness
+ Besides functional requirements there are also non functional requirements that specify how well the system or application does what it does
+ Such requirements may describe how well the software runs in particular situations
+ For example the media app can have non functional requirements to download a full length movie at a specific speed and to play such a movie within a certain memory limit
+ Beyond correctness other qualities to satisfy include performance resource usage and efficiency in terms that can be measured from the running software
+ Both functional and non functional requirements are important to satisfy
+ You will need to discuss what is acceptable with the stakeholders
+ The desired qualities will put constraints on your systems design
+ Consider an analogy involving categories of cars
+ Both sports cars and minivans meet the functional requirement of providing transportation
+ But each category indeed each model of car offers a different balance of achieved non functional requirements with different factors like acceleration handling cargo capacity weight and fuel economy
+ Another kind of non functional requirement concerns how well the code of the software can evolve
+ For example parts of the implementation may have to support use in other similar software products
+ Also the implementation may have to allow for future changes
+ So other qualities to satisfy for the software can include re usability flexibility and maintainability
+ As the design gets detailed and the implementation is constructed the required quality should be verified through techniques like reviews and tests
+ As well certain qualities can be validated with feedback from end users
+ You need to keep many qualities in mind when designing software
+ it is not enough to write any code you want if it works to meet the desired functional requirements
+ There are multiple perspectives to consider
+ You must satisfy qualities that matter to the users of the software as well as those for its developers
+ In software design your starting point is ensuring your software structure suits the balance of qualities desired
+ How the structure is organized may affect the performance as seen by the users as well as the re usability and maintainability as seen by the developers
+ In particular there is a common trade off between performance and maintainability
+ High performance code may be less clear and less modular making it less maintainable
+ Another trade off is security and performance
+ The extra overhead for high security may reduce performance
+ Extra code for backward compatibility can worsen both performance and maintainability
+ Achieving the extremes in such competing qualities can in a way pit users against developers or users against other users
+ Generally you have to strike a balance during design
+ You should ask how much performance maintainability security or backward compatibility is needed
+ Can you cut back on performance to gain more security
+ Can you drop some backward compatibility to have better performance
+ Finally project realities will impose compromises on your design
+ You must balance the software qualities with the resources you have to develop your product
+ Thinking about quality attributes gives a broader view on how you can achieve the desired requirements in your design
+ You now understand these qualities as competing ideals that must be balanced
+ When asked to satisfy a quality you will consider multiple perspectives and look for potential trade offs
+Note cards are often used when planning a speech
+ You can represent each of your talking points on a card
+ The speech only makes sense if you ordered the cards in a way that you move logically from one talking point to the next
+ It would be nice if we had something similar to map out the structure of the software logically when forming its design
+ The good news is we do
+ You identify components connections and responsibilities from some requirements when forming the conceptual design
+ This is where you give your initial thoughts on how you might satisfy the requirements
+ In the technical design you learned how these components and connections are further refined to give them technical details
+ This makes them easier to implement
+ Although identifying components their responsibilities and connections is a good first step in software design we have not yet demonstrated a way of representing them
+ Being able to play with our design like reordering note cards and speech planning would be valuable
+ In this lesson you will learn about an important technique for representing this information at a high level when forming the conceptual design
+ This technique uses CRC cards where CRC stands for Class Responsibility Collaborator
+ Similar to how note cards help you organize your talking points CRC cards help you to organize your components into classes identify the responsibilities and determine how they will collaborate with each other
+ To learn about CRC cards in a software design Let us have a mini software system we can play with
+ Consider a bank machine for instance
+ You insert your bank card into the bank machine the bank machine will then ask you to enter a PIN authenticating you for access
+ After that you can choose to deposit withdraw or check your balances
+ This scenario suggests the basic requirements for the system
+ Admittedly it is an incomplete set of requirements but it is a good start
+ Remember that requirements are often incomplete and are resolved with further interactions with your client and end users
+ The next step is to design the bank machine
+ But as we form the conceptual design beyond just identifying components their responsibilities and connections we are going to represent them with our new technique the CRC card
+ Much like how note cards are used to organize your talking points CRC cards are used to record organize and refine the components in your design
+ Again CRC stands for Class Responsibility and Collaborator
+ A CRC card has three sections
+ The top of the card has the class name
+ On the left are the responsibilities of the class and on the right you list collaborators
+ Collaborators are other classes that the class interacts with to fulfill its responsibilities
+ So how can we use this while forming the conceptual design
+ To keep track of each candidate component and its responsibilities using a CRC card you place a components name in the class name section and the responsibilities in the responsibilities section
+ that is pretty straightforward so far
+ So what about the connections
+ In the collaborators section you list other components that your current component connects to or interacts with to fulfill its responsibilities
+ A CRC card can be as simple as a physical index card marked into three sections
+ They are cheap editable and widely available
+ CRC cards are small on purpose so you can not write much on them
+ This forces you to keep breaking down each component into smaller components and eventually classes that are small enough to be individually described on index cards
+ Now that you have learned about CRC cards Let us use them to design our bank machine system
+ Let us begin with a basic user component
+ In this example our primary user would be a bank customer that would go on our first CRC card
+ We place bank customer in the class name section
+ The bank customers responsibilities are insert a bank card or choose an operation such as deposit withdraw or check account balance
+ Let us list these in the responsibility section of the CRC card
+ I would go with insert bank card and choose operation but write a description that makes sense for you
+ All of these bank customer responsibilities involve a bank machine
+ The customer can insert bank card in the machine and choose an operation
+ Since the bank machine is required for our bank customer component to fulfill its task we placed bank machine under the collaborators section of the bank customer card
+ Next Let us do the other component the bank machine on another CRC card
+ We write bank machine in the class name section
+ The machines responsibilities include authenticate bank customer display task options deposit withdraw and check balances
+ And since this card interacts with the bank customer component add bank customer to the collaborators section of the bank machine card
+ As we have said a key advantage of using CRC cards is that it allows you to physically reorganize your design
+ You can move related cards together or situate cards to suggest relationships
+ With our CRC cards we can organize things by placing collaborating components together
+ For example put the bank customer CRC card on the left and the bank machine CRC card on the right
+ Where CRC cards organized you can simulate a prototype design of the system so far
+ Now Let us consider the scenario of the bank machine authenticating our bank customer
+ You can imagine enacting our bank customers insert card responsibility
+ This in turn collaborates with the bank machine and triggers its responsibility to authenticate the bank customer
+ Once authenticated the bank machine enacts its responsibility to display the task options
+ Here is where CRC cards shine
+ They are cheap editable and disposable so you are encouraged to experiment and play with alternative designs
+ In the simulation we just did you might ask how does a bank machine authenticate the bank customer
+ This question suggests adding another component the bank where the bank machine communicates to authenticate the bank customer
+ Now you should understand how working with CRC cards can help to identify needed components in the design
+ You can find more candidate components by using CRC cards to prototype and simulate various scenarios
+ For instance since the bank machine will talk over a network to the bank you can add a network CRC card between them
+ You want the network communication to be secure so you make the network collaborate with a new component called encryption
+ This component supports secure communication with the bank
+ As well you probably notice the bank machine itself contains several different components which seem small enough to be individual classes for programming
+ For example there is a card reader keypad display cheque slot and cash dispenser
+ Each of these classes but their responsibilities and collaborators can be described on their own cards
+ In a design meeting with the software development team you can have all the cards on the table and discuss a simulation of how these classes work with other classes to achieve their responsibilities
+ As before these simulations may reveal shortcomings in the design and you can experiment with alternatives by introducing appropriate cards
+ In this lesson you have learned how to use CRC cards in designing software
+ You have also learned how CRC cards can be used for prototyping and simulation
+ This allows you to reveal shortcomings in the requirements or design
+ Again CRC cards are just a technique for representing candidate components their responsibilities and connections
+ Using note cards will not guarantee a great speech and you still need to be experienced in speech writing to be able to arrange your talking points properly
+ Similarly you still need to be knowledgeable of various design techniques in order to define your CRC cards and form your design properly
+ Throughout the rest of this specialization we will discuss various techniques so you can design more effectively
+Welcome back
+ In the previous module you were introduced to how design fits into the software development process and how to complete a conceptual design using CRC cards
+ In this module we are going to dive deeper into Object Oriented Modeling
+ We will start off by talking about modeling problems and how programming languages evolve toward object orientation
+ Then we are going to explore four major design principles used in Object Oriented Modeling
+ These principles help in problem solving and lead to software that is flexible reusable and maintainable
+ These principles are key to having a good design for your software
+ We will also show you how to express these design principles using both UML Class Diagrams and Java Code
+ In this module you will have your first capstone assignment
+ The rest of the work for the capstone projects will be completed in the fourth module of each course
+ However you will occasionally have capstone assignments in the earlier modules once you have learned the content required to complete that assignment
+ Ready
+ Let us get started
+ If you wanted to make a house you would not start nailing without a design and just figure out the details later
+ Similarly for a complex software problem you do not dive right into solving it in code
+ there is a design step in between that iteratively deals with both the problem space and the solution space
+ You need conceptual design to break down the problem further and further into manageable pieces
+ You also need technical design to describe and refine the solution so that it is clear enough for developers to implement as working software
+ Over the years people have tried many approaches to make the design activity easier
+ For example there are design strategies in programming languages suited for solving certain kinds of problems
+ If you had a data processing problem you may have used Top Down Programming
+ This strategy map the processes in the problem to routines to be called
+ As you broke down the processing needs top down you made a tree of routines for the eventual solution
+ These routines would be implemented in a programming language that supported subroutines
+ To make design easier you do not want a big mental jump during design work between a concept in the problem space and how to deal with it in the solution space
+ If these concepts could be described in a design that made sense to both users and developers that would be great
+ This would help ensure the two groups can discuss their understanding and common terms
+ For many kinds of complex problems it makes sense to think about the concepts using objects
+ For example any noun in a problem description could be an important object
+ The real world where problems arise is just full of objects
+ This has led to the popularity of Object Oriented Programming with object oriented languages
+ But even here you still do not go straight from the problem to writing the code
+ there is a conceptual design involving object oriented analysis to identify the key objects in the problem
+ there is also technical design involving object oriented design to further refine the details of the objects including their attributes and behaviors
+ The design activities happen iteratively and continuously
+ The goal during software design is to construct and refine models of all the objects
+ These models are useful throughout the design process
+ Initially the focus will be on the entity objects from the problem space
+ As a solution in software arises you introduced control objects that receive events and coordinate actions
+ You also introduce boundary objects that connect to services outside your system
+ The models are often expressed in a visual notation called Unified Modeling Language or UML
+ In Object Oriented Modeling you have different sorts of models or UML diagrams to focus on different software issues like a structural model to describe what the objects do and how they relate
+ it is like having a scale model of a building to understand the spatial relationships
+ To deal with complexity you can apply design principles and guidelines to simplify objects
+ Break them down into smaller parts and look for commonalities that can be handled consistently
+ there is a continual need to critique and evaluate the models to ensure the design addresses the original problem and satisfies quality goals
+ Qualities are expected to be reusable flexible and maintainable
+ The models also serve as design documentation for your software and can be easily mapped to skeletal source code particularly for an object oriented language like Java
+ That can give a good start for the developers implementing the software
+Language is an interesting idea
+ The word language is used to describe a system that we use to communicate our thoughts and ideas with each other
+ There are different ways in which the system can be used
+ We can communicate through writing reading speaking drawing pictures or even making gestures with our body
+ Language has allowed us to create incredible things like the pyramids and solve complex problems that help us understand our world
+ It even helps us communicate the most basic things to other people
+ But as with many things in our lives we have to adapt language to meet our needs
+ Language has evolved over the many years of human existence
+ Think about how language has changed with the integration of modern technology and the rise of Internet culture
+ Programming languages evolved in a similar fashion as traditional languages
+ Each new programming language was developed to provide solutions to problems that previous languages were unable to adequately address
+ Over the years ideas used in computer languages have caused a shift in programming paradigms
+ We needed to change the way in which programs were written in order to address the latest problems more effectively
+ If you are a veteran of the software industry you may remember languages such as COBOL and Fortran
+ If you are new to the software scene these are languages you may have heard of but have never actually used
+ So what programming paradigm do these two languages follow
+ Have you met Ted
+ Ted is a software developer making his way through the different ages of programming languages and programming paradigms
+ We will be following Ted from the early years of computers when computers were designed to simply process batches of input into output
+ Ted will finish his journey in our modern day society where computers help us with complex tasks
+ Ted begins his career in the nineteen sixties 
+ He has just been hired by a bank to develop their very first program that will be used to keep track of account balances
+ In these days the two most popular programming languages were COBOL and Fortran
+ They followed an imperative paradigm which broke up large programs into smaller programs called subroutines which are like methods in Java
+ Now back in the nineteen sixties computer processing time was costly
+ As a result it was important to maximize processing performance
+ This was accomplished by having global data because they are all located in one place in the computers memory for a program
+ With globally accessible variables all the subroutines would be able to access them to do their necessary calculations
+ However there are some problems that Ted noticed as he continued with his career
+ With global data it was possible that changes in the data could have weird side effects on the program
+ Sometimes a subroutine would run into cases where the global data was not as expected
+ The need for better data management led to changes to imperative programming and the rise of languages like Algol and Pascal in the nineteen seventies
+ The idea of local variables was introduced
+ Subroutines were called procedures which could contain nested procedures
+ And each one could have their own variables
+ Algol sixty eight and Pascal support the notion of an abstract data type which is a datatype that is defined by the programmer and not built into the language
+ An abstract data type is essentially a grouping of related information that is denoted with a type
+ It was a way to organize data in a meaningful way
+ Developers can write their software using these types in a similar way to the built in types of the languages
+ By having variables in different scopes Ted can compartmentalize the data into different procedures
+ This way a procedure can be the only one that can modify that piece of data allowing Ted to put it in the local scope and not have to worry about it being changed by another procedure
+ As we continue on our journey into the mid nineteen seventies computer processing time became less expensive while human labor became more expensive
+ The time consuming factor in software development was now the human element
+ Problems were becoming more complex
+ The questions we could ask computers to solve were becoming more intricate
+ For developers like Ted this meant that software was becoming so massive that having one file for his program was becoming difficult to maintain
+ New languages arose such as C and Modula two provided a means to organize programs and allow developers to more easily create multiple but unique copies of their abstract data types
+ Programs could now be organized into separate files
+ In C each file contained all the associated data and functions that manipulated it and it declared what could be accessed through a separate file called the Header File
+ There are still issues that are not addressed in any of the languages we have looked at so far
+ These languages do not make it easy for an abstract data type to inherit from another
+ That means that Ted can define as many data types as he wants but cannot declare that one type is an extension of another type
+ In the final leg of our journey Let us follow Ted into the nineteen eighties
+ During this time in software history the concepts of Object Oriented Design that are central for object oriented programming became popular
+ The goal of object oriented design is to make an abstract data type easier to write structure a system around abstract data types called classes and introduce the ability for an abstract data type to extend another by introducing a concept called inheritance
+ With an object oriented programming paradigm Ted is now able to build a software system that is made up of entirely abstract data types
+ The advantage of this is that the system will mimic the structure of the problem meaning that any object oriented program is capable of representing real world objects or ideas with more fidelity
+ Class files replace the standard files in C and Modula two
+ Each class defines a type with associated data and functions
+ These functions are also known as methods
+ A class acts like a factory making individual objects all of a specific type
+ This allows Ted to compartmentalize the data and how it can be manipulated in their own separate classes
+ Object Oriented Programming is the predominant programming paradigm
+ Popular modern languages such as Java C plus plus and C sharp are all founded based on objects
+ So why the big history lesson
+ Why do we care about Ted and his journey through the different software design eras
+ It is important because as a software developer you need to have a broad understanding of what is out there in the industry today
+ There are many systems that still use the older languages and design paradigms
+ It is also important to understand that while object oriented programming is a powerful tool it is not the only one in your toolbox
+ Object oriented design is not always the best approach for everything because the design may not fit the problem
+ Remember that it is more important to be efficient with your time even if this means taking a non object oriented approach
+ As the power of computers becomes better than ever before the most expensive cost of creating software is you
+ As you continue to explore the world of object oriented programming you must examine the major design principles of object oriented programs
+ These principles help to define what exactly object oriented programs are and how you can create them
+ When you design object oriented programs you create models of how objects are represented in your system
+ These models cannot be designed without forethought
+ In order for a system to be object oriented it should adhere to certain design principles
+ One of the design principles in object oriented modeling I am going to talk about is abstraction
+ Abstraction is one of the main ways that humans deal with complexity
+ Abstraction is the idea of simplifying a concept in the problem domain to its essentials within some context
+ Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details
+ For example we might want to create an abstraction for a food
+ In a health context its nutritional value and not its cost would be part of a simplified description of a food
+ Good abstraction emphasizes the essentials needed for the concept and removes details that are not essential
+ Also an abstraction for a concept should make sense for the concepts purpose
+ This idea applies the Rule of Least Astonishment
+ That is the abstraction captures the essential attributes and behavior for a concept with no surprises and no definitions that fall beyond its scope
+ You do not want to surprise anyone trying to understand your abstraction with irrelevant characteristics
+ In object oriented modeling abstraction pertains most directly to the notion of a class
+ When you use abstraction to decide the essential characteristics for some concept it makes the most sense to define all of those details in a class named after the concept
+ A class is like a template for instances of a concept
+ An object instantiated from a class then has the essential details to represent an instance of some concept
+ Later on we will go into more detail of how to form your classes using abstraction
+ Let us take the concept of a person
+ What are the essential characteristics of a person that we care about
+ Well it is hard to say because person is so vague and we have not said what the purpose of our person is
+ The abstractions you create are relative to some context and there can be different abstractions for one concept
+ For example if you are creating a driving app you would care about a person in the context of a driver
+ In another example if you were creating a restaurant app then you would care about a person in the context of a patron
+ It is up to you to choose the abstraction that is most appropriate for your purpose
+ Before we start creating an abstraction we need a context for our person
+ Context or specific perspective is critical when forming an abstraction
+ Let us look at an example where our context is an academic setting and we want to create an abstraction for a student
+ What are some of the essential characteristics of a student
+ We will include the courses they are currently taking their grades in each course and their student ID number
+ These are basic attributes for a student
+ The attributes do not disappear over time although their values may change since they are essential characteristics of a student
+ For a course the students grade value may change but they always have a great attribute
+ This means the actual values of these attributes may change but the attributes themselves do not
+ See if you can identify relevant attributes for a concept
+ Give examples of attributes for a house cat from the perspective of a cat owner
+ A house cat will have basic attributes like a name color favorite nap location and microchip number
+ Certain values of these attributes could change
+ For example over the course of the day the cats favorite nap location could change from the living room to a bedroom
+ In addition to attributes an abstraction should describe a concepts basic behaviors
+ For a student those behaviors would be studying doing assignments and attending lectures
+ These are the responsibilities that the student abstraction does for its purpose
+ See if you can identify relevant behaviors for a concept
+ Give examples of behaviors for a house cat from the perspective of a cat owner
+ A house cat has a pretty low activity lifestyle and not much purpose other than to nap
+ Perhaps you said having naps grooming catching mice in the house eating and using the litter box
+ Within the context of an abstraction anything other than a concepts essential attributes and behaviors is irrelevant
+ When considering our student in the context of an academic setting we do not care whether the student has a pet or how they clean their kitchen or what their favorite video game is
+ Those are all irrelevant details to the abstraction in this context
+ Whenever we make abstractions we need to remember our context
+ If the context changes the right abstraction can as well
+ Say our context changes and we need to model a student from a social perspective
+ How would our definition change
+ Perhaps the relevant attributes would be the student groups they belong to their hobbies for study breaks and the sports teams their in
+ Now it is your turn Let us take a moment to do another example abstraction
+ What is an abstraction for a dog from the perspective of a dog owner
+ Well your abstraction may be slightly different
+ You probably defined attributes like the dogs breed its size whether it has long or short hair pointy or floppy ears and its color
+ Behaviors of a dog include sleeping eating and doing tricks
+ Overall abstraction is an important principle you use when solving problems and designing your systems
+ Some of its benefits are simplifying your class design so they are more focused succinct and understandable to someone else viewing them
+ As you have learned though abstractions are formed within a specific context for perspective and you have to carefully decide what is relevant
+ If the purpose of your system or the problem changes do not be afraid to update your abstractions accordingly
+ Abstractions are not a fixed creation but are a direct result of the problem for which you created them
+Now it is time for you to learn about encapsulation
+Encapsulation is a fundamental design principle in object oriented modeling and programming
+There are many things that you can represent as objects
+For example you could represent a university course as an object
+The course object can have many attribute values like the specific number of students enrolled credit value and prerequisites as well as specific behaviors dealing with these values
+And the course class defines the essential attributes and behaviors of all the course objects
+Encapsulation involves three ideas
+As the name suggests it is about making a sort of capsule
+The capsule contains something inside some of which you can access from the outside and some of which you cannot
+First you bundle attribute values or data and behaviors or functions that manipulate those values together into a self contained object
+Second you can expose certain data and functions of that object which can be accessed from other objects
+Third you can restrict access to certain data and functions to only within that object
+In short encapsulation forms a self contained object by bundling the data and functions it requires to work exposes an interface whereby other objects can access and use it and restricts access to certain inside details
+You naturally bundle when you define a class for a type of object
+Abstraction helps to determine what attributes and behaviors are relevant about a concept in some context
+Encapsulation ensures that these characteristics are bundled together in the same class
+The distinct objects thus made from a particular class will have their own data values for the attributes and exhibit resulting behaviors
+You will find that programming is easier when the data and the code that manipulates that data are located in the same place
+An objects data should only contain what is relevant for that object
+A student would only contain relevant data for themselves like the degree program
+This is as if the student object knows its degree program like a real student would
+A course object would know a list of students taking it
+The professor object would know a list of courses the professor teaches
+And none of these types of objects would contain a list of other courses offered because that is not relevant data for them
+Besides attributes a class also defines behaviors through methods
+For an object of the class the methods manipulate the attribute values or data in the object to achieve the actual behaviors
+You can expose certain methods to be accessible to objects of other classes thus providing an interface to use the class
+For example a course can provide a method to allow a student to enroll in the course or a course that a professor is teaching can provide a method that allows the professor to see the list of students in that course
+Encapsulation helps with data integrity
+You can define certain attributes and methods of a class to be restricted from outside to access
+In practice you often present outside access to all the attributes except through specific methods
+That way the attribute values of an object cannot be changed directly through variable assignments
+Otherwise such changes could break some assumption or dependency for the data within an object
+As well Encapsulation can secure sensitive information
+For example you may allow a student class to store a degree program and grade point average GPA
+The student class itself could support queries involving the GPA without necessarily revealing the actual value of the GPA
+For example the student class could provide a method that tells whether the student is in good standing for the degree program which uses the GPA and the calculation but never reveals its actual value
+Encapsulation helps with software changes
+The accessible interface of a class can remain the same while the implementation of the attributes and methods can change
+Outsiders using the class do not need to care how the implementation actually works behind the interface
+To explain this I am going to use the university example again
+Let us say a professor wants a student to calculate and declare their GPA before getting admitted into a course
+This is an action that the student may perform
+However there could be many different ways that this action could be done
+A student might fill out a paper form and hand that to the administrator who would check the paper files write it a list of courses and grades for that student from which to calculate the GPA
+Or this action may have been automated so that the student would fill out the paper form and hand it into an administrator who would check the computer database for the GPA
+Or the student can go online and get the GPA themselves using a student information system
+All these different ways will still achieve the end goal reporting the GPA to the professor
+As you can see the professor does not have to care how the student gets their GPA a student is the only one that really needs to know how to do it
+You can apply this notion when you program software
+For example suppose a student class has a method to return its major when called
+The actual steps to retrieve the major does not need to be known by any other class
+In programming this sort of thinking is commonly referred to as Black Box Thinking
+Think of a class like a black box that you cannot see inside for details about how attributes are represented or how methods compute the result but you provide inputs and obtain outputs by calling methods
+It does not matter what happens in the box to achieve the expected behaviors
+This distinction between what the outside world sees of a class and how it works internally is important
+Encapsulation achieves what is called the Abstraction Barrier
+Since the internal workings are not relevant to the outside world this achieves an abstraction that effectively reduces complexity for the users of a class
+This increases re usability because another class only needs to know the right method to call to get the desired behavior what arguments to supply as inputs and what appear as outputs or effects
+In the real world if I ask you to buy me a soda you can get the soda in many ways
+You can go to the vending machine and buy one or you can drive to another city and buy one there
+The input and output is the same
+I ask you to buy me a soda and you give me a soda
+I do not need to know the details of how you got it
+Encapsulation is a key design principle in achieving a well written program
+It keeps your software modular and easier to work with
+It also keeps your classes easy to manage whose behaviors are accessed like black boxes
+As we continue examining the major design principles of object oriented modeling and programming you are now going to learn about decomposition
+I will explain how decomposition works on its own
+But it is important to keep in mind the design principles work well together
+Decomposition is taking a whole thing and dividing it up into different parts
+Or on the flip side taking a bunch of separate parts with different functionalities and combining them together to form a whole
+Decomposition allows you to further break down problems into pieces that are easier to understand and solve
+Let us consider a whole thing like a car or a refrigerator
+By breaking down such a thing into its different parts using decomposition you can more easily keep their different responsibilities separate
+A general rule for decomposition is to look at the different responsibilities of some whole thing and evaluate how you can separate them into different parts each with its own specific responsibility
+This relates one whole to multiple different parts
+Let us get some practice breaking down a whole thing into its different constituent parts
+Identify the different constituent parts of a car
+Some possible parts of your car maybe a transmission a motor wheels tires doors windows seats and fuel
+For another example a refrigerator also has several parts
+There is the cabinet and doors compressor and coils freezer ice maker shelves drawers and of course food if the refrigerator is stocked
+Each of those parts has a very specific purpose to help achieve the responsibilities of the whole
+For refrigerator the parts work together to achieve the overall purpose of keeping and preserving food in cold storage
+Sometimes the whole will delegate specific responsibilities to the parts
+So the refrigerator delegates the freezing of food and the storing of that food to the freezer
+Since decomposition allows you to create clearly defined parts it is quite natural that these parts are separate
+Let us see how parts interact within the whole
+A whole might have a fixed or dynamic number of a certain type of part
+If there is a fixed number then over the lifetime of the whole object it will have exactly that much of the part object
+For example a refrigerator has a fixed number of freezers just one
+This does not change over time but there are sometimes parts with a dynamic number
+Meaning the whole object may gain new instances of those part objects over its lifetime
+For example a refrigerator can have a dynamic number of shelves or food items over time
+Now for some practice in determining whether you have a fixed or dynamic number of a part
+Fixed parts do not change in number over time
+So by a process of elimination we can find out which car parts are dynamic
+We know a typical car has one steering wheel four tires and one engine at any given time
+These numbers do not fluctuate
+The number of passengers can change though making it dynamic
+A part itself can also serve as a whole containing further constituent parts
+When you look at our refrigerator example a drawer can contain fruit
+Let us come up with another example of one part containing other parts
+Thinking of a car can you describe an example of decomposition where one part contains another
+You may have come up with several different examples
+The one that comes to mind for me is the instrument panel which contains a fuel gauge an odometer and a speedometer among other parts
+Also because of encapsulation the instrument panel treats the instruments like black boxes and does not care about how they are implemented
+One issue in decomposition involves the lifetimes of the whole object and the part objects and how they could relate
+Lifetimes might be closely related
+For example the refrigerator and its freezer have the same lifetime
+One cannot exist by itself without the other
+If you dispose off the refrigerator you would dispose off the freezer as well
+But lifetime can also not be so related
+The refrigerator and food items have different lifetimes
+Either can exist independently
+Let us take a look at the lifetimes of parts in an example
+Consider the lifetime of a car and name one part of a car that has a closely related lifetime and one part that is not
+As possible responses a closely related lifetime would be the frame and not closely related would be the tires
+You can have whole things contain parts that are shared among them at the same time
+How can this relationship arise
+Consider a person who has a daughter in one family but also a spouse in another family
+The two families are regarded as separate wholes but they simultaneously share the same part
+However sometimes sharing is not possible or intended
+For example a food item in a refrigerator cannot at the same time also be inside an oven
+Overall decomposition helps you to break down a problem into smaller pieces
+A complicated whole thing can be composed out of constituent separate simpler parts
+Important issues to understand are how the parts relate to the whole such as fixed or dynamic number their lifetimes and whether there is sharing
+The idea behind object oriented modeling and programming is to create computer representations of concepts in the problem space
+It lets you model the relative attributes in behaviors so that a computer can simulate them
+One design principle called generalization helps us to reduce the amount of redundancy when solving problems
+You probably already have experience with a form of generalization and do not even know it
+Many behaviors and systems in the real world operate through repetitious actions
+We can model behaviors using methods
+It lets us generalize behaviors and it eliminates the need to have identical code written throughout a program
+Take this array creation and initialization code for instance
+We can generalize repetitious code that we would need to write by making a separate method and calling it
+This helps us to reduce the amount of near identical looking code throughout our system
+Methods are a way of applying the same behavior to a different set of data
+Generalization is frequently used when designing algorithms which are meant to be used to perform the same action on different sets of data
+We can generalize the actions into its own method and simply pass it through a different set of data through arguments
+So where else can we apply generalization
+Well if we can reuse code that is inside a method and a method is inside a class then can we reuse code from a class
+Can we generalize classes
+Generalization happens to be one of the main design principles of object oriented modeling and programming
+But it is achieved differently than what we have just seen with methods
+So how is this done
+Generalization can be achieved by classes through inheritance
+In generalization we take repeated common or shared characteristics between two or more classes and factor them out into another class
+Specifically you can have two classes a parent class and a child class
+When a child class inherits from a parent class the child class will have the attributes and behaviors of the parent class
+You place common attribute and behaviors in your parent class
+There can be multiple child classes that inherit from a parent class and they all will receive these common attributes and behaviors
+The child classes can also have additional attributes and behaviors which allow them to be more specialized in what they can do
+In standard terminology a parent class is known as a superclass and a child class is called the subclass
+Let us say you want to model an adorable cat named Mittens
+Mittens has four legs a tail knows how to walk run and eat but these attributes and behaviors can also be used to describe Doug the dog
+Doug also has four legs a tail can walk run and eat
+If you were to design classes cat and dog based on these characteristics you would have a lot of overlapping code
+What would happen if you want to model another similar characteristic
+You would need to add the same code to both of your classes
+This does not sound too bad because you only have two classes but what if you have several classes that share common characteristics
+It would be time consuming and error prone to carefully add code to all of them
+That leads to a system that is not flexible maintainable or reusable
+Let us look at Mittens and Doug to see what commonalities we can find between them
+I would say they are both a type of animal with legs a tail and have a shared set of behaviors like walking running and eating
+An animal then is a general idea
+This means that an animal is a broad term used to describe a large grouping of more distinct classes
+The term animal can be used to define a set of common characteristics and behaviors that belong to different specific types of animals like cat and dog
+In this example we can generalize the common attributes and behaviors of the cat and dog class into a superclass that we will call animal
+Keep in mind that we can name these classes whatever we want but since we are creating meaningful obstructions of things in the real world our classes should be named after the things we are trying to model
+This makes our code easier to understand
+The subclasses will inherit attributes and behaviors from the superclass
+Since cats and dogs are both animals they inherit from the animal superclass
+One of the advantages of doing this is that any changes to the code that is common to both subclasses can be made in just a superclass
+The second benefit is that we can easily add more animals to our system without having to write out all the common attributes and behaviors for them
+Through inheritance all subclasses of the animal class will be endowed with the animal classes attributes and behaviors
+Inheritance and methods exemplify the generalization design principle
+We can write programs that are capable of performing the same tasks but with less code
+It makes code more reusable because different classes or methods can share the same blocks of code
+Systems become easier to maintain because we do not have repetitious code
+Generalization will help you build software that is easier to expand easier to apply changes to and easier to maintain
+By learning how to identify commonalities between classes and their behaviors you can design highly robust software solutions
+When designing a building architects create sketches to visualize and experiment with various designs
+Sketches are quick to produce and an intuitive way to communicate the design to their client but these sketches are simply not detailed enough for the builders
+When architects communicate with the people who will be constructing the building they provide detailed blueprints which contain exact measurements of various components
+These extra details allow the builders to construct exactly what the architect envisions
+For software developers use technical diagrams called UML Diagrams to express their designs
+This is what we will be learning
+To recap in previous lessons we have only been doing conceptual design in the software development process through CRC cards
+In the same way architects use sketches to visualize and experiment with various designs
+CRC cards are only good for prototyping and simulating higher level designs
+To guide implementation you need a technique that would be more like a blueprint
+A UML Class Diagram or just Class Diagram for short allows you to represent your design in more detail than CRC cards can but it is still visual
+Class Diagrams are much closer to the implementation and can easily be converted to classes in code
+Abstraction which you may recall is the idea of simplifying a concept in the problem domain to its essentials within some context
+Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details
+You can first apply abstraction at the design level using UML Class Diagrams then eventually convert the design into code
+In this lesson you are going to learn how to abstract concepts as a class in a Class Diagram
+You will see that additional details can be represented in a Class Diagram compared to a CRC card
+Do not get me wrong CRC cards still have their place in prototyping and simulating various designs but UML Class Diagrams are more suited for communicating the technical design of the softwares implementation
+By the end of this lesson you will be able to convert Class Diagrams into code and even convert code into Class Diagrams with ease
+So Let us get started
+Think for a moment on how you would abstract a food item in the context of a grocery store using a CRC card
+You would have a food component with the responsibility of keeping track of its grocery ID name manufacturer expiry date and price
+It also needs to know if the item is on sale or not
+Although CRC cards represent components if you remember early on the goal of design is for the components when they are refined enough to become functions classes or collections of other components
+Since we use Java in this course where an abstraction is formed in a class we focus on classes
+So how would the food class look in a Class Diagram
+This is the Class Diagram representation of the food class
+Each class in the Class Diagram is represented by a box
+Each box is divided in three sections much like a CRC card
+The top part is the Class Name
+This would be the same as the class name in your Java class
+The middle part is the Property section
+This would be equivalent to the member variables in your Java class and defines the attributes of the abstraction
+And finally the bottom part is the operations section which is equivalent to the methods in your Java class and defines the behaviors of the abstraction
+Properties which are equivalent to Javas member variables are mainly composed of the variable name and variable type
+Variable types much like in Java can be classes or primitive types
+Operations which are equivalent to Javas methods are mainly composed of the operation name parameter list and return type
+For example a food object could have a method to return if it is on sale or not
+To show this we write a method called isOnSale
+This method will return a boolean to represent if it is on sale
+A boolean value is either true or false
+The isOnSale operation takes no parameter so we do not include a parameter list
+Suppose isOnSale takes a date parameter and returns true if the food item is on sale on the given date our Class Diagram will now look like this
+Note how the parameter list follows the same format as the Class Diagrams properties
+Now if we compare the CRC card to our Class Diagram you might notice how some of the responsibilities on the card turned into properties in the Class Diagram
+Some specifically isOnSale became an operation
+You could certainly use CRC cards for abstracting an object such as a grocery food item but there are simply too many ambiguities that prevent a programmer from translating a CRC card to code
+One ambiguity is that a CRC card does not show a separation between properties and operations
+They are all listed together
+Now that we have a Class Diagram representation Let us finally implement it in Java
+Class Diagrams are very close to implementation making the translation to Java very easy
+Class name in Class Diagram turns into a class in Java
+Properties in the Class Diagram turn into member variables
+And finally Operations turn into methods
+You will probably notice that everything is public
+We will assume that for now
+Later you will learn about access modifiers of member variables and methods in Java
+Converting code to Class Diagram is also straightforward
+Consider for instance this code
+To convert this code to a Class Diagram we identify ClickCounter as the class name since that is what the class is named in the code
+We then set the member variable count as a property
+This property has a type int
+Finally the methods setClickCount and getClickCount become operations
+setClickCount takes a parameter
+Therefore we will include the parameter list specifying the parameter name and its type
+getClickCount has a return value
+Therefore we also have to specify the return type
+Despite the extra details that the Class Diagram can provide they still can not replace CRC card for simulating and prototyping different designs
+CRC cards are cheap and small
+It is easy to play with different designs with your team in the physical world and the fact that it is far from code makes you focus on the problem and not the implementation
+Class Diagrams on the other hand are much closer to code as you have seen
+This is great if you want to clearly communicate your technical design to the developers but since you have to specify code specific things like parameter lists and return values these are too detailed for conceptual design
+The details would be a distraction and time consuming to describe when creating your initial designs
+You now have learned to represent abstractions at a UML Class Diagram
+Although CRC cards still have their place for prototyping and simulating designs the Class Diagram gives you a technical description of what the implementation looks like
+But we have only scratched a very tiny surface of UML Class Diagrams
+We will continue to use Class Diagrams in many areas of this specialization
+In the other lessons we will expand on the Class Diagram by revisiting the other object oriented design principles
+Now that you have a greater understanding of the major design principles of object oriented programming you need to learn how to apply them
+In order for design theories to be useful they must be applied
+Let us take a look at how to apply encapsulation
+As you will recall from an earlier lesson on encapsulation it involves three ideas
+First you bundle data and functions that manipulate the data into a self contained object
+Second you can expose certain data and functions of that object which can be accessed from other objects
+Third you can restrict access to certain data and functions to only within that object
+So what does that look like in code
+And what does the design look like
+Before we get to the written code Let us take a look at some notation in a UML class diagram that expresses encapsulation
+If you are creating a system that models a university student using encapsulation you would have all of the students relevant data defined in attributes of a student class
+You would also need specific public methods that access the attributes
+In this example our students relevant data could be their degree program and GPA
+This would be the UML class diagram for the student class
+The student class has its attributes hidden from public accessibility
+This is denoted by the minus signs before GPA and degree program
+These minus signs indicate that a method or attribute is private
+Private attributes can only be accessed from within the class
+Outside this class instead of being able to directly manipulate the students GPA attribute you must set the GPA through a public method setGPA
+By only allowing an objects data to be manipulated via a public method you can control how and when that data is accessed
+This control of data is like creating a gate
+You only let access to data you allow
+If your GPA was on a four point scale you would not want someone to be able to directly set the value to ten
+Now it is your turn to describe the data and functions in a self contained object
+With every piece of essential data you need to create a protective layer from unapproved manipulation
+This is like changing a countrys laws
+Not just anyone can change laws the way they would like it anytime there is a proper procedure for changing laws
+This procedure provides protection from ill advised changes
+Getter Methods are methods that retrieve data and their names typically begin with get and end with the name of the attribute whose value you will be returning
+In our example this would be your get license ID method in the driver object
+Getters often retrieve a private piece of data
+Setter Methods change data and their names typically begin with set and end with the name of the variable you wish to set
+In the driver example this would be the set car function
+Setters are used to set a private attribute in a safe way
+Data integrity is why you have Getter and Setter Methods
+In order to change a piece of data you need to go through the correct channels
+Data must be accessed in an approved way
+Let us take a look at a class that bundles data and has methods that manipulate the data
+As you can see in this code whether or not an attribute or method is private or public influences its accessibility
+Attributes that are private cannot be accessed from anywhere other than from inside the class
+This hides them from anything outside of the class
+The only way you can manipulate the hidden data is by writing public functions that allow access to it
+Now it is your turn to write some code that restricts data manipulation to certain functions within an object
+There are many possible data points that are relevant to a person
+The most basic of those are a persons name
+In our code you should have one private attribute that represents a persons name
+This attribute can only be accessed via a public method to hide it from direct access by outside classes
+Outside classes do not care how your methods are implemented
+They only care if the methods are returning the expected output or doing their expected responsibility
+This means your Getters and Setters do not purely have to return and change private attribute values
+They can do more
+Let us take a look at our student example
+You might have a situation in which there are restrictions on changing the degree program
+You can change your code to more accurately display this restriction when it comes to changing the degree program
+Let us say that you need a GPA greater than two point seven in order to be able to change the degree program
+this restriction might look like this
+The outside observer does not need to know how your public methods are implemented
+Just that they perform as expected
+That means you can add additional code to your Getters and Setters if you need to
+Overall encapsulation is meant to protect your class and its objects
+It also allows for an interface of approved methods for other classes to safely use the class
+It allows you to hide implementation details from other classes
+Next on our journey we will be applying the object oriented design principle decomposition
+Now that we have discussed the basic theory behind decomposition it is time to expand our knowledge and see it in action
+Let us take a look at how to apply decomposition
+Our definition of decomposition is taking a whole thing and dividing it up into different parts
+Or on the flip side taking a bunch of separate parts with different functionalities and combining them together to form a whole
+What does this look like when programming
+Is there any way we can expand this definition and make it more specific
+There are three types of relationships found in decomposition association aggregation and composition
+They define the interaction between the whole and the parts
+Let us explore these interactions in a few different perspectives Java code UML class diagram and definition
+The first decomposition relationship is association
+Association is some relationship
+This means that there is a loose relationship between two objects
+These objects may interact with each other for some time
+For example an object of a class may use services or methods provided by object of another class
+This is like the relationship between person and airline
+A person does not generally own an airline but can interact with one
+An airline can also interact with many person objects
+There are some persons and some airlines neither is dependent on the other
+Let us take a look at what an association relationship looks like using UML class diagram notation
+It is helpful to read UML diagrams which each box being called an object
+This UML examines the relationship I described between person and airline
+The straight line between two UML objects denotes that the relationship between them is an association
+You can see that there is a zero
+found on both sides of the relationship
+This means a person object is associated with zero or more airline objects
+And an airline object is associated with zero or more person objects
+The association in this question is between food and wine students and sports and kitten and yarn
+Each of these relationships is between completely separate entities
+If one object is destroyed the other can continue to exist unlike human and organ
+There can be any number of each item in the relationship
+One object does not belong to another
+Now we will look at an association example in code
+In this code excerpt the student is passed a sport object to play
+The student does not possess the sport beyond playing it
+The relationship is between two completely separate objects
+A student can play any number of sports
+And any number of students can play a sport
+Now it is your turn to come up with some code displaying an association
+As with our student example the wine can exist independent of the food
+It does not need food to exist nor does it always have food
+The two objects interact with each other without belonging to one another
+Overall association is a loose partnership between two objects that exist completely independently
+They have numbers that are not tied to each other
+The next decomposition relationship
+I will talk about is aggregation
+Aggregation is a has a relationship where a whole has parts that belong to it
+There may be sharing of parts among the wholes in this relationship
+The has a relationship from the whole to the parts is considered weak
+What this means is although parts can belong to the wholes they can also exist independently
+This is like the relationship between an airliner and its crew
+An important part of the airliner is its crew
+Without the crew an airliner would not be able to fly
+However the airliner does not cease to exist if there is no crew on board
+Same goes for the crew they are part of the operation of the airliner but the crew does not cease to exist or become destroyed if they are not on board their airliner
+These entities have a relationship but can exist outside of it
+Let us take a look at this example of aggregation using a UML class diagram
+This UML class diagram describes the relationship I explained above between airliner and crew
+It says that for an airliner object it has zero or more crew members
+Also a crew member object can be had by zero or more airline objects
+The empty diamond denotes which object is considered the whole and not the part in the relationship
+This empty diamond is the symbol for aggregation
+The aggregation we can see is between course section and students pet stores and pets and bookshelf and books
+Each of these are a has a relationship
+A course has students students have courses and so on
+But the relationship is weak
+If one of the objects in the relationship is destroyed it still makes sense that the other can continue to exist
+Now I will show a code example for aggregation
+In the airliner class there is a list of crew members
+The list of crew members is initialized to be empty
+And a public method allows new crew members to be added
+The airliner has a crew
+This means that an airliner can have zero or more crew members
+You can try for yourself to create some code that uses aggregation
+As with our airliner example a pet store has pets
+These are two objects that have a weak has a relationship
+The pet store has a list of pets that can contain zero or more pets
+It has the ability to add pets at any time
+Both pets stores and pets can exist without each other
+Aggregation is a weak has a relationship between classes
+One object has the other but the objects are not heavily linked
+They can both exist without the other
+One of the major decomposition relationships is composition
+Composition is an exclusive containment of parts otherwise known as a strong has a relationship
+What this means is that the whole cannot exist without its parts
+If loses any of its parts the whole ceases to exist
+If the whole is destroyed then all of its parts are destroyed too
+Usually you can only access the parts through its whole
+Contained parts are exclusive to the whole
+Compare this to the relationship between a house and a room
+A house is made up of multiple rooms
+However if you were to remove the house its rooms would cease to exist
+You cannot have a room without its house
+Let us examine a composition relationship using UML
+This UML class diagram describes the relationship between a house and a room that a house object has one or more room objects
+The filled in diamond next to the house means that the house is the whole in the relationship
+If the diamond is filled in it means that has a relationship is strong
+The two related objects cannot exist without each other
+The filled diamond denotes the relationship is composition
+The composition is between the human and brain pair
+This relationship is between completely dependent classes
+If one object is destroyed then the other is too
+Here is an example of composition using Java
+In this example the brain is created at the same time that the human object is
+The brain does not need to be instantiated anywhere else nor does it need to be passed into the human object on creation
+The brain is automatically created with the human
+The two parts human and brain are tightly dependent with one not being able to exist without the other
+Now you get to create some code that illustrates a composition
+This example is the same as our human and brain example
+The employee cannot exist without a salary
+And the salary cannot exist without an employee
+On instantiating an employee the salary part is made
+The salary must always exist as long as the employee does from that point on
+Composition is the most dependent of the decomposition relationships
+It forms a relationship that only exists as long as each object exists
+Decomposition is simply about whole objects containing part objects
+Depending on your design you can relate wholes to parts in different increasingly tighter ways
+You can use association a very loose interaction between two completely independent objects
+An aggregation one whole has a part but both can live independently
+And finally in composition the whole cannot exist without its parts and vice versa
+All three relationships are useful and versatile for your software designs
+ike the other design principles UML will let you model generalization and inheritance of the classes in your system
+Showing inheritance is very simple in a UML class diagram
+You simply connect two classes with a solid lined arrow
+This indicates that two classes are connected by inheritance
+The superclass is at the head of the arrow and the subclass is at the tail
+The standard way to draw inheritance into your UML diagrams is to have the arrow pointing upward
+This means that the superclasses are always toward the top and the subclasses are always toward the bottom
+Think of this like a family tree drawn on paper the younger the generation the further down they are on the page
+ Older generations are typically closer to the top of the page
+ So a simple inheritance in a UML diagram would have this layout
+ You do not need to put any of the inherited superclasses attributes and behaviors into the subclass
+ The arrow is used to communicate inheritance which implies that the subclass will have the superclasses attributes and methods
+ The superclasses are the generalized classes and the subclasses are the specialized classes
+ Now that you know how to show inheritance in a UML class diagram Let us try to make the connection between UML and code
+ Let us connect the UML class diagram with the actual code
+ We can get some help from Doug the dog
+ Doug is not just a dog Doug is also an animal
+ Suppose you have a dog class and an Animal class
+ Are you able to see which class is a superclass and which one is the subclass
+ Is the dog class the superclass or the subclass
+ First we will model the dog and animal classes in a UML diagram to show the relationship between them
+ We also will include the attributes and behaviors of both classes
+ This will show how the two classes are related to each other how the superclass is generalized and how the subclass is specialized
+ A UML class diagram describes a dog class as a subclass and the Animal class as the superclass
+ This means that the dog class will inherit from the Animal class
+ The hash symbol is used to communicate that the animals attributes are protected
+ In Java a protected attribute or method can only be accessed by the encapsulating class itself all subclasses all classes within the same package
+ In Java a package is simply a means in which the classes can be organized into a namespace that represents those classes
+ We know that a subclass will have all attributes and behaviors of the superclass that it inherits from
+ So we do not need to put the superclasss attributes and behaviors in the subclass in our UML diagram
+ This is because the inheritance notation tells us that the subclass will already have the attributes and behaviors listed in the superclass
+ Now Let us convert the UML model into code for the animal and dog classes so that we can create Doug from it
+ Since an animal is a generalization of specific species we do not want to be able to create an animal object on its own
+ We use the keyword abstract to declare that this class cannot be instantiated
+ That means that we cannot create an animal object
+ The Animal class will be the superclass for our dogs subclass any class that inherits from the Animal class will have its attributes and behaviors
+ This means that if we were to introduce a cat subclass into our system that inherited from the Animal class the cat and dog subclasses would both have the same attributes and behaviors as the animal superclass
+ As you would expect we do not need to declare any of the attributes and behaviors that the dog class inherits from the Animal class
+ Notice that our code and UML diagram are similar in terms of what attributes and methods are declared in the superclass and subclass
+ The UML class diagram represents our design
+ If we do not need to restate the inherited attributes and behaviors in the code then we also do not need to do it in our UML diagram
+ We declare inheritance in Java using the keyword extends
+ You instantiate objects from a class by using constructors
+ With inheritance if you want an instance of a subclass you need to give the superclass a chance to prepare the attributes for the object appropriately
+ Classes can have implicit constructors or explicit constructors
+ In this implementation of the Animal class we have an implicit constructor since we have not written our own constructor
+ All attributes are assigned zero or null when using the default constructor
+ The Animal class in this implementation has an explicit constructor that will let us instantiate an animal with however many legs we want
+ Explicit constructors are use of that we can assign values to attributes during instantiation
+ A subclasss constructor must call its superclasss constructor if the superclass has an explicit constructor
+ This is because explicit constructors of the superclass must be referenced by the subclass
+ Otherwise the superclass attributes would not be appropriately initialized
+ In order to access the superclasss attributes methods and constructors the subclass uses the keyword called Super
+ Subclasses can override the methods of its superclass meaning that a subclass can provide its own implementation for an inherited superclasss method
+ The dog class has overwritten the animal classs walk method
+ If we were to ask the dog to walk it would tell us that it would rather lay on the couch instead of performing the behavior implemented in the Animal class
+ Now that we have seen how to represent generalization and inheritance in UML and how to translate UML class diagrams to code and the similarities between the two Let us shift gears and explore the different types of inheritance
+ The inheritance that we have been looking at is called implementation inheritance
+ For Java only single implementation inheritance is allowed
+ Well a superclass can have multiple subclasses
+ A subclass can only inherit from one superclass
+ For example the dog and cat subclasses can each only have implementation inheritance with one superclass which is animal
+ The animal superclass however can have any number of subclasses two in this example
+ To implement this in code we simply have the cat and dog classes extend the Animal class
+ Now we have a cat and a dog that behave like an animal without having to explicitly write code for them
+ They also have their own behaviors
+ Doug would know how to play fetch but would not know how to play with yarn like Mittens would
+ In this way we can create specialized classes like the dog and cat subclasses with customized or special behaviors
+ Note that a subclass itself can be a superclass to another class
+ Inheritance can trickle down through as many classes as you want
+ Inheritance will let you generalize related classes into a single superclass and still allow the subclasses to retain the same set of attributes and behaviors
+ This will help remove redundancy in your code and make it easier to implement changes
+In this lesson you will learn about a form of generalization
+ But first Let us discuss some important programming language and design notions
+ A class denotes a type for its objects
+ The type signifies what these objects can do through public methods
+ For example instances of a dog class are dog typed objects and these objects do dog things
+ In modeling a problem we may want to express subtyping relationships between two types
+ For example we can have dog type as a subtype of animal type
+ This means a dog object is not only dog typed it is also animal typed
+ So a dog object behaves not only like a dog it should also behave like an animal
+ In effect a dog is an animal
+ In JAVA class inheritance with the extends keyword is often used for subtyping
+ If a dog subclass extends an animal superclass a dog object behaves not only like a dog it will also behave by default like an animal through the inherited methods and attributes of an animal
+ In effect a dog is an animal
+ Here the dog class inherits the implementation details of animal class
+ A JAVA interface also denotes a type
+ Unlike a class however an interface only declares method signatures and no constructors attributes or method bodies
+ It specifies the expected behaviors in the method signatures but does not provide any implementation details
+ In JAVA an interface is also used for subtyping
+ If a dog class implements an I animal interface then a dog object behaves not only like a dog but it is also expected to behave like an animal by providing all the method bodies for the method signatures listed in the interface
+ Just like with inheritance the dog is an animal
+ However the difference is that the dog class needs to provide the implementation details for what it means to be an animal
+ So an interface is like a contract to be fulfilled by implementing classes
+ In both inheritance and interfaces you achieve consistency between the dog type and the animal type so that a dog object is usable anywhere in your program when you are dealing with an animal type
+ Unlike inheritance interfaces are not a generalization of a set of classes
+ It is important to understand that interfaces are not classes
+ They are used to describe behaviors
+ All that an interface contains are method signatures
+ In JAVA we use the key word interface to indicate that we are creating one
+ Standard JAVA naming convention places the letter I before an actual name to indicate an interface
+ This interface describes three different behaviors of an animal which are moving speaking and eating
+ Notice how we never implement or describe how these behaviors are performed
+ We only show that an animal has these behaviors
+ Another thing you might have noticed is that the interface does not encapsulate any of the attributes of an animal
+ This is because attributes are not behaviors
+ Now that we have an interface how do we use it
+ We need to declare that we are going to fulfill the contract as described in the interface
+ The keyword in JAVA for this action is implements
+ Our dog class has declared that it will implement or describe the behaviors that are in the interface
+ When you do this you must have all the method signatures explicitly declared and implemented in the class
+ This means that we must the move speak and eat methods in this class
+ Interfaces are drawn in a similar way that classes are drawn in UMLs
+ Interfaces are explicitly noted in UML class diagrams using guillemets or French quotes to surround the words interface
+ The interaction between an interface and a class that is implementing the interface is indicated using a dotted arrow
+ The class touches the tail end of the arrow and the interface touches the head of the arrow
+ We combine these notations together with a class to show that a class implements an interface
+ This indicates that the class implements the interface
+ The standard way to draw interfaces on your UML class diagrams is to have the arrow pointing upward
+ This means that the interface is always toward the top and the classes that implement them are always toward the bottom
+ If we translate the JAVA code to UML the diagram for our animal interface example looks like this
+ This UML class diagram tells us that the
+Dog class will determine how the behavior that is described in the interface IAnimal will be implemented by repeating the method signature
+ There are several advantages for interfaces
+ Knowing and understanding what these advantages are will help you to determine if you should use interfaces or use inheritance when you are designing your systems
+ Like abstract classes which are classes that cannot be instantiated interfaces are a means in which you can implement polymorphism
+ In object oriented languages polymorphism is when two classes have the same description of a behavior but the implementations of the behavior may be different
+ This can be seen when we compare a cat and a dog
+ How would you describe how each of these animals speak
+ Well to simply put it a cat meows and a dog barks
+ The description of the behavior is the same both animals can speak
+ But the actual behavior implementation itself is different
+ This is known as polymorphism
+ It is simple to achieve in
+JAVA using an interface
+ We create our interface the same way as we did before
+ The Cat and Dog class both implement the IAnimal interface but they each have their own versions of the speak behavior
+ When we ask Doug the Dog to speak he knows how to bark but will not know how to meow like Mittens the Cat
+ Just like with class inheritance interfaces can inherit from other interfaces
+ And just like with class inheritance interface inheritance should not be abused
+ This means that you should not be extending interfaces if you are simply trying to create a larger interface
+ Interface A should only inherit from interface B if the behaviors in interface A can fully be used as a substitution for interface B
+ A little confused
+ This example should clear things up
+ Lets simplify the movement of a vehicle by restricting it s movement so that it can only travel along either the x axis or y axis
+ This interface can be used to describe the behaviors of vehicles on land or on water
+ But what if we need to implement the movement of a plane or a submarine that can also move in the zed axis
+ We do not want to add an extra behavior to the interface because on land and on water vehicles do not move along the zed axis
+ So what do we do
+ We can create a second interface that will inherit from our first one
+ Now we can use the Vehicle Movement three dimensional interface for all vehicles that have three dimensional movement without having to add the Zed axis movement to the interface used by the on land and on water vehicles
+ To understand the next advantage of interfaces we need to step back to inheritance
+ There is one other form of inheritance that we have not looked at called multiple inheritance
+ This is when a subclass has two or more super classes
+ While this is possible to do with other object oriented languages like C plus plus
+JAVA does not support Multiple Inheritance
+ This is because inheriting from two or more superclasses can cause Data Ambiguity
+ When your subclass inherits from two or more superclasses that have attributes with the same name or behaviors with the same method signature how do you distinguish between them
+ Since JAVA cannot tell which one you would be referencing it does not allow for multiple inheritance so that data ambiguity is not an issue
+ Interfaces do not run into this issue
+ In JAVA a class can implement as many interfaces as we want
+ This is because of the nature of interfaces
+ Since they are only contracts and do not enforce a specific way to complete these contracts overlapping method signatures are not a problem
+ A single implementation for multiple interfaces with overlapping contracts is acceptable
+ There is no ambiguity here because the
+Person class only has one definition of a speak method and it is the same implementation for both interfaces
+ This is JAVAs approach to avoid the issue that is introduced with multiple inheritance
+ Interfaces are powerful tool to allow you describe a set of behaviors
+ Classes can implement one or more interface at a time which allows them to have multiple types
+ Interfaces enable you to describe behaviors without the need to implement them which allows you to reuse these abstractions
+ Just like with other constructs in object oriented modeling and programming interfaces will help you to create programs with reusable and flexible code
+ Although they are a useful technique remember that you should not be generalizing all behavior contracts into interfaces
+ They are meant to fulfill a specific need which is to provide a way for related classes to work consistently
+Hello again
+ Welcome to the third module
+ In the previous module we discussed four design principles useful in object oriented modeling and programming abstraction encapsulation decomposition and generalization
+ You also saw how to express your object oriented model using an UML class diagram and in Java code
+ The class diagram is great to capture the structure of the problem and the technical design of a software solution
+ In this module you will see general guidelines when evaluating the structure of your software solution so that it is flexible reusable and maintainable
+ As well we will talk about modeling behaviors of the objects in your software using the UML state and UML sequence diagrams
+ Let us jump right in
+ Here you are going to learn about evaluating design complexity
+ The average person can only hold seven things in short term memory
+ This was observed in a psychology paper by George Miller in which subjects had to recall one to fourteen random sounds and images
+ Subjects started to fail at recall when the number reached around seven
+ When you are programming keeping modules simple is critical
+ Once you design complexity exceeds what developers can mentally handle bugs will occur more often
+ So you must have a way of evaluating your design complexity
+ Since design complexity applies to both classes and the methods within them we will use the term module to refer to any sort of program unit like these
+ The metrics you will use to evaluate design complexity are coupling and cohesion
+ Coupling focuses on complexity between a module and other modules
+ Cohesion focuses on complexity within a module
+ These two ideas will help you to better apply object oriented design principles and achieve a more manageable system
+ When you design your system you combine various modules together
+ Think of a bad design like puzzle pieces where your modules are the pieces
+ You can only connect a puzzle piece to another specific puzzle piece and nothing else
+ On the other hand Let us think of a well designed system like Lego blocks
+ You can connect any two Lego blocks without much trouble and all Lego blocks are compatible with one another
+ When designing your system you want to make it like Lego
+ That way you can easily connect and reuse modules together
+ Coupling for a module captures the complexity of connecting the module to other modules
+ If your module is highly reliant on other modules you would say this module is tightly coupled to others
+ This is like having puzzle pieces
+ On the other hand if your module finds it easy to connect to other modules this module is loosely coupled to others
+ This is like Lego
+ You want coupling for your module to be loose or low not tight
+ When evaluating the coupling of a module you need to consider degree ease and flexibility
+ Degree is the number of connections between the module and others
+ With coupling you want to keep the degree small
+ For instance if the module needed to connect to other modules through a few parameters or narrow interfaces then degree would be small and coupling would be loose
+ Ease is how obvious are the connections between the module and others
+ With coupling you want the connections to be easy to make without needing to understand the implementations of the other modules
+ Flexibility is how interchangeable the other modules are for this module
+ With coupling you want the other modules easily replaceable for something better in the future
+ Again like Lego
+ Coupling only concerns complexity between a module and other modules but you also need to consider complexity within the module
+ that is where you would look at cohesion
+ Cohesion represents the clarity of the responsibilities of a module
+ If your module performs one task and nothing else or has a clear purpose your module has high cohesion
+ On the other hand if your module tries to encapsulate more than one purpose or has an unclear purpose your module has low cohesion
+ You want chi cohesion
+ If you find your module having more than one responsibility it is probably time to split your module
+ Let us now look at a more detailed example of coupling and cohesion
+ Suppose we have a class called sensor that has two purposes getting humidity and getting temperature sensor readings
+ Here we have a get method that takes a zero flag if you wanted to return the humidity value and takes the one flag if you want it to return the temperature value
+ Now Let us evaluate this sensor class based on coupling and cohesion metrics
+ Since the sensor class does not have a clear single purpose it suffers from low cohesion
+ Look at this get method
+ Is it easy to determine what is happening
+ Since it is unclear what control flag means we would have to read inside the method itself in order to know what values to give it
+ This is not respecting encapsulation which also shows our method is unclear and lacks ease
+ This lack of ease makes get method harder to use and in turn makes any color tightly coupled to it
+ Let us look at a new design of the same system
+ The sensor class is now replaced with a humidity sensor glass and the temperature sensor class
+ Each of these classes has one clearly defined purpose
+ Since each has a clear purpose you can say that these classes are highly cohesive
+ The get method is now not hiding any information like before
+ We do not have to break encapsulation to look inside the method
+ You could reasonably assume that humidity sensors get method returns humidity and temperature sensors get method returns temperature
+ This makes another module that uses either be loosely couple
+ In general there is a balance to be made between low coupling and high cohesion in your designs
+ For a complex system the complexity can be distributed to between the modules or within the modules
+ As modules are simplified to achieve high cohesion they may need to depend more on other modules thus increasing coupling
+ As connections between modules are simplified to achieve low coupling the modules may need to take on more responsibilities thus lowering cohesion
+ You now have the skills to evaluate your systems design complexity using coupling and cohesion
+ However being able to evaluate design complexity is just the beginning
+ To really solidify your knowledge of coupling and cohesion you are going to need to start applying good design to your system so that they have low coupling and high cohesion
+ One goal of software design principles is to help us create a system that is flexible reusable and maintainable
+ One of these principles is called separation of concerns
+ So what is a concern
+ A concern is a very general notion basically it is anything that matters in providing a solution to a problem
+ Let us think of a supermarket the concerns in a supermarket could be how do I butcher meat
+ How do I bake bread how do I accept payment
+ And how do I stock the shelves
+ These concerns matter when running the business to serve their customers
+ But what do you notice in how a supermarket is organized to deal with these concerns
+ There are separate departments that focus on each concern
+ Each concern poses unique sub problems
+ And each department knows what to do and how to address their specific concerns
+ The organization of a supermarket applies separation of concerns
+ A software system solves a problem in a similar fashion
+ The problem might be complex with a large number of concerns
+ Or it might be simple with the small number of concerns
+ There are concepts that can be abstracted from the problem space
+ How these abstractions are implemented in the software can lead to more concerns
+ Some of these concerns may involve what information the implementation represents what it manipulates and what gets presented at the end
+ it is easy to get lost and tangled up in all these concerns and their sub problems
+ We need to be organized so that we can think about and address these concerns effectively
+ As a software solution is designed and constructed we express how we can address the different sub problems by separating them into separate sections
+ You might have noticed that separation of concerns is a key idea that applies throughout object oriented modelling and programming
+ The concerns that matter are addressed separately when applying the design principles of obstruction encapsulation decomposition and generalization
+ Each concept in the problem space leads to a separate obstruction with its own relevant attributes and behaviors
+ These attributes and behaviors are encapsulated into their own section of code called a class
+ The view of a class by the rest of the system and its implementation are separated
+ So that the details of implementation can change while the view through an interface can stay the same
+ A whole class can also be decomposed into multiple classes
+ We may recognize commonalities among classes which are then separated and generalized into a super class
+ Separation of concerns is an ongoing process throughout the design process
+ Let us look at the behavior of a dog
+ Some basic behaviors that a dog can do are walking running speaking and eating
+ While these behaviors are easy to identify and abstract we need to ask ourselves which behaviors can the dog do all on its own
+ And which ones need help from something or someone else
+ If we examine the eating behavior more closely we might come up with something like this
+ Our UML tells us that the dog has food which it knows how to eat
+ We can tell the dog to eat food by giving it food but is this the correct way of modeling the situation
+ Who is actually giving the dog the food
+ Does the dog always have food to eat or is the dog given food to eat by an owner
+ In reality a dog would need an owner to feed it
+ The dog knows how to eat food but it does not know anything about the foods it is eating until its owner feeds it
+ We need to separate two concerns the action of eating and the action of providing food
+ This can be done by introducing a dog owner class
+ In our new design the dog class only knows how to eat food
+ The dog owner class is the one that knows how to get the dog food and how to give it to the dog
+ We have removed the concern of how to get food away from the dog and let the dog owner handle that issue
+ In using separation of concerns here we should only be encapsulating behaviors and attributes within classes that are concerned with the said behaviors and attributes
+ This helps us to create a modular system where individual classes can easily be swapped in and out without having to rewrite a large portion of our code
+ Let us illustrate some operation of concerns with the another example
+ Think about all the different behaviors that a smartphone is capable of
+ You can use it to take photos schedule meetings send and receive e mail browse the internet send SMS or of course make phone calls
+ If we were to design a smartphone what would the classes look like
+ Given the complexity of a smartphone
+Let us just look at the camera and the traditional phone functions
+ In this snippet of code the SmartPhone class has attributes called camera and phone along with all of the associated behaviors
+ However there is low cohesion in the SmartPhone class because we have behaviors that are not related to each other
+ The camera behaviors do not need to be encapsulated with the behaviors of the phone in order for the camera to do its job
+ Furthermore our smartphone components do not offer us any modularity
+ We cannot access the camera or the phone separately if we were to build another system that required only one or the other
+ We cannot replace our current camera with a different camera or replace it with a completely different object without removing the code for the camera completely in this class
+ So what changes can we make to our
+SmartPhone class in order to make it more cohesive and give each component of our smartphone distinctive functionalities
+ Well Let us check what our smartphone class is concerned about and separate them out
+ Our SmartPhone class has two concerns
+ One act as a traditional telephone and two be able to use the built in camera to take pictures
+ Now that we have identified these two different concerns we can separate them out into their own more cohesive classes and encapsulate all the details about each into functionally distinct and independent classes
+ The SmartPhone class will reference instances of our newly created classes so that the smartphone can act as a coordinator of the camera and the phone
+ This will let our smartphone provide access to all the behaviors of the camera and the phone without having to know how each component behaves
+ Let us now take a look at what our new smartphone design looks like after we applied separation of concerns
+ First we will extract the attributes and behaviors of both the camera and TraditionalPhone into two separate interfaces
+ Then we can implement these interfaces correspondingly with the FirstGenCamera class and the TraditionalPhone class
+ Here is what the code looks like
+ As you can see we have separated the camera and phone functionalities into different classes each of which implements a certain interface
+ Next Let us redesign the code for our SmartPhone class so that it refers to instances of the camera and phone classes
+ This allows our smartphone to provide the functions of both the camera and the phone while keeping the functionalities of either one separate and hidden from each other
+ The camera and phone know nothing about the other but are still composed by this SmartPhone class
+ Also we can have a smartphone constructor with camera and phone as parameters
+ Then we can create a new instance of the
+SmartPhone class by passing in a instances of classes that implemented the camera and phone interfaces
+ Note that we leave it as a separate responsibility of who will instantiate the appropriate phone and camera objects
+ The smartphone class does not actually need to know
+ Finally the smartphone class has methods that forward the responsibilities of using the camera and phone to these objects
+ Are you able to see how we now have a more modular design for our phone
+ If we want to swap out our camera or phone classes for something else we do not need to touch any of the SmartPhone classs code
+ We simply just change the code to instantiate the smartphone and its parts
+ The smartphone class is now more cohesive
+ The tradeoff is that we have increased coupling in our system
+ Because the smartphone class needs to know about the camera and phone interfaces and is indirectly dependent on other classes
+ We use separation of concerns throughout this example by separating out the general notions of camera and phone through applying generalization and defining two interfaces
+ Separating out the functionality for a first gen camera and traditional phone by applying abstraction and encapsulation and defining two implementing classes
+ And finally by applying decomposition to the smartphone so the constituent parts are separated from the whole
+ Now that we have talked about separation of concerns and completed an example Let us take a quick quiz to help you gauge your understanding of how separation of concerns works to meet our design goals
+ Our goal is to create flexible reusable and maintainable code
+ Separation of concerns creates more cohesive classes using abstraction encapsulation decomposition and generalization
+ This creates a system that is easier to maintain because each class is organized so that it only contains the code that it needs to do its job
+ Modularity is increased in turn which allows developers to reuse and build up individual classes without affecting others
+ In our smartphone example it is clear where the boundaries of each class are
+ However real world problems may not be so obvious
+ Deciding how to abstract encapsulate decompose and generalize to address the many concerns for a given problem is at the core of designing modular software
+ Having a well designed system means that it needs to be well organized
+ We have seen how this can be achieved with a variety of design principles
+ One thing we are yet to explore is how to address information access
+ You do not need everything in your system to know about everything else
+ The manual should only have access to the information that it needs to do its job
+ So how do we limit the information our various modules of our system can have access to
+ We do this by applying information hiding
+ Information hiding allows models of our system to give others the minimum amount of information needed to use them correctly and hide everything else
+ Information hiding allows a developer to work on a module separately with other developers needing to know the implementation details of this module
+ They can only use this module through its interface
+ In general things that might change like implementation details should be hidden
+ And things that should not change like assumptions are revealed through interfaces
+ Let us say we were both working on the same system but on different modules
+ If my module requires information from your module information hiding allows you to provide me with just the information
+I need for my module to work
+ You do not have to give me access to everything in your module and you do not need to know how my module works
+ Information hiding is often associated with encapsulation
+ We use encapsulation to bundle attributes and behaviors into their appropriate class and expose an interface to provide access
+ Encapsulation effectively hides the implementation of behaviors since the only access is through an interface of specific methods
+ Other classes can only rely on the information in these method signatures not the underlying implementations
+ Information hiding through encapsulation allows us to change the implementation without changing the expected outcome
+ We can still fulfill the expectations for a behavior without exposing how we get there
+ Take a look at this example the string library has a method called concat
+ But how is it implemented
+ Are there extra data structures being used
+ Or other method calls being made that we do not have access to
+ As a user of the library you are given access to the concat nation functionality through an interface a particular method signature
+ But you are not shown how the functionality is implemented
+ That is because the implementation may change and you should not depend on how it actually works
+ The interface establishes the only assumptions you can rely on
+ Attributes can also be hidden in order to prevent critical information of a classroom being changed directly
+ For example if an attribute is critical to all the behaviors of a class then we do not want any external classes changing it directly
+ You can apply information hiding to your own classes in your system
+ It will allow you to hide information that you need but do not want to show to others
+ Encapsulation is the practical design principle used to apply the concept of information hiding
+ You can hide information through the use of access modifiers
+ You probably have experience using them
+ Access modifiers change which classes are able to access attributes and behaviors
+ They also determine which attribute and behaviors a superclass will share with its subclasses
+ There are four levels of access in Java public protected default and private
+ Attributes with a public access modifier are accessible by any class in your system
+ This means that other classes can retrieve and modify the attribute
+ Public methods are also accessible by any class in your system
+ But this access does not allow other classes to change the implementation of the behavior for the method
+ A publicly accessible methods simply allows other classes to call the method and receive any output from it
+ In this example the Person class has a public attribute which anyone can access and have modified to be johnDoe
+ The Person class also has a publicly accessible method named sleep
+ Notice that we can invoke the behavior but we cannot change how it is implemented because it is hidden from us through encapsulation
+ Protected behaviors and attributes are not accessible to every class in the system
+They are only available to the encapsulating class itself all subclasses and classes within the same package
+Packages are the means by which Java organizes related classes into a single namespace
+Let us take a look at another example to see what this means
+We have put the Person class in a package called Populace which contains all classes related to the people of a country
+Notice that the Persons name attribute is protected
+The University class is in a new package called Educational Instititution
+This package imports everything in the Populace package which will give us access to the publicly accessible Person class
+If you look at the main method you will notice emphasized on size line of code
+This is to bring your attention that this line of code does not work
+We cannot access the name attribute from the Person class because it is protected and it is in a different package
+This access modifier also applies to methods in classes
+The default access modifier will only allow access to attributes and methods to subclasses and to the encapsulating class
+This access modifier is also called the no modifier access because you do not need to explicitly declare it
+See how we have not declared any access modifier for a name attribute
+This will set the access to default access and apply the default access level
+The last access modifier is called private
+Private attributes and methods are not accessible by any class other than by the encapsulating class itself
+This means these attributes cannot be accessed directly and these methods cannot be invoked by any other classes
+Information hiding is a powerful idea
+You control what information you want to share and what behaviors you want to let others see
+You reveal assumptions through interfaces that others can rely on and hide changeable things like implementation details
+Information hiding allows you to build flexible reusable and maintainable systems
+Now it is time to learn about conceptual integrity
+Conceptual integrity is about creating consistent software
+it is making decisions about how your system will be designed and implemented so that even if multiple people worked on the software it would seem as if there was only one mind guiding all the work
+Now it is important to understand that conceptual integrity does not mean that the developers in your team do not get to voice their opinions about the software
+it is more about everyone agreeing to use certain design principles and conventions
+There are multiple ways to achieve conceptual integrity
+One important way is communication
+Adopting certain agile development practices like daily stand up meetings and sprint retrospectives where team members can agree to use certain libraries or methods when addressing certain issues can help to maintain the consistency of the code
+For example team members can all follow a particular naming convention
+In addition to communication another way to ensure conceptual integrity is code reviews
+Code reviews are systematic examinations of written code
+it is similar to peer review in writing
+it is often used to find mistakes in the software but also to keep different developers consistent with each other
+Developers evaluate each others code line by line to uncover issues
+Additionally using certain design principles and programming constructs can also help in maintaining conceptual integrity
+Consider Java interfaces
+An interface defines a type with behaviors that implementing classes of that type should all have in common
+This creates consistency in your software thereby also increasing the conceptual integrity of your software
+In this specialization you will also learn about design patterns
+They provide conventional structures for your classes to solve a design issue and lead to consistency
+Another approach to achieving conceptual integrity is having a well defined design or architecture underlying your software
+While software design is typically associated with guiding the internal design of software running as a single process software architecture describes how software running as multiple processes work together and how they relate to each other
+Much like using certain design principles having a strong software design or architecture to guide how your software is organized creates consistency
+Unifying concepts is also another approach to maintaining conceptual integrity
+It is taking seemingly different things and finding common ground so that each concepts can be seen and treated in similar ways
+For example in the Unix operating systems every resource can be seen and manipulated as if it were a file
+The same set of operations can be used on different types of resources
+This simplifies things by making it so that any resource can be treated in the same way
+Unifying concepts to avoid special cases can provide consistency in your software
+Finally having a small core group that accepts commits to the code base is another approach in achieving conceptual integrity
+This is similar to exercising code reviews but it restricts the review to only core members of your software team
+These members will be responsible for ensuring that any software changes follow the overall architecture and design of the software
+Restricting this decision to only either a single person or a small group will solve any design issues and lead to consistency
+Conceptual integrity is often quoted as being the most important consideration in system design
+Fred Brooks a well known computer architect states in his book The Mythical Man Month it is better to have a system omit certain anomalous features and improvements but to reflect one set of design ideas than to have one that contains many good but independent and uncoordinated ideas
+Simply put conceptual integrity is about designing and implementing the software in a consistent manner as if it were written by one person
+Practicing conceptual integrity in your software can help guide your team when they are writing software
+If each team member sees that the design and logic of the software is consistent and easy to follow it will help them know how and where to change the software to meet new requirements
+Let us use a metaphor to show you the benefits of conceptual integrity
+Let us say that I was hosting a party and I assign multiple people to send invites through Facebook Snapchat and Twitter
+If I ask you to check who will be attending the party you would have to check different social media sites which would cost more time and effort
+If I was to use just one method like
+Facebook this task would be much easier
+This is similar to writing software
+Keeping things consistent and logical would make it much easier to maintain and work with
+Think of your software as a building
+Conceptual integrity is the consistency of the structure and design behind your building
+To create a huge skyscraper many workers would need to work together in a well organized way
+They would need a definite blueprint and an architect to guide the design of the building
+Without this blueprint workers may have no way of knowing how to build different sections of the building
+Different materials and structures may be used by these confused workers
+Allowing construction of the building to be informal and unguided would result in an unorganised and inconsistent structure leading to possibly poor structural integrity
+You now have a greater understanding of the importance of conceptual integrity
+Conceptual integrity is a very important principle and one that will help you to create consistent and well designed software
+Object oriented modeling tries to take concepts in a problem space and model them in a piece of software
+Given how complicated a problem can be we need to refine our models through design principles abstraction encapsulation decomposition and generalization
+Each of these principles requires you to make a decision on how they apply to your system
+What attributes and behaviors do you need to model in a class through abstraction
+How are these attributes and behaviors grouped together and accessed through encapsulation
+Can my classes be simplified into smaller parts using decomposition
+Are there common things across my objects that can be generalized
+These principles are meant to guide the choices that you make when designing an object oriented system
+Some design decisions will be easier to make than others
+For example a car can have attributes such as color make and model
+It has behaviors like acceleration and steering
+The car can be decomposed into its parts like engine transmission and battery
+But how does everything relate to each other
+Can we generalize any parts of the car
+Generalization and inheritance are some of the more difficult topics to master in object oriented programming and modeling
+Well inheritance is a powerful design tool that can help you create clean reusable and maintainable software systems
+Misusing inheritance can lead to poor code
+That happens when design principles are used improperly creating more problems than they are meant to solve
+So how do we know if we are abusing inheritance
+Well there are a few points to be aware of when implying inheritance
+First you need to ask yourself am I using inheritance to simply share attributes or behavior without further adding anything special in my subclasses
+If the answer is yes then you are misusing inheritance
+This is an indication of misuse because there is no point for the subclasses to exists since the superclass already is enough
+Let us say you were designing for your favorite pizza restaurant
+You need to model all the different varieties of pizza that the restaurant has on the menu
+Given the different combination of toppings and names you can have for pizzas you might be tempted to design a system using inheritance
+The pizza class has been generalized to know what toppings it will have its size style of crust and how long it will take to cook
+This seems reasonable but
+Let us look at why this is a misuse of inheritance by examining the code for a subclass of pizza
+Despite the fact that a pepperoni pizza is a more specific kind of pizza it is not really different from a superclass
+You can see that the pepperoni constructor uses the pizzas constructor and adds toppings using the pizzas method
+there is no reason to use inheritance in this case because you can simply use only the pizza class to build the pizza with pepperoni as a topping The second indication of improper use of generalization is if you break the Liskov Substitution Principle
+The principle states that a subclass can replace a superclass if and only if the subclass does not change the functionality of the superclass
+How would this principle be violated through inheritance
+Let us take a look at this example
+This is our generalized Animal class it knows how to eat walk and run
+Are you able to see how we can introduce a subclass that would break the Liskov Substitution Principle
+What if we had this type of animal
+A whale does not know how to run and walk
+Running and walking are behaviors of land animals
+The Liskov Substitution Principle is violated here because the whale class overrides the animals classes running and walking functions and replaces them with swimming behaviors
+The whale no longer behaves in the way we would expect it superclass to behave
+An example of bad inheritance can be seen in the Java Collections Library
+Have you ever used the stack class in Java
+A stack is understood as first in and last out data structure
+It has a small number of well defined behaviors like peak pop and push
+This is not the case in the Java stack class because the stack class inherits from the vector class
+This means that the stack class is able to return an element at a specified index retrieve the index of an element and even insert an element into a specific index
+These are not behaviors expected from a stack but because of poor use of inheritance they are allowed in Java
+If inheritance does not suit your need consider whether decomposition is more appropriate
+A smartphone is a good example of where decomposition works better than inheritance
+A smartphone has characteristics of a phone and a camera
+Here is one design
+It does not make sense for us to Inherit from the phone and then add camera methods to the subclass smartphone
+We should be using decomposition to extract out the camera responsibilities and put them in their own class
+The smartphone now indirectly provides the responsibilities of the camera in the phone
+To separate part classes the smartphone does not need to know how these classes work
+Inheritance could be a difficult design principle to apply but it is still a very powerful technique
+Inheritance lets you define some classes that are tailor made for your system while defining common attributes and behaviors in the superclass
+Remember that a common goal is to build reusable flexible and maintainable systems
+Inheritance is simply one technique to help you reach that goal
+It is important to understand that a technique is beneficial when used properly but can cause headaches if not
+Now it is time for you to learn about Sequence Diagrams
+Sequence Diagrams are used to show your team how objects in your program interact with each other to complete tasks
+Simply put think of a sequence diagram like a map of conversations between different people where this map follows all the messages sent from person to person
+Let us say that a person wants to order a burger at a local fast food restaurant here is a simple sequence diagram of the scenario
+That person will go to a restaurant and talk to the cashier and order a burger
+The cashier will then talk to the chef of the back to tell him my order
+The shuffle cook the burger give it to the cashier
+And the cashier will give it to the person
+Now Let us go into more detail because a sequence diagram is another type of UML diagram to fully understand it you should have a good grasp of objects and basic UML class diagrams
+Knowing how to break down a system into classes is essential in creating meaningful sequence diagrams
+A sequence diagram describes how objects in your system interact to complete a specific task
+Think back to the burger example
+All of those interactions between the different people were needed
+Staff person could get a burger
+This is similar to how objects will interact to complete a given task
+I would describe the different components of a sequence diagram first
+Then later I will elaborate more on how to put it all together
+When creating sequence diagrams first you use a box to represent role play by an object
+The role is typically labeled by the name of the class for the object
+Second you use vertical dotted lines known as lifelines to represent an object as time passes by
+Finally you use arrows to show messages that are sent from one object to another
+Now that you know the different elements Let us put everything together by creating a sequence diagram
+Let us use changing the channel of your television using a remote control
+First I am going start by drawing a box that will surround the entire process
+This is to show that this is one sequence of activities
+A sequence diagram can contain other sequence diagrams within it
+For example if you are creating a sequence diagram for an ATM there might be a different sequence for Withdrawal and Deposits
+And during a single process someone might want to do both
+In your sequence diagram you would have one big sequence of activities with two smaller sequences inside them
+Moving on in the top corner I am going to draw a label with a meaningful title
+Remember your team will be looking at this diagram as a reference for development so make the titles meaningful
+We will name it Change TV Channel
+Next I am going to draw out the objects that are important in this task
+To keep things clean you should draw objects from left to right in the sequence that they interact with each other
+In this example the TV viewer starts the entire process
+The use of the remote which will then interact with the TV
+So when are diagram I am going to drive the TV viewer then the remote and then the TV
+If there are people in your example who will be using or interacting with objects this are typically draw on a stick figures
+We call these people actors in our example the TV viewers an actor
+So I am going to draw them is a stick figure I am going to the other objects as labeled boxes
+Each of these objects has a lifeline
+The lifelines you can draw as a dashed line projecting downwards from the object
+Now I am going to start drawing the messages that are sent from object to object
+In a sequence diagram if one object sends a message to another object or objects we denote this by drawing a solid line arrow from the sender to the receiver
+To return data and to control back to initiating objects we would use a dotted line arrow
+what is the first thing that happened in this example
+Let us assume the TV is already on and the TV viewer wants to change her channel
+The first thing that happens is the TV viewer presses the numbers on the remote to tell it which channel to go to
+This activates both TV viewer and the remote in our sequence diagram
+When an object is activated we denote this on our sequence diagram using small rectangles on the objects lifeline
+You activate an object whenever an object sends receives or it is waiting for a message
+The first message that is sent is from the TV viewer to the remote
+That message says that the TV viewer pressed numbers
+So I am going to add this to the diagram with a solid line arrow and label it Press Numbers number
+The remote then sends a new message to the television to change the channel to number
+We denote this on the diagram with another solid line arrow labeled Change channel number
+This also activates the television object so I will add a small rectangle to the televisions lifeline
+You will notice that since a television was not activated at the beginning of the example we do not want the rectangle on its lifeline to start at the same place as the TV viewer or the remote
+I drew it a little bit lower on the lifeline to indicate it was activated later in the process
+Next the television changes the channel which the TV viewer can see on the TV screen
+This is a returning of control
+that means I am going to denote this response using a dotted line arrow
+I am going to draw this arrow from the television object to the TV viewer
+This action only affects the television and the TV viewer
+The remote is not part of this interaction so we do not extend the box on the remotes lifeline to include this action
+As you design software your sequence diagrams can get much more complicated
+You can also show loops and alternative processes in a sequence diagram
+Let us see what these would look like in a sequence diagram
+Say the TV viewer is unsure what channel to go to and would like to surf the channels until they find a channel they like
+I can wrap the previous sequence I just drew as part of an alternative process
+So that it is a sequence of actions that will occur if a condition is true
+So I put the sequence in a box and label it alt for alternative in the top right corner
+Now I need to specify when this alternative will occur
+In this case the sequence occurs if the TV viewer knew what channel they would like
+We will label this alternative
+TV Viewer knows what channel they want
+If the TV viewer does not know what channel they want other sequences can occur
+One sequence is that the TV viewer will browse to the channels until they find something to watch
+So I am going to drag this sequence underneath the previous sequence with the condition else meaning this sequence occurs if all other alternatives are false
+However this sequence contains a loop
+I will denote that by adding and labeling a box loop on the top right corner
+Right under the label I put a conditional statement for the loop
+If that statement is true it will go through the loop
+Loop sequence should continually occur if the TV viewer does not like the channel they are watching so I will add that condition to this loop box
+The TV viewer is going to press the up or down arrow on the remote to browse through the channels
+This sends a message to the remote
+The remote will then send a message to the TV with this action
+Just like in the initial sequence the TV changes the channel and displays that to the TV viewer
+The final sequence diagram looks like this
+Sequence diagrams are a very powerful too you can use to model your software
+Sequence diagrams are commonly used as a planning tool before the development team starts programming or to show others how a system is designed
+And they can help you to determine the functions you will need to right
+It might even help you find problems in your system that you did not see before
+Sequence diagram are another technique you now know that will help you to create clean well designed programs
+Now it is time for you to learn about UML state diagrams
+A state diagram is a technique that you can use to describe how your system behaves and responds
+When an event occurs you note how a system acts or behaves
+Let us think of a person
+To make things simple Let us say that this person can have three different emotional states happy sad and angry
+State diagrams show states as nodes like the following
+You will learn more about this later but I will draw a filled circle to indicate the start state of this diagram
+Usually I wake up happy after a good sleep
+Let us say that this person starts their day happy too
+During the day maybe something happens to anger this person
+Let us say that the person accidentally stubbed their toe on a table this would change their state from happy to angry
+In state diagrams arrows are used to represent events to transition from one state to another
+While this person is angry they might notice that it is raining outside and this makes the person sad
+So this would change their state from angry to sad
+This is how a state diagram works
+The state diagram follows the states of a system or object and shows changes between the states as events occur
+Right now this is a simplified version of a state diagram for the mood behavior of this person
+We will go through more UML state diagram conventions and examples later
+State diagrams can describe a single object and illustrate how that object behaves in response to a series of events in your system
+A state diagram illustrates object behavior by depicting the changing states of an object
+These states change and respond to different events
+A state is the way an object exists at a particular point in time
+The state of an object is determined by the values of its attributes
+For example think of a car
+A car with an automatic transmission can be in different states park reverse neutral and drive
+When a car is in reverse it can only behave in a certain way it can move backwards
+If want it to move in a forwards direction you would have to change the state of the car accordingly
+This is how you can think about the states of the objects in your system
+When an object is in a certain state it behaves in specific ways or has attributes set to specific values
+Using UML state diagrams you can express the different states of your objects and how the states will change when an event occurs
+To better understand how to create UML state diagrams Let us actually create one together
+Let us use a vending machine as an example for our UML state diagram
+First I will indicate the start of this diagram with a filled circle like we did earlier in the mood state diagram
+Every state diagram has a filled circle to indicate which is the starting state the vending machine starts in a state named idle
+This is when the vending machine is waiting for coins to be inserted
+I draw states as rounded rectangles
+Let me explain states in more detail each state has three important sections a state name state variables and activities
+Each state should at least have a state name
+A state name is as it sounds the name of the state these names should be meaningful for the states of your object
+For example a car in reverse would have a state named reverse
+Or a vending machine in a waiting or idle state would have a state named idle
+State variables are data relevant to the state of the object
+For example using a course as an object a relevant variable is the number of students enrolled
+The course would be in state full if this variable was at the course capacity
+Activities are actions that are performed when in a certain state and they are displayed at the bottom
+There are three types of activities for each state entry exit and do
+Entry activities are actions that occur when the state is just entered from another state
+Exit activities are actions that occur when the state is exited and moves on to another state
+And do activities are actions that occur once or multiple times while the object is in a certain state
+To explain these activities Let us use a traditional alarm clock that uses a bell as an alarm
+An entry activity for when a clock enters the ringing state is that the clock releases a spring to ring a bell
+When the clock leaves the ringing state it will relock the spring as an exit activity
+When the clock is actually in its ringing state the clock continuously rings the bell and this is its do activity
+Now back to our vending machine example
+When the vending machine enters this idle state it always displays the total of coins inserted so far
+This means it is also tracking this total
+I will draw these inside the rectangle
+The state variable is total and the entry activity will be display total
+Inserting a coin is an event that could change the state of the vending machine
+Events that could change a state label transitions between the states
+You draw these transitions with arrows from one state to another
+Each transition arrow will always have an event and may have a guard condition and an action
+The transition and action happens from a given state if the event occurs and the condition is true
+As a basic example suppose you are finished writing an online test
+For your test to go from state in progress to submitted the event will be click the submit button
+The condition will be submission date is before due date and the action will be submit test
+Again back to our vending machine
+Suppose when in the idle state someone inserts a coin and the total so far is less than the product price
+Let us express this situation with a transition arrow that loops back to the idle state
+With the event insert coin condition total less than price and action display insert more coins
+But suppose when in the idle state someone inserts a coin and the total equals the product price
+Let us express this situation with a transition arrow to a new state named enough coins
+And label this transition with the event insert coin and condition total equals price
+Let us have an entry action for enough coins being display enough coin
+When in the enough coins state we have enough payment
+So if someone presses the dispense button the vending machine should release one of the product
+We will express this situation with a transition arrow from the enough coin state back to idle
+And label this transition with the event press dispense and action total equals zero dispense product
+In either state if someone press the cancel button the vending machining should return all the coins inserted
+So we will express this with two transitions from the two states
+Both back to the idle state and label both transitions with an event press cancel and action total equals zero eject coins
+Here is the resulting state diagram
+One element of state diagrams that is not shown in the one we just created is termination
+Termination represents an object being destroyed or the process being completed and is drawn as a circle with a filled circle inside
+For example when using a bank machine you can represent it returning your card at the end of the process and thus ending in termination
+Not all diagrams have a termination like the vending machine they may run continuously
+State diagrams are useful for describing the behavior of a system or of a single object
+For example it can help you determine the different events that might occur during an objects lifetime
+Like different user inputs and how that object should behave when these events occur like checking conditions and performing actions
+For the vending machine example if I forgot to express canceling the order I could see this easier on a state diagram than looking at source code
+State diagrams can also help you to find issues in your system
+Like discovering a condition that you did not plan for or help you to create tests
+Knowing the different states of a system can help to make sure that your tests are complete and correct
+State diagrams are a very powerful design technique that you can use to model your softwares behavior
+Using them along with the other
+UML diagrams you have learned will help you to create well designed software

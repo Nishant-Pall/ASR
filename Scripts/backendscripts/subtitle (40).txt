@@ -1,0 +1,142 @@
+[MUSIC] I guess by now, your head is infested
+with mongooses or is it mongeese? Well, I'm no English major, so
+I have no clue what the plural is. In any case, that brings us to the topic
+of this lecture, Mongoose population. What exactly is Mongoose population and how is it useful in our
+express application? Let's talk about that next. As we realized, document databases,
+the NoSQL databases, are not designed with relations in mind. Everything that you need in a document is
+stored completely within the document. Well, that is pretty much the way things
+operate with NoSQL databases like MongoDB. So you do not have support for
+relations that you might be more familiar with from
+the relational database world. Where you have records and then records
+can reference other records and so on. And then you do joins in order to join the
+information from the records and so on. So that kind of support doesn't
+exist in NoSQL databases, at least to a large extent. MongoDB has taken a few steps in that
+direction, even with the NoSQL databases. But in general, document databases expect
+that all documents are self-contained. So which means all the information that
+is required is within the same document. Now of course, there are situations
+where you have other documents that already contained the information. And you may want to pull that
+information into your existing document, rather than duplicating that information. So this is where MongoDB or Mongoose, allows you to store references to other
+documents within a current document. The reference to the other document
+is done by using the ObjectID of that other document. Now if that is the case, then Mongoose
+allows you to perform a way of taking the information from the other
+document and then enclosing it inside the correct document using
+the Mongoose population support. That is what we will discuss
+in a little more detail. Mongoose itself, as we realize,
+being a module built on top of MongoDB,
+doesn't have explicit supports for joins, the way we talk about
+joins in the SQL world. To understand how this referencing of the
+other document in a document helps us and how it is actually structured,
+let's take a look at an example. In this example,
+we'll look at the dishes document that we have been using in our exercise. In the dishes documents that
+we store on the server side, we noticed that we also
+store the comments. And within the comments, we also store
+an author field within the comments. And author field explicitly
+contains the name of the person who submitted that specific comment. Now, since we already
+have a users document within our database,
+as we saw in this module. We had extended our expert server
+to support users and thereby, you can register a user and
+that you can authenticate users and so on. So the user document can carry additional
+information about the user already. And so
+when a comment is posted by the user, instead of storing the user's
+name within the comment itself, why not have a reference to the specific
+user that has posted the comment? This is helpful not only
+in terms of being able to deal with the fact that this comment
+is posted by the specific user. Later on, we will see that if you
+need to allow users to modify or delete documents,
+you may wish to restrict the kind of operation of a specific
+user to only those comments that that specific user
+has posted earlier. Even though we are using sub-documents
+within our Mongo document. If we can reference another document
+in the sub-document using ObjectIds, then Mongo helps us to
+do population of this information from the other document
+into the current document. So this is where Mongoose
+population comes to our rescue. Taking this idea further,
+let me show you a detailed example from the comment schema
+that we have defined earlier. So in the commentSchema,
+we already have the rating field and the comment field which we
+have already specified there. We also used to have
+the author field earlier. For the author field earlier,
+we were storing the author as a string and,
+The default value also for the author. Now in storing the author as
+a type string, if we now turn the author into a type of
+mongoose.Schema.Types.ObjectId. So which means that the author
+field now will contain an ObjectID, which is a reference to a user document. How do you ensure that this is
+referencing a user document? So this is where this additional property
+called ref, which specifies that the schema of the document that you are
+referring here is of the type, the User, schema and the model that we
+have already added earlier. So in this case, the comment schema is now
+extended to store the author information, but the author information
+is in a form of an ObjectId. Which is a reference to the user document
+that is already stored in our database. Now, how does this help us? This is where, as a I said,
+Mongoose population comes to our help. So how does Mongoose population work? With Mongoose population,
+the way Mongoose population works is that it automatically replaces specified
+paths within a current document. Which has reference to another document by
+the information from that other document. So in the comment schema, for example,
+you have an author field that is referring to the ObjectId of the user
+document that is already in your database. So with Mongoose population, when you ask
+Mongoose to populate this dish document, then it'll populate the information
+about the author in the comment field from the user document. So the information about the specific
+author that is referenced there will be fetched and added into your dish document. And the compound document will be
+constructed and then sent back to you. How do we ensure that this happens? This is where that cross-referencing with
+the ObjectId, as we have seen, helps us. How does the population
+actually happen in code? Taking a look at how we would populate,
+for example, the dishes document
+we have just seen earlier. Earlier we were doing Dishes.find to
+find all the dishes in our database. Now, once you find the Dishes document,
+then you can say populate. And then supply within the populate,
+as a parameter, the specific field that
+needs to be populated. So here we are specifying comments.author. Now the expectation is that
+the comments.author field is actually an OjectId which
+references to the user document. And that is how we have set up
+our comment schema already. So this populate call that we
+perform here will then go and fetch from the database each individual
+author's record or the user's record. And then take that user document and populates it into the dishes document to
+construct the compound document from here. And then after that, of course, there some is subsequent handling
+of data that you have obtained. And then replying or returning the data to
+the client can take place at this point. But of course, let me caution you
+that this population operation is not an easy task for the server to do. Because every single dish, you will
+have to examine each and every comment. Then for each and every comment, then
+you need to find out their ObjectId for the user. Then you go and
+fetch that user document and then populate it inside the dish document. And then, that has to be repeated for every single comment that is
+contained in that Dishes document. It essentially means that it'll take
+a much longer time for the server side to complete the request and send back
+the information to the client side. So I would suggest that you should
+use populate very judiciously. You should use it only in circumstances
+where you really need that information. If, for example, you're simply
+constructing the menu for your restaurant. When you're just constructing the menu for
+your restaurant, you may not really need to populate
+the information about the author of each comment into the comment document at all. Because when you are just rendering
+the menu for your restaurant, you are not going to be showing
+the comments for that specific dish. But instead, if the user is
+examining a specific dish and wants to see the comments at that point, you may wish to execute
+a server side request. And then fetch the comment information
+with the other author information populated in and obtain that for
+use within our client side. So again, populate is a wonderful
+way of doing things when required, but use it very judicially, only when
+you really require the information. So that flexibility that
+populate provides for us is the fact that we don't need
+to populate when we don't have to. But we can populate the information
+when we really need that information. With this quick understanding
+of Mongoose population, let's move on to the exercise where
+we will modify the Dishes schema, the comments schema
+within the Dishes schema. And then use Mongoose populate to populate
+the information within our dishes when we are returning the dish
+information to the server side. Also, this also implies that when a
+comment is being added to a specific dish, the author of the comment's information
+has to be captured on the server side. Now, it so happens that the way
+we have developed our servers, we already have this information
+being provided for us. When we authenticate the user, the user's
+information is already loaded into every request that comes in
+from the client side. And so they use that user
+information's available to us. So when we are posting the comment
+on the server side, we will also capture the user's ID and then store it in
+the author field of the comment schema. This should be done automatically
+on the server side. The client should not be allowed to
+fill in the author field explicitly. But the server side should
+validate the user and only for users that are signed in, you would allow
+them to, first of all, post comments. And then when they post comments, you will automatically fill in the author
+field for that comment document by substituting the author field
+with the ObjectId of the user. Now, in the exercise,
+you will see me doing that. So watch out for
+that specific thing in the exercise. With this, we complete this lecture, let's proceed on to the exercise to
+examine the use of Mongoose population. [MUSIC]

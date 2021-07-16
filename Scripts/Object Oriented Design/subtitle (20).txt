@@ -1,0 +1,75 @@
+[MUSIC] Now it's time to learn
+about conceptual integrity. Conceptual integrity is about
+creating consistent software. It's making decisions about how your
+system will be designed and implemented, so that even if multiple
+people worked on the software, it would seem as if there was only
+one mind guiding all the work. Now, it's important to understand that
+conceptual integrity does not mean that the developers in your team don't get to
+voice their opinions about the software. It's more about everyone agreeing to use
+certain design principles and conventions. There are multiple ways to
+achieve conceptual integrity. One important way is communication. Adopting certain agile development
+practices like daily stand-up meetings and sprint retrospectives, where team members
+can agree to use certain libraries or methods when addressing certain issues, can help to maintain
+the consistency of the code. For example, team members can all
+follow a particular naming convention. In addition to communication, another way to ensure conceptual
+integrity is code reviews. Code reviews are systematic
+examinations of written code. It's similar to peer review in writing. It's often used to find
+mistakes in the software, but also to keep different developers
+consistent with each other. Developers evaluate each other's'
+code line by line to uncover issues. Additionally, using certain
+design principles and programming constructs can also help
+in maintaining conceptual integrity. Consider Java interfaces. An interface defines a type, with behaviors that implementing classes
+of that type should all have in common. This creates consistency in your software, thereby also increasing the conceptual
+integrity of your software. In this specialization,
+you will also learn about design patterns. They provide conventional structures for
+your classes to solve a design issue and lead to consistency. Another approach to achieving conceptual
+integrity is having a well defined design or architecture underlying your software. While software design is
+typically associated with guiding the internal design of software
+running as a single process, software architecture describes how
+software, running as multiple processes, work together, and
+how they relate to each other. Much like using certain design principles,
+having a strong software design or architecture to guide how your software
+is organized creates consistency. Unifying concepts is also another approach
+to maintaining conceptual integrity. It is taking seemingly different
+things and finding common ground so that each concepts can be seen and
+treated in similar ways. For example, in the Unix operating
+systems, every resource can be seen and manipulated as if it were a file. The same set of operations can be
+used on different types of resources. This simplifies things by making it so that any resource can be
+treated in the same way. Unifying concepts to avoid special cases
+can provide consistency in your software. Finally, having a small core group
+that accepts commits to the code base is another approach in
+achieving conceptual integrity. This is similar to
+exercising code reviews, but it restricts the review to only
+core members of your software team. These members will be responsible for
+ensuring that any software changes follow the overall architecture
+and design of the software. Restricting this decision to
+only either a single person or a small group will solve any design
+issues and lead to consistency. Conceptual integrity is often quoted as
+being the most important consideration in system design. Fred Brooks, a well known computer
+architect, states in his book, The Mythical Man-Month, it is better
+to have a system omit certain anomalous features and improvements, but
+to reflect one set of design ideas, than to have one that contains many good
+but independent and uncoordinated ideas. Simply put, conceptual integrity is about
+designing and implementing the software in a consistent manner,
+as if it were written by one person. Practicing conceptual integrity in
+your software can help guide your team when they are writing software. If each team member sees
+that the design and logic of the software is consistent and
+easy to follow, it will help them know how and where to change the software
+to meet new requirements. Let's use a metaphor to show you
+the benefits of conceptual integrity. Let's say that I was hosting a party, and I assign multiple people to send invites
+through Facebook, Snapchat and Twitter. If I ask you to check who will be
+attending the party, you would have to check different social media sites,
+which would cost more time and effort. If I was to use just one method, like
+Facebook, this task would be much easier. This is similar to writing software. Keeping things consistent and logical would make it much easier
+to maintain and work with. Think of your software as a building. Conceptual integrity is
+the consistency of the structure and design behind your building. To create a huge skyscraper, many workers would need to work
+together in a well-organized way. They would need a definite blueprint and an architect to guide
+the design of the building. Without this blueprint, workers may have no way of knowing how to
+build different sections of the building. Different materials and structures may
+be used by these confused workers. Allowing construction of
+the building to be informal and unguided would result
+in an unorganised and inconsistent structure, leading to
+possibly poor structural integrity. You now have a greater understanding of
+the importance of conceptual integrity. Conceptual integrity is a very
+important principle, and one that will help you to create
+consistent and well designed software.

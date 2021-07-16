@@ -1,0 +1,178 @@
+[MUSIC] Let us now explore some basic Git
+commands that are very useful for us in this specialization. There is lot more to Git than
+what we cover in this exercise. To get started, go to your convenient
+location on your computer, and then create a folder named git-test. Then open this folder in
+your favorite editor. Here I have the git-test
+folder that we just created open in my Visual Studio Code. Let me add a file to this
+folder named index.html. Now you can see that I have added in some
+HTML code into this index.html file. Let's save the changes,
+now let's switch to our command line. At the command line,
+go to the git-test folder, and let's initialize this folder
+to be a Git repository. So to do that, add the command line,
+type, git init. Now this folder has been initialized
+to be a Git repository, so this is our first Git command
+that we have learned, git init. This initializes the current
+folder as a Git repository, and when it initializes the folder,
+it will mark that folder as a master. This is the master branch for my Git,
+now let's not worry about branches and so on,
+we will not deal with that in this course. We will only be working with the master
+branch in this particular specialization, so this would be marked as the master. Now, this is the initial
+point of our repository, the next command that we're
+going to look at is git status. If you type git status in the command
+line, it'll tell you the current status of the folder, so let's do that at
+the command line and see what it shows. At the command line, type git status, and read the information that is
+typed out on the command window. You see that it says, On branch master, so
+that is the master branch that we are on, and it says, untracked files,
+and then shows index.html in red. On your specific computer,
+it may be using different colors or represent this differently, but
+this is what it shows on my Mac. So now this index.html file that we
+have just created in this folder is now not been added
+to our Git repository. So let's go ahead and
+add that file to the Git repository. So to do that, we say, git add,
+and you can simply say dot, which means that all the files in
+the current directory will be added to what is called as the staging
+area of my Git repository. So now if I again type,
+git status, you will see that the file index.html
+is marked in green, and it says changes to be committed there,
+and then shows the file name. And then, so that means that this file is now ready
+to be committed to my Git repository. So the next command that we saw
+was git add, by using git add, you can add file or
+folders to the staging area. So once you add it to the staging area,
+then you can commit that snapshot of our folder status
+to our Git repository. So that means that when
+you do the git commit, what this command will
+do is commit the current state of our folders
+into our Git repository. So all the files, as they exist at
+the moment, once they have been staged using the git add, then they will be
+committed through a Git repository, then we execute the git command folder. So, at this point,
+when we execute the git command, then our initial state will now
+be changed to the first commit to the Git repository, so
+let's go ahead and do that. Back at the command prompt,
+let's type git commit, and then we can even add
+a message to our commit. So I'm going to say git
+commit -m "first commit", because this is our first
+commit to our Git repository. So when I do that, it says, okay, one file
+has been added to the Git repository and some other information will be
+typed out onto the command window. So let's now check, again, git status, and now you see that it says, nothing
+to commit, working directory is clean. So what that means is that the current
+state of my working directory or working folder has been
+committed to the Git repository. So a snapshot has been committed to my
+Git repository, now I can type the next command, called git log --oneline. And see that it shows a number there,
+an eight digit number there, and it also shows the message that we put
+in our commit saying "first commit". So that is the log of all the commits that
+have been put into my Git repository. So going back to our next git command, we saw that git log --oneline will show us a brief
+log of all the commits. If you simply type git log, it'll display a lot more detailed
+information about all the commits, but this is sufficient enough for
+obtaining information that we require. Let's now come back to our editor
+here in Visual Studio Code. So I'm going to add more changes to
+my index.html file, so I will add, So I have changed my index.html file. Now let me add another folder
+under the git-test folder, so I will create a subfolder
+here named templates. And inside this templates folder, I'm going to create another
+file named test.html. This is just to show you how
+Git can commit entire folder hierarchy into its repository. So with test.html now there, I'm just going to copy everything from my index.html into my test.html, and save the changes Going
+back to the command line, let's now check out the status of
+our Git repository and this folder. So typing git status shows that
+the index.html file that we have already added earlier to
+the repository has now been modified, so there is a newer version
+of the index.html file. Also, it shows that
+there are some untracked files in this folder called templates. Let's add all these changes to our
+repository, to the staging area. So again, type git add., and then all these files will be
+added to the staging area. Again, checking out the status, you now
+see that the changes that have been added to the staging area, so all these
+files have been added to the staging area. Let's do one more commit, so
+I would say git commit -m, "Second commit", and then,
+let's check out the log. If you check out the log,
+you'll now see that there are two commits in my Git repository,
+the first and the second commit. And note that each one of them is
+given a different number there. If you want to see the full details of
+the log, you can type simply, git log. And then you will see
+more details in there than what you would be interested in. So notice that the one line commit only gives the first few characters
+of my commit number there. That is sufficient enough for
+us to operate with. Let me now go back again to my
+Visual Studio, and add one more, One more line to my index.html file. So now my index.html file has been
+modified, and let's save the changes. Going back to the command line, doing git status shows that
+the index.html file has been modified. So let's add this to the staging area, and then do a third commit,
+so let's say git add ., git status. Now you'll see that the index.html,
+the modified version, has been added. Now, we can say git commit, "Third commit", And do git log --oneline, and you'll see that there are three
+commits in our repository. So now our repository contains
+snapshots of three different points, at the end of the first commit,
+at the end of the second commit, and at the end of the third commit. Now we also can roll back changes, we can revert the repository
+to a previous version. We can pull out a file
+from an older commit and then replace the existing file in
+our directory from the older commit. So let's see how we can operate
+with these things by learning a couple of more commands. At this stage, our index.html
+file is in the current state, so you can notice that it has an h1 and
+two p's. Let's now look at the next Git command. The next Git command that we're going
+to learn about is git checkout. So this checkout command
+allows us to check out a file from a previous commit
+in our Git repository. So if we don't like the current
+file that we have in our folder, and we want to go back to
+a previous version of the file. We can always check out the file
+from a previous commit or from the current commit, and
+then continue to work with that file. So let's make use of this and see some
+further changes to our Git repository. Going back to our command line,
+we remember that, between the second and the third commit,
+I made changes to my index.html file. Suppose I want to revert back to
+the index.html file from my second commit. So then I can simply say,
+git checkout 900cfcf, so that is the commit identifier, the number that identifies
+that particular commit. And then I can say index.html,
+and what you would notice is that all the file will now be checked
+out into my current working directory. Going to my Visual Studio Code, you now notice that my index.html file
+has reverted to the previous version. So the change that I made before
+the third commit is now gone. So my index.html file has been restored to
+its state at the end of the second commit. Now at the command line,
+if I type git status, you notice that this index.html file, which has reverted to what it was
+at the end of the second commit. It has now already been staged,
+so using this git checkout will pull out an older version of the file
+and then replace what is in the current directory and then it will also
+check it into the staging area. So now, if I do that and
+then I realize that this is what I want, I can simply do another
+commit at this point. And then that file can be
+committed as the fourth commit, but suppose I don't like this. I want to revert back to
+the index.html file at the end of the third commit,
+then all I can do is say git reset, HEAD and index.html. So at this point,
+what happens is that the index.html, the modified version that I have
+checked out is still there, but this file has been unstaged
+from the staging area. If you go back and
+look at the index.html in your, Editor, it will still show the state
+at the end of the second commit because we had pulled out that
+file using checkout for that. Now if we want to revert it back to what
+it was at the end of the third commit, then we do one more checkout
+from the third commit. Going to our command window,
+type git status, and you would notice that the index.html
+is marked as modified. But it also shows this particular
+statement here, it says git checkout --, and the file name, to discard
+the changes in the working directory. So that's one way you can
+discard the changes that are made to a particular file
+corresponding to the previous commit. So let me restore this
+index.html back to what it was at the end of the third commit. So to do that,
+I will simply say git checkout -- index.html, and then if I do, Git status, it shows that my
+directory is clean, and basically my directory has been restored to the state
+of the end of the third comment. Going to the file in my Visual Studio
+Code, I see that the file has been restored back to what it was at
+the end of the third commit. So if you have made changes to a file
+after a commit and you want to just discard those changes, you can simply
+checkout the file from the last commit. And then all your changes that you've done
+after the last commit will be discarded at this part.. So these are some basic commands
+that are very useful for you as you go through the courses and the specialization because you may want
+to commit at the end of each exercise. And as you proceed forward, you would still have a committed
+version of the state of your folder at the end
+of the previous exercise. So that way if you are carrying out a new
+exercise and you discover that you've made mistakes and you want to
+revert back to the previous commit. You'll always have a way of
+doing that using the commands that we have just learned. So with this basic understanding
+of these few Git commands, we would be able to proceed
+forward with understanding and using Git in the courses
+of this specialization. So now, we have reviewed the git reset for
+a specific file or git reset in general. If you simply type get reset,
+it'll restore you back to the last commit. So it will reset the staging
+area to the last commit without disturbing the changes that
+you've done to your working directory. So once you reset,
+then you can checkout the previous version of the file that you have
+committed in the previous commit. So this way you can restore your
+folder back to where you were at the starting point
+of the previous commit. So sometimes when you are going through an
+exercise and you realize you made mistake, you always have a way of reverting
+back to a previous version. So with these commands I think
+you're all set to go ahead to use Git in the courses of this specialization. So at the end of this exercise,
+did you Git it? [MUSIC]

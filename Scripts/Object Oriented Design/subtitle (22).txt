@@ -1,0 +1,102 @@
+[MUSIC] Now it's time for
+you to learn about Sequence Diagrams. Sequence Diagrams are used to show
+your team how objects in your program interact with each other
+to complete tasks. Simply put, think of a sequence diagram like a map of
+conversations between different people, where this map follows all the messages
+sent from person to person. Let's say that a person wants to order
+a burger at a local fast food restaurant, here is a simple sequence
+diagram of the scenario. That person will go to a restaurant and
+talk to the cashier and order a burger. The cashier will then talk to the chef
+of the back to tell him my order. The shuffle cook the burger,
+give it to the cashier. And the cashier will
+give it to the person. Now, let's go into more detail, because a sequence diagram is another type
+of UML diagram, to fully understand it, you should have a good grasp of
+objects and basic UML class diagrams. Knowing how to break down a system
+into classes is essential in creating meaningful sequence diagrams. A sequence diagram describes how
+objects in your system interact to complete a specific task. Think back to the burger example. All of those interactions between
+the different people were needed. Staff person could get a burger. This is similar to how objects will
+interact to complete a given task. I would describe the different
+components of a sequence diagram first. Then later, I will elaborate more
+on how to put it all together. When creating sequence diagrams, first you use a box to represent
+role play by an object. The role is typically labeled by
+the name of the class for the object. Second, you use vertical dotted lines,
+known as lifelines, to represent an object as time passes by. Finally, you use arrows to show messages
+that are sent from one object to another. Now that you know the different elements, let's put everything together
+by creating a sequence diagram. Let's use changing the channel of your
+television using a remote control. First, I'm going start by drawing a box,
+that will surround the entire process. This is to show that this is
+one sequence of activities. A sequence diagram can contain
+other sequence diagrams within it. For example,
+if you are creating a sequence diagram for an ATM, there might be a different
+sequence for Withdrawal and Deposits. And during a single process
+someone might want to do both. In your sequence diagram, you would
+have one big sequence of activities with two smaller sequences inside them. Moving on, in the top corner I'm going
+to draw a label with a meaningful title. Remember, your team will be looking
+at this diagram as a reference for development, so
+make the titles meaningful. We will name it Change TV Channel. Next, I'm going to draw out the objects
+that are important in this task. To keep things clean, you should draw
+objects from left to right in the sequence that they interact with each other. In this example,
+the TV viewer starts the entire process. The use of the remote which
+will then interact with the TV. So when are diagram, I'm going to drive
+the TV viewer then the remote and then the TV. If there are people in your example, who
+will be using or interacting with objects, this are typically draw
+on a stick figures. We call these people actors,
+in our example, the TV viewer's an actor. So I'm going to draw
+them is a stick figure, I'm going to the other
+objects as labeled boxes. Each of these objects has a lifeline. The lifelines you can draw as a dashed
+line projecting downwards from the object. Now, I'm going to start drawing
+the messages that are sent from object to object. In a sequence diagram, if one object sends
+a message to another object or objects, we denote this by drawing a solid line
+arrow from the sender to the receiver. To return data and to control back to initiating objects,
+we would use a dotted line arrow. What's the first thing that
+happened in this example? Let's assume the TV is already on and
+the TV viewer wants to change her channel. The first thing that happens is the TV
+viewer presses the numbers on the remote to tell it which channel to go to. This activates both TV viewer and
+the remote in our sequence diagram. When an object is activated, we denote
+this on our sequence diagram using small rectangles on the objects lifeline. You activate an object whenever
+an object sends, receives or it's waiting for a message. The first message that is sent is
+from the TV viewer to the remote. That message says that the TV
+viewer pressed numbers. So I'm going to add this to the diagram
+with a solid line arrow and label it Press Numbers, number. The remote then sends a new message
+to the television to change the channel to number. We denote this on the diagram with
+another solid line arrow labeled Change channel, number. This also activates the television object,
+so I will add a small rectangle
+to the television's lifeline. You'll notice that since a television
+wasn't activated at the beginning of the example, we don't want the rectangle
+on its lifeline to start at the same place as the TV viewer or the remote. I drew it a little bit lower on
+the lifeline to indicate it was activated later in the process. Next, the television changes the channel, which the TV viewer can
+see on the TV screen. This is a returning of control. that means I'm going to denote this
+response using a dotted line arrow. I'm going to draw this arrow from
+the television object to the TV viewer. This action only affects
+the television and the TV viewer. The remote is not part
+of this interaction, so we do not extend the box on the remote's
+lifeline to include this action. As you design software, your sequence
+diagrams can get much more complicated. You can also show loops and alternative
+processes in a sequence diagram. Let's see what these would look
+like in a sequence diagram. Say the TV viewer is unsure
+what channel to go to and would like to surf the channels
+until they find a channel they like. I can wrap the previous sequence I just
+drew as part of an alternative process. So that it is a sequence of actions
+that will occur if a condition is true. So I put the sequence in a box and
+label it alt, for alternative, in the top right corner. Now, I need to specify when
+this alternative will occur. In this case, the sequence occurs if the TV viewer
+knew what channel they would like. We will label this alternative
+TV Viewer knows what channel they want. If the TV viewer does not
+know what channel they want, other sequences can occur. One sequence is that the TV viewer will
+browse to the channels until they find something to watch. So I'm going to drag this sequence
+underneath the previous sequence with the condition else, meaning this sequence occurs if
+all other alternatives are false. However, this sequence contains a loop. I will denote that by adding and labeling
+a box loop on the top right corner. Right under the label, I put
+a conditional statement for the loop. If that statement is true,
+it will go through the loop. Loop sequence should continually occur if
+the TV viewer does not like the channel they are watching, so I will add
+that condition to this loop box. The TV viewer is going to press the up or down arrow on the remote to
+browse through the channels. This sends a message to the remote. The remote will then send a message
+to the TV with this action. Just like in the initial sequence,
+the TV changes the channel and displays that to the TV viewer. The final sequence
+diagram looks like this. Sequence diagrams are a very powerful
+too you can use to model your software. Sequence diagrams are commonly used as a
+planning tool before the development team starts programming, or to show others how a system is designed. And they can help you to determine
+the functions you will need to right. It might even help you find problems in
+your system that you didn't see before. Sequence diagram are another technique
+you now know that will help you to create clean, well-designed programs.

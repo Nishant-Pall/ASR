@@ -1,0 +1,150 @@
+[MUSIC] The Express REST API server that
+we implemented in the previous module allows any user to perform any of
+the GET or POST or DELETE operations. There is no control on who
+can perform this operation. So which means that, if you run a server like that,
+then anybody can come into your server and start manipulating the information
+that is present within your database. This is obviously a dangerous situation. The way that server should
+be implemented is that, you need to have some
+kind of restriction on which kinds of users will be allowed
+to perform which kinds of operations. So maybe, you would allow and an authorized user only to
+perform GET operations. So for example, if you want a guest
+to be able to see information about the dishes in your restaurant or
+the menu of your restaurant and so on, that is perfectly acceptable. But, you may allow only
+an administrator to go in and modify the information about the dish or
+to delete a dish from the menu. And also update an existing dish
+in the menu, or a promotion, or the information about
+the leaders in your server-side. Now, you could also have another group
+of users which will be registered users who may be allowed to save some of
+their dishes as their favorite dishes, and only they would be able to manipulate
+the list of their favorite dishes. So that is another level
+of authorization or authentication that you need to perform. So, you have different grades of users,
+and also, depending on what kind of operations
+they would be allowed to perform. So all this means is that you need
+some kind of security to be built into your server-side. We'll look at how we can
+authenticate users, and then decide what kind
+of user this client is. And then depending on
+the type of the user, you can allow the user to perform
+certain kinds of operations. We will start with the basic
+understanding of this, what we call as Basic Authentication in a server-side for a client, and then, build upon that
+throughout the rest of this module. And then at the end of this module,
+we will end up with a mechanism, thereby, allowing users
+to register themselves. And, registered users can
+perform certain operations that an unregistered user cannot,
+and so on. So we'll impose various
+kinds of access controls for various operations on the server-side
+based upon the kind of user. So that sets you the perspective, or rather the idea of what you
+will encounter in this module. Let's start with basic authentication, the very basic mechanism that will
+enable us to authenticate users. Basic authentication in HTTP
+is a very simple mechanism, which will ask the user for
+a user name and password to be submitted with a request. And there is a specific structure on how this information will be sent
+from the client to the server-side. So, this is a matter, the basic access
+authentication, which HTTP supports, is a matter that will enable a server
+to challenge a client, and ask for the username and
+password to be submitted by the client. So the server can challenge the client
+to authenticate itself by typing in this information. The client needs to send the username and password in response to
+the challenge from the server-side. So, every request message
+originating from a client should include the encoded
+form of the username and password in the request header that
+goes from the client to the server-side. So when the server receives the request, the server will extract this information
+from the client's request header. And then, use that for
+authenticating the client before allowing access to the various
+operations on the server-side. So, how does this authentication work? If a client sends a request to the server,
+and this client request does not include the
+authorization formation, then the server will challenge the client, they're asking
+for the client to submit this information. The server challenges
+the client by including a header into the reply message coming in. The header with the type
+as WWW-Authenticate, and then the second part where it
+specifies the type is where it will specify what kind of authentication
+the client needs to submit. And we will start with the understanding
+of basic authentication here. And also notice that the reply
+message will contain a 401 error code, which is unauthorized,
+which stands for unauthorized. So when the reply comes back from
+the server-side, then the client, in response to this reply coming in, the
+client will have to send their request, including a specific header field in the
+request message of the type authorization. And this authorization header field
+will contain some information in there. For a basic authentication,
+this information would be in the form of, as the first word here, will be Basic. And then followed by a space here, and
+followed by a Base64 encoded string here. This Base64 encoded string
+encodes the username and password in a particular format, and
+then includes that in the header. Now you're saying, if you send
+out a request message like this, including this, in the header,
+then anybody in the middle. So if you know anything about security and how man in the middle attacks
+can be launched, then obviously, this can be retrieved by
+an intruder in between, and then can be used to
+fake the real client. Again, we are not getting into
+that question at the moment. When I talk about HTTPS
+in the next module, I will come back to address that
+issue in a bit more detail. But for the moment, the information
+in the header will be sent over without being encrypted in
+the header at this moment. Now, one other reason why I'm doing this
+is that, so that we can actually look at the header directly and then see this
+information in the header itself. So, when the client sends this request,
+then the server will extract the information from this authorization
+header in the request header. And then use this information in
+order to verify whether this is an authorized a client request or not. Now of course your next question would be, what exactly does this
+authorization header contain? The authorization header itself
+is constructed as follows. If you have a username and
+a password, these are the two pieces of information that you
+will use to authenticate a client. So the username and password will be
+concatenated into a single string by saying username and a colon,
+and the password itself. So the username string, colon and password will be concatenated
+together into an entire string here. This resulting string that we get here
+is that, encoded using Base64 encode. If you know about how encoding
+is done basics for encoding, convert that into an ASCII header
+like as shown in this example here, so this is nothing but
+a string of ASCII headers. Now if you don't know much about basic
+stiff encoding, don't worry about it, it doesn't impact your understanding
+of what is going on here anyway. So this Basic64 encoded strings, so this particular information is
+encoded into a string like this, and then enclosed in the request header
+going from the client to the server. The request header itself is
+of the type authorization, and then followed by the actual
+value here, which says, Basic, and a space here, and
+the Base64 encoded string here. So, when this is received by our sever,
+the server will extract this information, and then from here, it'll extract
+the username and password, and then verify whether that matches an
+authorized user or not on the server-side. To help you better understand how we
+actually organize the express application and how the authentication itself is
+carried out, as we have learned earlier, express applications themselves
+are organized in a set of middleware. And the way the express application
+works is that the middleware are applied to the request and
+the response message in the order in which it is
+declared in my express application. So if you have a express.use and then you have the first one saying
+a static server, then after that, you have another middleware, then after
+that, you have another middleware. The sequence in which they are declared
+in the express servers app.js file, for example, is the exact sequence in
+which the middleware will be applied. So an incoming request from the
+server-side as you recall in your express application, the incoming request
+is treated as a request object. The response object is what
+the express server constructs, and then the next is allows you to
+go on to the next middleware that you're going to be applying,
+and so on. So, an incoming request like this, when it
+comes in, the first middleware is applied. And then once that middleware has
+transformed both the request and the response, it moves on to the next
+middleware, which is then applied to it. So for example,
+we saw that we applied Morgan first, then we applied body
+parser to the middleware. So they must have already transformed
+the request and the response objects. And then after that, we can include an
+authentication middleware in place there. The authentication middleware is
+going to authenticate the request. Now, so if you are using basic
+authentication, do your request must contain in the header the
+authorization header in place in there. So the authorization header will be
+extracted by the authentication middleware and then checked to see if
+the user is authorized. And if the authentication middleware
+detects that you are an authorized user, then you'll be allowed to proceed
+forward to the next set of middleware that follows
+the authentication step. And your records will be processed
+by the subsequent middleware. But other hand, if your authentication middleware decides
+that you are not an authorized user, then the authentication middleware will
+take you along a different path off. And then generate an error,
+and then send back an appropriate error reply
+to that client-side and will be redirected to the error handler. So this redirection to the error
+handler will be done by calling Next with the error as the parameter
+to that Next here. So the Next is exactly this Next that we
+see in the request resource Next here. And so, that will take you all
+the way down to the error handler, which will handle error and then send back
+the error message back to the client-side, indicating the failure
+of the authentication. So this is how your typical
+basic authorization, or basic authentication works in
+your server-side application. Having understood this,
+let's move on to the exercise where we will implement the basic
+authentication in our application and see how it authenticates users. [MUSIC]

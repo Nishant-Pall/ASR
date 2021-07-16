@@ -1,0 +1,107 @@
+[MUSIC] Now it's time for
+you to learn about UML state diagrams. A state diagram is a technique that you
+can use to describe how your system behaves and responds. When an event occurs,
+you note how a system acts or behaves. Let's think of a person. To make things simple, let's say that this
+person can have three different emotional states, happy, sad and angry. State diagrams show states as nodes,
+like the following. You will learn more about this later, but I'll draw a filled circle to indicate
+the start state of this diagram. Usually I wake up happy
+after a good sleep. Let's say that this person
+starts their day happy too. During the day, maybe something
+happens to anger this person. Let's say that the person accidentally
+stubbed their toe on a table, this would change their
+state from happy to angry. In state diagrams, arrows are used to represent events to
+transition from one state to another. While this person is angry, they might
+notice that it's raining outside and this makes the person sad. So this would change their
+state from angry to sad. This is how a state diagram works. The state diagram follows the states
+of a system or object, and shows changes between
+the states as events occur. Right now, this is a simplified
+version of a state diagram for the mood behavior of this person. We will go through more UML state
+diagram conventions and examples later. State diagrams can describe a single
+object and illustrate how that object behaves in response to a series
+of events in your system. A state diagram illustrates object
+behavior by depicting the changing states of an object. These states change and
+respond to different events. A state is the way an object exists
+at a particular point in time. The state of an object is determined
+by the values of its attributes. For example, think of a car. A car with an automatic transmission can
+be in different states, park, reverse, neutral, and drive. When a car is in reverse,
+it can only behave in a certain way, it can move backwards. If want it to move in
+a forwards direction, you would have to change
+the state of the car accordingly. This is how you can think about
+the states of the objects in your system. When an object is in a certain state,
+it behaves in specific ways or has attributes set to specific values. Using UML state diagrams, you can express
+the different states of your objects and how the states will change
+when an event occurs. To better understand how to
+create UML state diagrams, let's actually create one together. Let's use a vending machine as
+an example for our UML state diagram. First, I'll indicate the start of
+this diagram with a filled circle, like we did earlier in
+the mood state diagram. Every state diagram has a filled circle
+to indicate which is the starting state, the vending machine starts
+in a state named idle. This is when the vending machine is
+waiting for coins to be inserted. I draw states as rounded rectangles. Let me explain states in more detail,
+each state has three important sections, a state name, state variables,
+and activities. Each state should at
+least have a state name. A state name is as it sounds,
+the name of the state, these names should be meaningful for
+the states of your object. For example, a car in reverse
+would have a state named reverse. Or a vending machine in a waiting, or
+idle state, would have a state named idle. State variables are data relevant
+to the state of the object. For example, using a course as an object, a relevant variable is
+the number of students enrolled. The course would be in state full, if
+this variable was at the course capacity. Activities are actions that are performed
+when in a certain state, and they're displayed at the bottom. There are three types of activities for
+each state, entry, exit, and do. Entry activities are actions that
+occur when the state is just entered from another state. Exit activities are actions that
+occur when the state is exited and moves on to another state. And do activities are actions
+that occur once, or multiple times while the object
+is in a certain state. To explain these activities, let's use a traditional alarm clock
+that uses a bell as an alarm. An entry activity for
+when a clock enters the ringing state is that the clock releases
+a spring to ring a bell. When the clock leaves the ringing state, it will relock the spring
+as an exit activity. When the clock is actually
+in its ringing state, the clock continuously rings the bell and
+this is its do activity. Now back to our vending machine example. When the vending machine
+enters this idle state, it always displays the total
+of coins inserted so far. This means it is also tracking this total. I will draw these inside the rectangle. The state variable is total, and
+the entry activity will be display total. Inserting a coin is an event that could
+change the state of the vending machine. Events that could change a state
+label transitions between the states. You draw these transitions with
+arrows from one state to another. Each transition arrow will always have an
+event, and may have a guard condition and an action. The transition and action happens from
+a given state if the event occurs and the condition is true. As a basic example, suppose you
+are finished writing an online test. For your test to go from state in
+progress to submitted, the event will be, click the submit button. The condition will be,
+submission date is before due date, and the action will be, submit test. Again, back to our vending machine. Suppose, when in the idle state,
+someone inserts a coin and the total so far is less than the product price. Let's express this situation with
+a transition arrow that loops back to the idle state. With the event insert coin,
+condition total less than price, and action display insert more coins. But suppose when in the idle state,
+someone inserts a coin and the total equals the product price. Let's express this situation with
+a transition arrow to a new state, named enough coins. And label this transition with the event,
+insert coin, and condition, total equals price. Let's have an entry action for
+enough coins being, display enough coins. When in the enough coins state,
+we have enough payment. So if someone presses the dispense button, the vending machine should
+release one of the product. We'll express this situation with
+a transition arrow from the enough coin state back to idle. And label this transition with the event,
+press dispense, and action, total equals zero, dispense product. In either state,
+if someone press the cancel button, the vending machining should
+return all the coins inserted. So we'll express this with two
+transitions from the two states. Both back to the idle state, and
+label both transitions with an event, press cancel, and action,
+total equals zero, eject coins. Here is the resulting state diagram. One element of state diagrams that's
+not shown in the one we just created is termination. Termination represents an object being
+destroyed, or the process being completed, and is drawn as a circle
+with a filled circle inside. For example, when using a bank machine,
+you can represent it returning your card at the end of the process and
+thus ending in termination. Not all diagrams have a termination
+like the vending machine, they may run continuously. State diagrams are useful for
+describing the behavior of a system or of a single object. For example, it can help you determine the
+different events that might occur during an object's lifetime. Like different user inputs, and how that
+object should behave when these events occur, like checking conditions and
+performing actions. For the vending machine example,
+if I forgot to express canceling the order I could see this easier on a state
+diagram than looking at source code. State diagrams can also help you
+to find issues in your system. Like discovering a condition that you did
+not plan for or help you to create tests. Knowing the different states of a system
+can help to make sure that your tests are complete and correct. State diagrams are a very powerful design
+technique that you can use to model your software's behavior. Using them, along with the other
+UML diagrams you've learned, will help you to create
+well designed software.

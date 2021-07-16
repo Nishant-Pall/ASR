@@ -1,0 +1,128 @@
+[MUSIC] One goal of software design principles
+is to help us create a system that is flexible, reusable and maintainable. One of these principles is
+called separation of concerns. So, what is a concern? A concern is a very general notion, basically it is anything that matters
+in providing a solution to a problem. Let's think of a supermarket,
+the concerns in a supermarket could be, how do I butcher meat? How do I bake bread,
+how do I accept payment? And how do I stock the shelves? These concerns matter when running
+the business to serve their customers. But, what do you notice in how
+a supermarket is organized to deal with these concerns? There are separate departments
+that focus on each concern. Each concern poses unique sub-problems. And each department knows what to do and
+how to address their specific concerns. The organization of a supermarket
+applies separation of concerns. A software system solves
+a problem in a similar fashion. The problem might be complex
+with a large number of concerns. Or it might be simple with
+the small number of concerns. There are concepts that can be
+abstracted from the problem space. How these abstractions are implemented in
+the software can lead to more concerns. Some of these concerns may involve what
+information the implementation represents, what it manipulates, and
+what gets presented at the end. It's easy to get lost and tangled up in
+all these concerns and their sub-problems. We need to be organized, so
+that we can think about and address these concerns effectively. As a software solution is designed and
+constructed, we express how we can address the different sub-problems by
+separating them into separate sections. You might have noticed,
+that separation of concerns, is a key idea that applies throughout
+object oriented modelling and programming. The concerns that matter are addressed
+separately when applying the design principles of obstruction, encapsulation,
+decomposition, and generalization. Each concept in the problem space leads
+to a separate obstruction with its own relevant attributes and behaviors. These attributes and behaviors are encapsulated into their
+own section of code called a class. The view of a class by
+the rest of the system and its implementation are separated. So that the details of
+implementation can change, while the view through
+an interface can stay the same. A whole class can also be
+decomposed into multiple classes. We may recognize commonalities among
+classes, which are then separated and generalized into a super class. Separation of concerns is an ongoing
+process throughout the design process. Let's look at the behavior of a dog. Some basic behaviors that a dog can do
+are walking, running, speaking and eating. While these behaviors
+are easy to identify and abstract, we need to ask ourselves which
+behaviors can the dog do all on its own? And which ones need help from something or
+someone else? If we examine the eating
+behavior more closely, we might come up with something like this. Our UML tells us that the dog has food,
+which it knows how to eat. We can tell the dog to eat
+food by giving it food, but is this the correct way of
+modeling the situation? Who is actually giving the dog the food? Does the dog always have food to eat, or
+is the dog given food to eat by an owner? In reality,
+a dog would need an owner to feed it. The dog knows how to eat food, but it doesn't know anything about the foods
+it's eating until its owner feeds it. We need to separate two concerns,
+the action of eating and the action of providing food. This can be done by
+introducing a dog owner class. In our new design,
+the dog class only knows how to eat food. The dog owner class is the one that
+knows how to get the dog food and how to give it to the dog. We have removed the concern of how
+to get food away from the dog and let the dog owner handle that issue. In using separation of concerns here, we
+should only be encapsulating behaviors and attributes within classes that
+are concerned with the said behaviors and attributes. This helps us to create a modular system
+where individual classes can easily be swapped in and out without having to
+rewrite a large portion of our code. Let's illustrate some operation of
+concerns with the another example. Think about all the different behaviors
+that a smartphone is capable of. You can use it to take photos,
+schedule meetings, send and receive e-mail, browse the internet,
+send SMS or, of course, make phone calls. If we were to design a smartphone,
+what would the classes look like? Given the complexity of a smartphone,
+let's just look at the camera and the traditional phone functions. In this snippet of code, the SmartPhone
+class, has attributes called camera and phone along with all of
+the associated behaviors. However, there is low cohesion
+in the SmartPhone class, because we have behaviors that
+are not related to each other. The camera behaviors do not need to
+be encapsulated with the behaviors of the phone in order for
+the camera to do its job. Furthermore our smartphone components
+do not offer us any modularity. We cannot access the camera or
+the phone separately if we were to build another system that required only one or
+the other. We cannot replace our current
+camera with a different camera, or replace it with a completely different
+object, without removing the code for the camera completely in this class. So what changes can we make to our
+SmartPhone class in order to make it more cohesive, and give each component of our
+smartphone distinctive functionalities. Well, let's check what our smartphone
+class is concerned about and separate them out. Our SmartPhone class has two concerns. One, act as a traditional telephone,
+and two, be able to use the built-in
+camera to take pictures. Now that we have identified
+these two different concerns, we can separate them out into their own
+more cohesive classes and encapsulate all the details about each into functionally
+distinct and independent classes. The SmartPhone class will reference
+instances of our newly created classes, so that the smartphone can act as
+a coordinator of the camera and the phone. This will let our smartphone provide
+access to all the behaviors of the camera and the phone without having to
+know how each component behaves. Let's now take a look at what
+our new smartphone design looks like after we applied
+separation of concerns. First, we will extract the attributes and
+behaviors of both the camera and TraditionalPhone into
+two separate interfaces. Then, we can implement these interfaces
+correspondingly with the FirstGenCamera class and the TraditionalPhone class. Here is what the code looks like. As you can see, we have separated
+the camera and phone functionalities into different classes, each of which
+implements a certain interface. Next, let's redesign the code for
+our SmartPhone class, so that it refers to instances of
+the camera and phone classes. This allows our smartphone to provide
+the functions of both the camera and the phone, while keeping the
+functionalities of either one separate and hidden from each other. The camera and
+phone know nothing about the other but are still composed by
+this SmartPhone class. Also, we can have a smartphone constructor
+with camera and phone as parameters. Then we can create a new instance of the
+SmartPhone class by passing in a instances of classes that implemented the camera and
+phone interfaces. Note that we leave it as a separate
+responsibility of who will instantiate the appropriate phone and camera objects. The smartphone class does
+not actually need to know. Finally, the smartphone class has methods
+that forward the responsibilities of using the camera and
+phone to these objects. Are you able to see how we now have
+a more modular design for our phone? If we want to swap out our camera or
+phone classes for something else, we do not need to touch
+any of the SmartPhone class's code. We simply just change the code to
+instantiate the smartphone and its parts. The smartphone class is now more cohesive. The tradeoff is that we have
+increased coupling in our system. Because the smartphone class needs to know
+about the camera and phone interfaces and is indirectly dependent on other classes. We use separation of concerns throughout
+this example by separating out the general notions of camera and
+phone through applying generalization and defining two interfaces. Separating out the functionality for a
+first gen camera and traditional phone by applying abstraction and encapsulation,
+and defining two implementing classes. And finally, by applying
+decomposition to the smartphone, so the constituent parts
+are separated from the whole. Now that we've talked about separation
+of concerns and completed an example, let's take a quick quiz to help you gauge
+your understanding of how separation of concerns works to meet our design goals. Our goal is to create flexible reusable,
+and maintainable code. Separation of concerns creates more
+cohesive classes using abstraction, encapsulation, decomposition,
+and generalization. This creates a system that is easier to
+maintain because each class is organized so that it only contains the code
+that it needs to do its job. Modularity is increased in turn,
+which allows developers to reuse and build up individual classes
+without affecting others. In our smartphone example, it is clear
+where the boundaries of each class are. However, real-world problems may not be so
+obvious. Deciding how to abstract, encapsulate,
+decompose and generalize to address the many concerns for a given problem is
+at the core of designing modular software.

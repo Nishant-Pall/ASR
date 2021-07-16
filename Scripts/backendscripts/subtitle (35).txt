@@ -1,0 +1,206 @@
+[MUSIC] Now that we have understood the need for
+basic authentication in our Express application, let's proceed to
+the exercise where we will add basic authentication to the ConFusion server
+that we have been developing so far, the Express REST API server. We will, along the way, learn how we can use basic
+authentication within our server. And then in subsequent exercises,
+we will expand upon this idea further to add a full-fledged authentication
+service for our Express REST API server. In this exercise,
+we will go to the ConFusion server, what we have been working on so far. So you must have completed the
+implementation of the second assignment by now, where you would have developed
+the promotions and the leaders model. And also updated the routes for
+the leader router and the promo router in your
+ConFusion server application. So within this code,
+let's go to app.js and then add in the basic
+authentication into app.js. So in app.js as we have
+understood about the way the middle way it works
+in Express application. So we start out here in the app.js by importing all the various
+node modules here. And then after that, we start out here
+by first saying app.use logger dev. So all these are going to be
+applied to our application. And then,
+this call here app.use(express.static) is what enables us to serve static
+data from the public folder. Now, they want to do
+authentication right before we allow the client to be able to
+fetch data from our server. So right there, we will go in and
+add an authentication badge. So you notice that everything
+that comes after this, all the the middleware that is mounted and
+comes after this particular point. We'll have to go through
+the authorization phase before that middleware can be access. So right there,
+I'm going to add in app.use and then adding a function called auth,
+which I am going to implement right now. So by doing this,
+what we are specifying is the default, the client can access any of these, either their static resources in the
+public folder, or any of the resources, dishes, promotions, or leaders, or
+even users as we will see later on. The client has to be first authorized. So right there, we will add in the auth. So let me add in the function
+here called auth right there. And then immediately use
+it within our Express application as the middleware there. So this function,
+auth will take in three parameters, the request object, the resource object,
+and the next object, yeah. So within this function let me first, just to know what is contained
+in the request header. Let me just log the request headers
+right there just to demonstrate to you, because once you add
+the authorization header, then we want to be able
+to see it right there. So we will first do a console log, just to see what is coming
+in from the client side. Then, let me get their authorization header by saying req.headers .authorization. So this is where we'll get hold of
+the authorization header that is added in by our client side. If it is not there, obviously,
+then we need to act accordingly. So if, The authHeader is null, which means that there is no
+authentication header in our incoming request then obviously, our client
+did not include the username and password into the authentication header. So we need to challenge our client
+to supply this information. So if the authorization header is null,
+then we'll see, var err new error, so we will not allow our client request
+to go further beyond this point. So we'll say, you are not authenticated, and then we will challenge client there. So we'll say res.setHeader, so we are going to be setting the header in the response message
+saying WWW-Authenticate, and from the lecture earlier, you'll see why we are putting this into the response header. And then we will say err status.401. 401 is unauthorized access. And then we will simply generate
+our call next with the header. So that means that it's going to skip over
+all this and go to the error handler, where the error handler will
+construct the reply message and send back to my client there. So that be, if the client has not
+included the authentication header or the authorization header,
+then I'm going to challenge the client to ask it to supply me
+the authorization header there. So if not, then I know that
+the authorization header exists. So beyond this point,
+we will say var auth, and I'm going to extract
+the authorization header. And then since the authHeader is a string, I'm going to split that value and this authorization header,
+I'm going to split the value. So as you can see, the buffer
+enables you to split the value and then we also give the encoding of
+the buffer which is Base64 encoding here. So we will convert that to a buffer
+by splitting that into two parts, using the space as the splitting part. So when you looked at the authorization
+header, you saw why the space separates the value saying basic,
+and then it gives you the rest of the Base64 encoded string which
+contains the username and password. And from that, we want to extract
+the username and password. So we're going to split that value, and
+then we're only going to consider So when you split the string by using this,
+it will split that into an array. And the first element of
+the array contains Basic. The second element of the array is
+where this base64 encoded string exist. So that's why we are only looking at
+the second element of this array. So this splitting will cause the string
+to split into an array of two items. So we could, we are picking up
+the base64 encoded string from that. And then we into this Buffer, and then
+we're going to convert that to string. And then again, split the string
+one more time because the string itself will contain the username and
+password separated by a colon. So, I'm going to split
+it using the colon as the splitting point for this string here. So notice that I am loading two
+splits here, one on the space and the second one, using the colon which
+separates the username and password. So at the end of this variable auth
+should be an array containing two items, the username and the password which
+is extracted from the base64 string. So at this point,
+what I am going to do is, just for your clarity, I'm going to simply say var username = auth[0] and then, var password = auth[1]. So now I've extracted the username and
+password from my authorization header. Now I'm going to use a default value for
+the username and password in this implementation. Later on, we will see that we can allow
+the users to create their own username and password. But for the moment, I'm just going to use, The encoded username and
+password as admin. And The password will be just password. For this basic exercise, we're going to be using this as
+the default username and password. If the username that I obtain is admin and
+the password is the string password. Then I am all fine to allow the client request will be passed through to
+the next middleware so, I will say next. So when I say next,
+this means that from the auth their request will passed on
+the next set of middleware here and then Express will try to match
+the specific request to were specific middleware which
+will service that request. So this is where we will
+allow it to pass through. If not, that means that the username and password did not match the request, the default username and
+password that I am setting up. So that means that there is an error. So in this case,
+I'm going to again cause an error here, so we'll say else, Error. So we'll again generate an error and
+then challenge the client to send in the correct authorization information,
+the username and password here. So that's it. This little bit of middleware that
+we have just implemented here, authorization middleware that
+we have just implemented here. Is sufficient enough to implement basic
+authentication within out application. So having made these changes, let's save the changes and then we'll
+see how this actually works in practice. Let's save the changes. And then we'll go and start our server. Now, going to the terminal, of course, make sure that you're MongoDB
+server is up and running. Otherwise, your Express
+server will not start up. So I have the prompt type npm start, and then your Express server will be up and
+running. Now, open in incognito
+window in your browser. The reason why I am asking you to use an
+incognito window is that when you type in the username and password then,
+it will be cached by your browser. So if you use an incognito window,
+if you restart the browser... Then the cache will be
+cleared automatically, so this information
+will not be remembered. Now what happens if you type in the
+username and password, it will be cached, so subsequently when you try to access
+the server, the cached information will be automatically sent in
+the request that you generate. So that is why it is important to use an incognito window just to show you
+that the basic authentication works. So in your browser address bar let's type
+localhost:3000, and see what happens. So when you type localhost:3000 you
+immediately see that your browser pops up this dialogue on top asking you to
+type in the username and password. If you don't type it, let me type in some
+random username and then see what happens. So if I type in a random username and
+password, then you see that the request is rejected. I'm not allowed to access the server, and then if the server will again say
+that the client is not authorized. And so it will come back and challenge
+us again for the correct authentication. So let me type in
+the current authentication. So let me type in admin and
+the password as password. And then log in, and
+you will see that now the Express application will allow you to go in and
+access the default value, which in this case is the Index.html
+file from that static public folder. Now, the same thing if you're
+trying to access localhost:dishes without the authorization,
+then it wont work. And I'll demonstrate that to
+you using postman in a minute. Now having seen how the authentication
+works, let's go and look at what happened on
+the console on our server site. Going to the console on our server site
+you see that a whole bunch of information has been printed out here, so as you saw, we were logging out
+the request headers here. So this is the first request that
+came in with the request header. And here you see that there is no
+authorization header in the request. And so your server rejected that with a
+401 asking our client to authorize itself. The second time also since we didn't
+type in the correct authorization that server rejected. Of course, you now notice that in the
+header, right there, the authorization's actually included there, and you see
+the way the authorization is included. It says Basic separated by a space, and separated by the 64-bit Encoded string
+which contains the username and password. And then, we see that the server rejected this because the authorization
+was wrong at that point. Now later on, we typed in
+the correct username and password. So right there in the third request that
+came in, we typed the correct username and password. And so, that is why you see that the
+request header contains the authorization, and this string use the correct
+encoding of the username and password. How do I know that? Well, I've cross checked and know that, that is the basic foreign encoded
+version of the string there. We will also see that from
+our postman image or what. Now then,
+you see that the request was accepted and it returned the value correctly. And then of course, subsequently, the
+client requested for a favicon, the icon. And since we don't have the favicon in our
+server side, it replies with the 404 and of course your favorite icon is
+not displayed in the address bar. So that's fine, but note in particular. Those particular requested came in, where the correct authorization
+header was included. And so, it was successful at the time. Let's try and see how we could
+do the same thing with postmap. So here I have my postmap window open. And so
+in my Postman window I'm going to type in a get to localhost: to my server,
+and then send the request and you will immediately notice that it
+challenges saying 401 unauthorized. So this is the reply message
+from the server side, so notice what it saves, 401 Unauthorized. And it says the response must include
+a WWW-Authenticate header field. And this will be challenging the client
+to send in the authorization information, the username and password. So previewing this, we see that
+the sentence you are not authenticated and then the code 401 here. Now looking at the headers
+of the reply message. When you look at the header of the reply
+message, you can see in particular this header included there,
+which is www.authenticatebasic. Now, how do we do authentication or
+authorization in post? So this is where they would go to
+this right below this box here, you will see this authorization here. And when you click on the authorization,
+right now it says NO AUTH.. Let's use the basic authentication. So when I say basic authentication,
+it will give me these two fields here where I
+can type in the username and password. Let me type in the correct username and
+password. So I will say username admin,
+password is password P-A-S-S-W-O-R-D. So you can see that, that's exactly
+the password that we have here. So once you type in the username and
+password, they'll say Update Request. So when I click on Update Request, you
+would see that immediately in the header, you will see that there is this field here that has
+been added here saying authorization. And then, you will see what this
+second part, the value you can take. It says basic and a space, and
+then this particular string. So if you check this particular
+string here, this will be the exact string that you'll see in the header
+of the successful request message. Notice what this string says. It say YWR something, and
+then ends with a Q equal to. Going to our terminal,
+you see that the successful request actually contained
+exactly that string here. It says YWR and
+then ending with Q equal to there. So by typing in the information into
+the authorization and then clicking on the update request, this information is
+added into the authorization headers. So now this is a get request, I don't need the content type there
+because it doesn't contain any body. So now that the authorization
+has been included, let's send the request now correctly and
+then you will see that the reply coming in from the server site
+will contain the index file as you expect. Now, let me delete the authorization. Now this is the reason why Postmap helps
+me to check for these things a lot more easily, I can delete the authorization and
+then send the request. And it will still contain
+this authorization, because I typed this into
+the authorization field. So let me clear the authorization from
+there, and then send the request here. And then it says you
+are not authenticated. Similarly, if I send
+the request to the dishes. Previously, this worked fine but now you see that we are prevented from
+accessing the /dishes endpoint also. And the same thing with all
+the other rest APR endpoints also. You will not be allowed to access, because
+the authorization middleware comes before you get access to any of these endpoints in the list of middleware for
+your express server. So now if I now include the authorization, And then update my request and
+then send the request to the server, then the server will respond. Now obviously at this moment
+my the database is empty, so it is replying with an empty array there. But now the request went
+through successfully, and I'm able to retrieve the information
+from the server sock. So this is a quick demonstration of basic authorization in our express
+rest APR application. With this, we complete this exercise. This is a good time for you to do a get comment with
+the message of basic authentication. [MUSIC]

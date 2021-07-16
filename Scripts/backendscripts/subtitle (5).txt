@@ -1,0 +1,126 @@
+[MUSIC] Online Git repositories
+enable you to store a copy of your Git repository online. And it can easily be shared among
+multiple computers and multiple users. Let's learn about two of the online
+Git repository service providers, GitHub and
+Bitbucket in a little bit more detail. We'll look at how we can setup
+our local Git repository to be mirrored in
+an online Git repository. There are several online Git
+repository service providers. Two of the most popular ones
+are GitHub and Bitbucket. I will go through in more detail about how
+you can setup your Git repository that you prepared in the previous exercise to be mirrored on an online Git
+repository on Bitbucket. To set up an online Git repository, go to one of these online service
+providers and then sign up for an account. So here, I have signed up
+into my Bitbucket account and I have my home page open here. And so I'm going to create a new repository online on my
+Bitbucket repository. So I just clicked on it,
+create repository, and then this would come up with some details. Now, this varies with
+the repository service provider. So here, I will specify the name of
+the repository and and skit test. And I'm going to mark this
+as a private repository. For this course and all the remaining
+courses in this specialization, I would strongly advise you to keep your
+repositories as private repositories, because you don't want somebody else to
+be copying a code that you might save in your online Git repository. So, please, make sure that you only used private
+repositories in this specialization. So I will sign up as a Git
+private repository, and then simply click on, Create repository. And then it will do some set up and
+then be ready for me, okay? Now, what I need to do is to copy this
+particular URL format repository. So you will see URL for the repository
+in the Homepage of that repository. So just copy that URL for the repository, because we would need that in
+order to synchronize our local Git repository with this repository,
+so I'm going to copy that. And since I have already created my
+local Git repository, I'm going to go in there and set that up to be
+mirrored in this online Git repository. So for that, we need to use a couple of
+Git commands that enable us to do this. Going to the command prompt
+in my Git repository folder, I will type git remote add origin. And then paste the URL for
+my Bitbucket repository that I have just created,
+and, Hit the return. So now, my local Git repositories remote
+origin is set to the Bitbucket repository. So now,
+I want to be able to push the entire contents of my local Git repository
+to my online Git repository. So reviewing the commands for
+setting up the online Git repository, the first one that we just did, Git
+remote add origin and the repository URL. And so this will add the online
+repository as the remote repository for my local Git repository. Once I do that, then I need to push
+my contents to my online repository. For that,
+I'll do Git push-u origin master. And this command would push the local
+Git repository to the online repository. So let's type that,
+add the command prompt. So once I typed this at
+the command prompt and hit the Return,
+it's going to setup my Git repository. Sometimes, it may ask you to
+type in your credentials, including your password on your Bitbucket
+account so you may have to do that. I had already done that previously, so
+that's why it didn't ask me again for the password. But once I've typed that in,
+then the contents of my local Git repository will be pushed
+to the server side. So now, the data on my local Git repository
+is now matched of the server side. So let's go to Bitbucket to see the status
+of my online Git repository now. Going to my Bitbucket and
+then reviewing the online Git repository, you would see that there
+has been a branch, the master branch, that has been
+pushed to my online Git repository. I can then examine the source
+by looking at the source here. And then you can see that I have the
+index.html file which is exactly the same as what I have in my local Git repository,
+and examine the various comments also, so I can look at the state in the second
+comment and the first comment. So you can now see that all this
+information has been uploaded to the online repository,
+including the history of all the comments. Then going back there,
+you can see more details about all the comments that have been
+sent to the server side. I can examine each of those
+comments in a bit more detail. And I'm going back to that source, I can look at more details
+of the source like that. So that has now set up my local Git repository to be mirrored in Bitbucket. The procedure is pretty much
+similar even on GitHub. So let me set up an online
+GitHub repository. Obviously, you have to remember that
+your local repository can only be matched to one online Git repository. So I will only go to setting up the
+repository on GitHub, and you will notice that this same kind of commands will
+be required if you want to set up your local repository to be
+mirrored on a repository on GitHub. So on GitHub,
+if you log in to your account, you would see something
+like this in your Homepage. You can go to the right-hand side
+where there's a plus sign, and then click on that to
+create a new repository, or just click on this button
+here to save your repository. And then when that comes up,
+I can simply say git-test, and then again, as a reminder,
+please make the private repository. Most of these providers allow you to
+now store private repositories online. So, why make them public unless you really
+want to share it with other people. So I would strongly urge you to
+keep your repositories private for the moment unless if you're
+working with a team. I should remind you that at this moment,
+GitHub supports private repositories only for those subscribers who pay for
+their GitHub account. So it is not available for subscribers
+who are using their free account. So simply click on Private,
+and then Create repository, and then that will create a repository. And then you would see that GitHub also
+gives me a bunch of commands here on how to setup the repository, so for creating
+a new repository on the command line. The commands that we actually had done
+earlier or to push an existing repository, the same two kinds of commands
+that have to be issued. So that basically sets up
+your GitHub repository to mirror your local repository. So, since I have already linked
+my repository to Bitbucket, I'm not going to use my GitHub
+repository for the purpose. So as you notice, the procedure is pretty
+much similar on either one of them. Give and take a few differences in
+the way the information is rendered on the screen in the user interface and
+a little bit of changes. More or less, they are similar in the way
+you're going to make use of them in terms of mirroring your local Git repository
+to the online repository here. So with this, suppose somebody
+gives you a Git repository, can you make a copy of
+that onto your local one? So this is where we use another
+Git command called Git clone. So now, here, you see that I
+have this git-test repository. So, what I'm going to do is I'm
+going to go to the repository, and then copy this URL. And then I'll show you how I can
+create a copy of the Git repository or clone this online repository
+into my local computer. So let's pretend that I am on a different
+computer, and then we'll go to our command line and then create another
+repository with that same name. Going to my command line,
+I'm just going to move up into my, and you'll see that I have my
+git-test folder there. So I'm going to create another
+temporary folder here, just to show you that I can
+clone an online Git repository. So in my temporary folder,
+you'll see that it is empty. So to review the command, it says
+Git clone and the repository's URL. So let's apply this command and
+then clone that online Git repository. Pretending that we are on another
+computer, so I'm going to say, git clone and then, Paste the URL of my Bitbucket repository here. And then you would see that Git
+repository will not get cloned into a local folder with
+the same name git-test. So now,
+if I do a listing of the directory, you can see that the git-test
+folder has been created. So let's go to the git-test folder,
+and then you will that this is an exact copy of the folder
+structure that we had created earlier. So this is how you can clone
+an online Git repository. So all you need to do is to obtain
+the URL of that Git repository, and then simply use Git clone to get a copy
+of that onto your local computer. With this, we complete this exercise
+on using online Git repositories. So did you finally get it? [MUSIC]

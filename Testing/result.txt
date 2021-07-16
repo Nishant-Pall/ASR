@@ -1,0 +1,70 @@
+a popular interview question concerns the fore core concepts an object oriented programming 
+his concepts are and capitulation abstraction inheritance and polymorphism let's look at
+ each of these concepts before objected programming we had procedure of programming that divided a
+  program into a solution so we have data stored in a bunch of
+   variables and functions that operate on the data this deloraine is very simple
+    and straightforward often it's what you will learn as part of your
+     first program in subject and university but as your programs grow you'll end up with
+a bunch of functions to their call ortolans which find yourself copying and pasting lines
+ of code over and over you make
+  a change to one function and then several other functions brackett's what we
+   call sidenote there's so much interdependency between all these functions
+    it becomes problematic object into programming came to solve this problem in
+     objected programming would combine a group of related variables
+      and functions into a unit we call a unit an object we
+       refer to this variable as properties and the functions as matters here is an example think of
+a car the corisande with properties such as make model and collar and methods like start stop and move
+ now you say what marsh we don't have cars in a programs give me a real programming example okay think
+  of the local store object in your browsers every browser has a local storage object that allows you
+   to store datolite object has a property like length which returns the number of objects
+    in the storage and metalanien so in objection we group related variables and functions that
+     operate on them into objects and this is what we call in encapsulation
+      let me show example of this inaction so here we have three of variables base salary over time and
+       rate below these we have a function to calculate the way to an employee the referee 
+       this kind of implementation as procedural so we have variables on one side and functions on
+        the other side the hard decapitate object were in tow to solve this problem we
+can have an employer object with three properties the salary over time and rat
+ and a metalled yet wait the wives better well first of all look at
+  the gestation this function has no parameters in contrast in a procedural example or get
+   wet function has three diameters there is an intimement ation without have any
+    trimeters is because all these promoters were actually modeled as properties of this object all
+     his properties and to get wagonin their hireland to their part of one unit to one of the
+      symptoms of procedure code is functioned with so many trimeters when you write
+       code in object granted way your functions and up having fewer and fewer promoters
+        as uncle bob says the best functions are those with no brometers the fewer the number of barometers
+         the easier it is to use and maintain that function so that's an tactual now less look at
+abstraction since demeler as an object this de witler has a complex logic board on the inside and a
+ few buttons on the outside that you interact with you simply press the play button and you don't
+  care what happens on the inside all that complexity is hidden from you this is abstraction in practice
+   we can use the same technique in our objects so we can hide some of the properties and
+    methods from the outside and this gives us a couple of benefits first is that will make the
+     interface of those objects simpler using an understanding an object with a few properties and
+      methods is easier than an object with several properties and methods the second benefit is
+       that it helps us reduced the impact of change let's imagine the to morrow which change these inner or private
+        methods none of these changes will lead to the outside because we don't have any coat that
+         touches this method outside of their containing object you may delatouche its parameters but none 
+of his changes will impact the rest of the applications coat so with abstraction to reduce the
+ impact of change now the third core concept in object granted programming inheritance inheritance is a mechanism that
+  allows you to eliminate redundant coat here is an example think of stalemate boxes dropped on
+   this check boxes and so all these elements have a few things in common they should have properties
+    like hide an inner hand mates like click and focus instead of redefining all these properties and methods for
+     every type of eighteen we can define the want in a generate object college exhalements and have other objects
+      inherits properties and matters to inheritance helps us eliminate redundant coat and finally polymorpha holyman
+       many more minor superposed many forms in object rented for gaming polymorphus is a technique that allows you to
+        get rid of long evans or second castenets so back to our echellent example all his objects should have the ability
+         to be rendered on a page but the way each element is rendered is different from the others if they want to
+render multiple estelle ends in a procedural way a coward probably look like this but with obsecration began implement a
+render method in each of his objects and the render metal will behave differently depending on the type of the
+object we are reverencing so we can get rid of this nasty wretch and taste and use one line of codlines you
+'ll see that later in the course so here are the benefits of object renteria using incaution regroup related variables and
+functions together and this way we can reduce complexity now we can rouse this object in
+ different parts of a program or in different programs when abstraction we hide the details and the
+  complexity and show only the essentials this technique reduces tramplin also isolates the impact of
+   changes in the coat we inheritance we can eliminate with one acota with palomares we can reflect
+    or ugly sweet case talents withal it may marsh again i wanted to say thank you very much
+     for watching the tutorial to the end i hope you learn a lot please share and like
+      the pedasos me if you want to learn more about the archiater as i told you before i have
+       a coarse called objected roaming in jaluit if you no learn more click on the link in the fiducit and
+        erinaceus i have no that's perfectly fine make sure to subscribe to my channel because i
+         flowerbeds every week thank you and have a great day
+
